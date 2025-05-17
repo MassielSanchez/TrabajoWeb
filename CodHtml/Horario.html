@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Horario de Clases</title>
+  <link rel="stylesheet" href="../CodCss/Horario.css" />
+</head>
+<body>
+  <h2>Horario de Clases</h2>
+
+  <div class="virtual-container">
+    Virtual 24/7 - 2 cursos ▼
+  </div>
+  <div class="virtual-cursos">
+    <ul>
+      <li>Análisis y Diseño de Sistemas de Información</li>
+      <li>Gestión de Proyectos</li>
+    </ul>
+  </div>
+
+  <div class="table-container">
+    <table class="tabla-horario">
+      <thead>
+        <tr>
+          <th>Hora</th>
+          <th>Lunes</th>
+          <th>Martes</th>
+          <th>Miércoles</th>
+          <th>Jueves</th>
+          <th>Viernes</th>
+          <th>Sábado</th>
+          <th>Domingo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Horario base hasta 14:00 con algunos cursos -->
+        <tr>
+          <td>08:00 - 08:45</td>
+          <td class="fundamentos" rowspan="2">Fund. Computación</td>
+          <td></td>
+          <td class="logica" rowspan="2">Lógica de Programación</td>
+          <td></td>
+          <td class="diseno" rowspan="2">Diseño Web</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>08:45 - 09:30</td>
+          <td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+          <td>09:30 - 10:15</td>
+          <td></td>
+          <td class="intro-web" rowspan="2">Intro Desarrollo Web</td>
+          <td></td>
+          <td class="logica" rowspan="2">Lógica de Programación</td>
+          <td></td>
+          <td></td>
+          <td></td>
+
+        </tr>
+        <tr>
+          <td>10:15 - 11:00</td>
+          <td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+          <td>11:00 - 11:45</td>
+          <td class="bases" rowspan="2">Bases de Datos</td>
+          <td></td>
+          <td class="algoritmos" rowspan="2">Algoritmos</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>11:45 - 12:30</td>
+          <td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+          <td>12:30 - 13:15</td>
+          <td></td>
+          <td class="moviles" rowspan="2">Apps Móviles</td>
+          <td></td>
+          <td class="bases" rowspan="2">Bases de Datos</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>13:15 - 14:00</td>
+          <td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <!-- Bloques vacíos para completar horario hasta la medianoche -->
+        <!-- Puedes seguir duplicando este bloque según lo necesites -->
+        <tr>
+          <td>14:00 - 14:45</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr><td>14:00 - 14:45</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>14:45 - 15:30</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>15:30 - 16:15</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>16:15 - 17:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>17:00 - 17:45</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>17:45 - 18:30</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>18:30 - 19:15</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>19:15 - 20:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>20:00 - 20:45</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>20:45 - 21:30</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>21:30 - 22:15</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>22:15 - 23:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>23:00 - 23:45</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>23:45 - 00:30</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

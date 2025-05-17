@@ -1,0 +1,65 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f4f6f9;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.tabla-horario {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.tabla-horario th,
+.tabla-horario td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+  height: 45px;
+  font-size: 13px;
+}
+
+.tabla-horario th {
+  background-color: #e3e3e3;
+  font-weight: bold;
+}
+
+/* Colores de cursos presenciales */
+.fundamentos { background-color: #17a2b8; color: white; }
+.intro-web { background-color: #dc3545; color: white; }
+.logica { background-color: #ffc107; color: white; }
+.diseno { background-color: #28a745; color: white; }
+.algoritmos { background-color: #007bff; color: white; }
+.bases { background-color: #6c757d; color: white; }
+.moviles { background-color: #343a40; color: white; }
+
+/* Estilo para cursos virtuales desplegables */
+.virtual-container {
+  background-color: #861639;
+  color: white;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.virtual-cursos {
+  background-color: #b2245d;
+  color: white;
+  padding: 10px;
+  display: none;
+  border-radius: 0 0 6px 6px;
+}
+
+.virtual-container:hover + .virtual-cursos {
+  display: block;
+}

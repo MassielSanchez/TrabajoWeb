@@ -1,0 +1,151 @@
+/* Estilos base: pensados para móviles primero */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('../Imagenes/fondoAzul.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 10px;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 320px;
+}
+
+.logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.login-card h2 {
+    margin: 10px 0 20px 0;
+    color: #2c3e50;
+    text-align: center;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+    outline: none;
+}
+
+button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+.forgot-password,
+.nosotros {
+    display: block;
+    margin-top: 15px;
+    color: #3498db;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+}
+
+.forgot-password:hover,
+.nosotros:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el campo de contraseña con ojito */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.toggle-password {
+    display: none;
+}
+
+.password-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    padding-right: 40px; /* espacio para el ojito */
+}
+
+.password-visible {
+    display: none;
+}
+
+.toggle-password:checked ~ .password-visible {
+    display: block;
+}
+
+.toggle-password:checked ~ .password-hidden {
+    display: none;
+}
+
+.toggle-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #888;
+}
+
+/* Desktop y tablets más grandes (min-width = Mobile First) */
+@media (min-width: 768px) {
+    .login-card {
+        padding: 40px;
+    }
+
+    .logo {
+        width: 150px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .forgot-password,
+    .nosotros {
+        font-size: 14px;
+    }
+}
