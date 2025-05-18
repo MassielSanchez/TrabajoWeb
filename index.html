@@ -30,27 +30,108 @@
       <h1>Bienvenidos a INTEC</h1>
       <p>Formamos líderes en tecnología para afrontar los retos del siglo XXI.</p>
     </section>
-
+    <div class="imagen-principal-contenedor">
+      <img src="img/intec.webp" alt="Estudiantes" class="imagen-principal">
+    </div>
     <section class="bloque-info" id="nosotros">
       <h2>¿Quiénes somos?</h2>
       <p>INTEC es una institución dedicada a formar profesionales en el campo de la tecnología y la innovación digital.</p>
     </section>
 
     <section class="carreras" id="carreras">
-      <h2>Nuestras Carreras</h2>
-      <div class="carreras-grid">
-        <div class="carrera">Ingeniería de Sistemas</div>
-        <div class="carrera">Ingeniería de Software</div>
-        <div class="carrera">Ciencia de Datos</div>
-        <div class="carrera">Ciberseguridad</div>
-        <div class="carrera">Desarrollo Web</div>
-        <div class="carrera">Inteligencia Artificial</div>
-        <div class="carrera">Redes y Telecomunicaciones</div>
-        <div class="carrera">Ingeniería Electrónica</div>
-        <div class="carrera">Administración de TI</div>
-        <div class="carrera">Robótica y Automatización</div>
+  <h2>Nuestras Carreras</h2>
+  <div class="carreras-grid">
+    <div class="carrera carrera-card" data-carrera="sistemas">
+      <div class="carrera-imagen-contenedor">
+        <img src="img/iconosistemas.png" alt="Imagen de Ingeniería de Sistemas" class="carrera-imagen">
       </div>
-    </section>
+      <div class="carrera-info">
+        <h3>Ingeniería de Sistemas</h3>
+      </div>
+    </div>
+
+    <div class="carrera carrera-card" data-carrera="software">
+      <div class="carrera-imagen-contenedor">
+        <img src="img/iconosoftware.png" alt="Imagen de Ingeniería de Software" class="carrera-imagen">
+      </div>
+      <div class="carrera-info">
+        <h3>Ingeniería de Software</h3>
+      </div>
+    </div>
+
+    <div class="carrera carrera-card" data-carrera="datos">
+      <div class="carrera-imagen-contenedor">
+        <img src="img/iconocienciadedatos.png" alt="Imagen de Ciencia de Datos" class="carrera-imagen">
+      </div>
+      <div class="carrera-info">
+        <h3>Ciencia de Datos</h3>
+      </div>
+    </div>
+
+    <div class="carrera carrera-card" data-carrera="ciberseguridad">
+      <div class="carrera-imagen-contenedor">
+        <img src="img/iconociberseguridad.png" alt="Imagen de Ciberseguridad" class="carrera-imagen">
+      </div>
+      <div class="carrera-info">
+        <h3>Ciberseguridad</h3>
+      </div>
+    </div>
+
+    <div class="carrera carrera-card" data-carrera="web">
+      <div class="carrera-imagen-contenedor">
+        <img src="img/iconodesarrolloweb.png" alt="Imagen de Desarrollo Web" class="carrera-imagen">
+      </div>
+      <div class="carrera-info">
+        <h3>Desarrollo Web</h3>
+      </div>
+    </div>
+
+    <div class="carrera carrera-card" data-carrera="ia">
+      <div class="carrera-imagen-contenedor">
+        <img src="img/iconoia.png" alt="Imagen de Inteligencia Artificial" class="carrera-imagen">
+      </div>
+      <div class="carrera-info">
+        <h3>Inteligencia Artificial</h3>
+      </div>
+    </div>
+
+    <div class="carrera carrera-card" data-carrera="redes">
+      <div class="carrera-imagen-contenedor">
+        <img src="img/iconoredes.png" alt="Imagen de Redes y Telecomunicaciones" class="carrera-imagen">
+      </div>
+      <div class="carrera-info">
+        <h3>Redes y Telecomunicaciones</h3>
+      </div>
+    </div>
+
+    <div class="carrera carrera-card" data-carrera="electronica">
+      <div class="carrera-imagen-contenedor">
+        <img src="img/iconoelectronica.png" alt="Imagen de Ingeniería Electrónica" class="carrera-imagen">
+      </div>
+      <div class="carrera-info">
+        <h3>Ingeniería Electrónica</h3>
+      </div>
+    </div>
+
+    <div class="carrera carrera-card" data-carrera="ti">
+      <div class="carrera-imagen-contenedor">
+        <img src="img/iconoti.png" alt="Imagen de Administración de TI" class="carrera-imagen">
+      </div>
+      <div class="carrera-info">
+        <h3>Administración de TI</h3>
+      </div>
+    </div>
+
+    <div class="carrera carrera-card" data-carrera="robotica">
+      <div class="carrera-imagen-contenedor">
+        <img src="img/iconorobotica.png" alt="Imagen de Robótica y Automatización" class="carrera-imagen">
+      </div>
+      <div class="carrera-info">
+        <h3>Robótica y Automatización</h3>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section class="bloque-info" id="contacto">
       <h2>Contacto</h2>
@@ -67,6 +148,175 @@
     const barraLateral = document.querySelector('.barra-lateral');
     btnMenu.addEventListener('click', () => {
       barraLateral.classList.toggle('active');
+    });
+    
+    const carrerasGrid = document.querySelector('.carreras-grid');
+    let carreraSeleccionada = null;
+    let infoMostrada = null;
+
+    // Objeto con la información de cada carrera
+    const infoCarreras = {
+      sistemas: {
+        titulo: 'Ingeniería de Sistemas',
+        descripcion: 'La Ingeniería de Sistemas se encarga del análisis, diseño, implementación y gestión de sistemas informáticos y tecnológicos. Formamos profesionales capaces de integrar hardware, software, redes y datos para resolver problemas en organizaciones.',
+        imagen: 'img/ingenieriadesistemas.jpg',
+        titulo_otorgado_bachiller: 'Bachiller universitario de Ingeniería de Sistemas', 
+        titulo_otorgado_profesional: 'Título profesional de Ingeniero de Sistemas',
+        duracion: '5 años',
+        mallaCurricularPDF: 'pdf/Malla Curricular- Ingenieria de Sistemas.pdf'
+      },
+      software: {
+        titulo: 'Ingeniería de Software',
+        descripcion: 'La Ingeniería de Software se enfoca en el diseño, desarrollo, mantenimiento y gestión de programas informáticos y sistemas digitales. Formamos  profesionales capaces de crear aplicaciones, páginas web, sistemas empresariales y soluciones tecnológicas para distintos sectores.',
+        imagen: 'img/ingenieriadesoftware.jpg',
+        titulo_otorgado_bachiller: 'Bachiller universitario de Ingeniería de Software', 
+        titulo_otorgado_profesional: 'Título profesional de Ingeniero de Software',
+        duracion: '5 años',
+        mallaCurricularPDF: 'pdf/Malla Curricular- Ingenieria de Software.pdf'
+      },
+      datos: {
+        titulo: 'Ciencia de Datos',
+        descripcion: 'La Ciencia de Datos combina estadística, programación y análisis para extraer conocimiento útil a partir de grandes volúmenes de datos. Formamos profesionales capaces de tomar decisiones basadas en evidencia, desarrollar modelos predictivos y optimizar procesos.',
+        imagen: 'img/cienciadedatos.jpg',
+        titulo_otorgado_bachiller: 'Bachiller universitario de Ingeniería de Ciencia de datos', 
+        titulo_otorgado_profesional: 'Título profesional de Ingeniero de Ciencia de datos',
+        duracion: '5 años',
+        mallaCurricularPDF: 'pdf/Malla Curricular – Ingeniería de Ciencia de Datos.pdf'
+      },
+      ciberseguridad: {
+        titulo: 'Ciberseguridad',
+        descripcion: 'La Ciberseguridad se encarga de proteger sistemas, redes y datos frente a amenazas digitales. Formamos profesionales capacitados para prevenir ataques informáticos, detectar vulnerabilidades y responder ante incidentes de seguridad.',
+        imagen: 'img/ciberseguridad.jpg',
+        titulo_otorgado_bachiller: 'Bachiller universitario de Ingeniería de Ciberseguridad', 
+        titulo_otorgado_profesional: 'Título profesional de Ingeniero de Ciberseguridad',
+        duracion: '5 años',
+        mallaCurricularPDF: 'pdf/Malla Curricular- Ingenieria de Ciberseguridad.pdf'
+      },
+      web: {
+        titulo: 'Desarrollo Web',
+        descripcion: 'El Desarrollo Web se enfoca en la creación de sitios y aplicaciones web. Formamos profesionales capaces de diseñar, programar y mantener plataformas digitales modernas, funcionales y adaptadas a diferentes dispositivos.',
+        imagen: 'img/desarrolloweb.jpeg',
+        titulo_otorgado_bachiller: 'Bachiller universitario de Ingeniería de Desarrollo Web', 
+        titulo_otorgado_profesional: 'Título profesional de Ingeniero de Desarrollo Web',
+        duracion: '5 años',
+        mallaCurricularPDF: 'pdf/Malla Curricular– Ingeniería de Desarrollo Web.pdf'
+      },
+      ia: {
+        titulo: 'Inteligencia Artificial',
+        descripcion: 'La Inteligencia Artificial se enfoca en el desarrollo de sistemas que pueden aprende, razonar y tomar decisiones. Formamos profesionales capaces de diseñar algoritmos inteligentes, automatizar procesos y crear soluciones innovadoras con tecnologías avanzadas.',
+        imagen: 'img/inteligenciaartificial.jpg',
+        titulo_otorgado_bachiller: 'Bachiller universitario de Ingeniería de Inteligencia Artificial', 
+        titulo_otorgado_profesional: 'Título profesional de Ingeniero de Inteligencia Artificial',
+        duracion: '5 años',
+        mallaCurricularPDF: 'pdf/Malla Curricular- Ingenieria de Inteligencia Artificial.pdf'
+      },
+      redes: {
+        titulo: 'Redes y Telecomunicaciones',
+        descripcion: 'La carrera de Redes y Telecomunicaciones se centra en el diseño, instalación, administración y seguridad de redes de comunicación. Formamos profesionales capaces de conectar personas y sistemas a través de tecnologías modernas como internet, fibra óptica, redes móviles y más.',
+        imagen: 'img/redesytelecomunicaciones.jpg',
+        titulo_otorgado_bachiller: 'Bachiller universitario de Ingeniería de Redes y Telecomunicaciones', 
+        titulo_otorgado_profesional: 'Título profesional de Ingeniero de Redes y Telecomunicaciones',
+        duracion: '5 años',
+        mallaCurricularPDF: 'pdf/Malla Curricular– Ingeniería de Redes y Telecomunicaciones.pdf'
+      },
+      electronica: {
+        titulo: 'Ingeniería Electrónica',
+        descripcion: 'La Ingeniería Electrónica se enfoca en el diseño, análisis y desarrollo de sistemas electrónicos. Formamos profesionales capaces de trabajar con circuitos, sensores, microcontroladores y tecnologías que se utilizan en la automatización, telecomunicaciones, robótica y más.',
+        imagen: 'img/ingenieriaelectronica.jpg',
+        titulo_otorgado_bachiller: 'Bachiller universitario de Ingeniería de Electrónica', 
+        titulo_otorgado_profesional: 'Título profesional de Ingeniero de Electrónica',
+        duracion: '5 años',
+        mallaCurricularPDF: 'pdf/Malla Curricular– Ingeniería Electrónica .pdf'
+      },
+      ti: {
+        titulo: 'Administración de TI',
+        descripcion: 'En la carrera de Administración de Tecnologías de la Información formamos profesionales capaces de gestionar los recursos tecnológicos de una organización. Donde se combina conocimientos de informática y gestión empresarial para alinear la tecnología con los objetivos estratégicos.',
+        imagen: 'img/administradordeti.jpg',
+        titulo_otorgado_bachiller: 'Bachiller universitario de Ingeniería de Administración de TI', 
+        titulo_otorgado_profesional: 'Título profesional de Ingeniero de Administración de TI',
+        duracion: '5 años',
+        mallaCurricularPDF: 'pdf/Malla Curricular– Ingeniería de Administración de Tecnologías de la Información (TI).pdf'
+      },
+      robotica: {
+        titulo: 'Robótica y Automatización',
+        descripcion: 'La carrera de Robótica y Automatización se enfoca en el diseño, construcción y control de sistemas robóticos e industriales automatizados. Formamos profesionales capaces de integrar electrónica, programación y control para crear soluciones inteligentes que optimicen procesos.',
+        imagen: 'img/roboticayautomatizacion.webp',
+        titulo_otorgado_bachiller: 'Bachiller universitario de Ingeniería de Robótica y Automatización', 
+        titulo_otorgado_profesional: 'Título profesional de Ingeniero de Robótica y Automatizacións',
+        duracion: '5 años',
+        mallaCurricularPDF: 'pdf/Malla Curricular– Ingeniería de Robótica y Automatización.pdf'
+      }
+    };
+
+    carrerasGrid.addEventListener('click', (event) => {
+      const carreraElemento = event.target;
+      if (carreraElemento.classList.contains('carrera')) {
+        const carreraId = carreraElemento.dataset.carrera;
+
+        if (carreraSeleccionada === carreraElemento) {
+          if (infoMostrada) {
+            infoMostrada.remove();
+            infoMostrada = null;
+          }
+          carreraSeleccionada = null;
+        } else {
+          
+          const info = infoCarreras[carreraId];
+          if (info) {
+            
+            if (infoMostrada) {
+              infoMostrada.remove();
+            }
+
+            // Crear el nuevo contenedor de información
+            const nuevoInfoDiv = document.createElement('div');
+            nuevoInfoDiv.classList.add('info-carrera-dinamico');
+            if (info.titulo === 'Ingeniería de Sistemas') {
+              nuevoInfoDiv.classList.add('info-sistemas');
+            }
+
+        // Crear el elemento de la imagen
+        const imagenCarrera = document.createElement('img');
+        imagenCarrera.src = info.imagen;
+        imagenCarrera.alt = `Imagen de ${info.titulo}`;
+        imagenCarrera.classList.add('imagen-carrera');
+
+        nuevoInfoDiv.appendChild(imagenCarrera); // Agregar la imagen después de la descripción
+        let mallaCurricularHTML = '';
+            if (info.mallaCurricularPDF) {
+               mallaCurricularHTML = `<p><a href="${info.mallaCurricularPDF}" >Ver Malla Curricular</a></p>`;
+            }
+
+        nuevoInfoDiv.innerHTML = `
+              <h3>${info.titulo}</h3>
+              <p>${info.descripcion}</p>
+              <img src="${info.imagen}" alt="Imagen de ${info.titulo}" class="imagen-carrera">
+              <div class="titulos-otorgados">
+                <h4>Títulos que otorgamos:</h4>
+                <ul>
+                  <li>${info.titulo_otorgado_bachiller}</li>
+                  <li>${info.titulo_otorgado_profesional}</li>
+                </ul>
+              </div>
+              <p><strong>Duración:</strong> ${info.duracion}</p>
+              ${mallaCurricularHTML}
+            `;
+
+        // Insertar el nuevo contenedor después de la carrera clicada
+        carreraElemento.parentNode.insertBefore(nuevoInfoDiv, carreraElemento.nextSibling);
+
+            infoMostrada = nuevoInfoDiv;
+            carreraSeleccionada = carreraElemento;
+          } else {
+            // Si no hay información, ocultar cualquier información mostrada
+            if (infoMostrada) {
+              infoMostrada.remove();
+              infoMostrada = null;
+            }
+            carreraSeleccionada = null;
+          }
+        }
+      }
     });
   </script>
 

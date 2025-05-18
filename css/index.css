@@ -99,22 +99,53 @@ body {
 
 .carreras-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta el minmax según el tamaño deseado */
+  gap: 15px;
   margin-top: 20px;
 }
 
-.carrera {
+.carrera-card {
   background-color: #ffffff;
-  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 15px; /* Espacio para la imagen arriba */
+  padding-bottom: 15px; /* Espacio para el texto abajo */
 }
 
-.carrera:hover {
+.carrera-card:hover {
   transform: scale(1.05);
-  background-color: #dce5f1;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.carrera-imagen-contenedor {
+  width: 60px; /* Ajusta el ancho del contenedor de la imagen */
+  height: 60px; /* Ajusta la altura del contenedor de la imagen */
+  margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.carrera-imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Asegura que el icono se ajuste sin recortarse */
+  display: block;
+  margin: 0 auto;
+}
+
+.carrera-info {
+  text-align: center;
+}
+
+.carrera-info h3 {
+  margin: 0;
+  font-size: 0.9em; /* Ajusta el tamaño del texto */
+  color: #333;
 }
 
 footer {
@@ -144,4 +175,119 @@ footer {
   .carreras-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
+}
+
+  .info-carrera-dinamico {
+    grid-column: 1 / -1; 
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: left;
+  }
+
+.info-carrera-dinamico {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start; 
+  gap: 15px;
+  margin-top: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  text-align: left; 
+}
+
+.imagen-carrera {
+  width: 500px;      
+  height: auto;     
+  max-height: 500px; 
+  object-fit: contain; 
+  border-radius: 5px;
+  margin: 0 auto 10px auto; /
+}
+
+.info-carrera-dinamico h3 {
+  color: #1f2e43;
+  margin-bottom: 5px;
+  text-align: left; 
+}
+
+.info-carrera-dinamico p {
+  line-height: 1.4;
+  color: #555;
+  margin-bottom: 0;
+  text-align: left;
+}
+@media (max-width: 600px) {
+  .imagen-carrera {
+    max-width: 95%; 
+  }
+
+  .info-carrera-dinamico h3 {
+    font-size: 1.3em;
+  }
+
+  .info-carrera-dinamico p {
+    font-size: 0.9em;
+  }
+}
+.imagen-principal {
+  max-width:100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .imagen-principal {
+    max-width: 1000px;
+  }
+}
+.titulos-otorgados {
+  margin-top: 10px;
+  text-align: left; 
+}
+
+.titulos-otorgados h4 {
+  color: #333;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.titulos-otorgados ul {
+  list-style-type: disc; 
+  padding-left: 40px; 
+  color: #555;
+}
+
+.titulos-otorgados li {
+  color: #555;
+  margin-bottom: 3px;
+}
+.info-carrera-dinamico a {
+  color: #007bff; /* Color azul para el enlace */
+  text-decoration: none; /* Eliminar el subrayado predeterminado */
+  font-weight: bold;
+}
+
+.info-carrera-dinamico a:hover {
+  text-decoration: underline; /* Subrayar al pasar el ratón */
+}
+.info-carrera-dinamico {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #ADD8E6; /* Celeste claro */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  text-align: left;
 }
