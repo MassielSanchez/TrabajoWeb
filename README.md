@@ -1,5 +1,6 @@
 # TrabajoWeb
-![image](https://github.com/user-attachments/assets/a2954c73-723c-4b2e-b8b2-0dead9127dad)
+![](https://massielsanchez.github.io/TrabajoWeb/img/intec-removebg-preview.png)
+
 
 
 Proyecto web desarrollado como parte del trabajo grupal para la asignatura Taller de Programación web.
