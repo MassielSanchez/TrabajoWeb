@@ -1,4 +1,6 @@
 # TrabajoWeb
+![image](https://github.com/user-attachments/assets/a2954c73-723c-4b2e-b8b2-0dead9127dad)
+
 
 Proyecto web desarrollado como parte del trabajo grupal para la asignatura Taller de Programación web.
 
@@ -12,9 +14,6 @@ Este proyecto consiste en una página web estática que incluye múltiples secci
 
 Cada sección tiene su propio diseño y está orientada a simular un entorno académico digital.
 
-## 🗂️ Estructura del Proyecto
-
-
 ## 🚀 Cómo visualizar el sitio
 
 Puedes abrir las páginas directamente en tu navegador:
@@ -23,7 +22,7 @@ Puedes abrir las páginas directamente en tu navegador:
    ```bash
    git clone https://github.com/MassielSanchez/TrabajoWeb.git
    ```
-2. Abre `ndex.html` en tu navegador para comenzar.
+2. Abre `index.html` en tu navegador para comenzar.
 
 ## 👨‍💻 Integrantes del equipo
 
@@ -42,4 +41,4 @@ Puedes abrir las páginas directamente en tu navegador:
 
 ## 📄 Licencia
 
-Este proyecto es de uso académico y no cuenta con licencia comercial.
+© 2025 INTEC - Todos los derechos reservados
