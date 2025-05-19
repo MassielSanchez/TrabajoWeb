@@ -1,11 +1,3 @@
-
-const btnMenu = document.getElementById('btn-menu');
-const barraLateral = document.querySelector('.barra-lateral');
-
-btnMenu.addEventListener('click', () => {
-  barraLateral.classList.toggle('active');
-});
-
 const carrerasGrid = document.querySelector('.carreras-grid');
 let carreraSeleccionada = null;
 let infoMostrada = null;
