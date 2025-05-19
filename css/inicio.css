@@ -1,150 +1,166 @@
 /* General */
 body {
-    font-family: Cambria, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f4fb;
-    min-height: 150vh;
+  font-family: Cambria, sans-serif;
+  margin: 0;
+  background-color: #f0f4fb;
+}
+
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background-color: #0833a2;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  border-radius: 5px;
 }
 
 /* Barra lateral */
 .barra-lateral {
-    width: 220px;
-    background-color: #0833a2; /* Color de fondo actualizado */
-    color: white; /* Texto blanco para mejor contraste */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    height: 100vh; /* Altura completa de la pantalla */
+  width: 220px;
+  background-color: #0833a2;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  transition: transform 0.3s ease;
 }
 
 .logo {
-    width: 150px;
-    margin-bottom: 10px;
+  width: 150px;
+  margin-bottom: 10px;
 }
 
 .barra-lateral h1 {
-    font-size: 22px;
-    margin: 10px 0 40px 0;
-    text-align: center;
+  font-size: 22px;
+  margin: 10px 0 40px;
+  text-align: center;
 }
 
 .barra-lateral nav a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    margin: 10px 0;
-    padding: 10px 15px;
-    border-radius: 25px;
-    width: 100%;
-    text-align: center;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.2s;
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 10px 0;
+  padding: 10px 15px;
+  border-radius: 25px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-.boton-notas {
-    background-color: #2980b9;
-}
-
-.boton-reservas {
-    background-color: #27ae60;
-}
-
-.boton-cerrar {
-    background-color: #e74c3c;
-}
+.boton-notas { background-color: #2980b9; }
+.boton-reservas { background-color: #27ae60; }
+.boton-cerrar { background-color: #e74c3c; }
 
 .barra-lateral nav a:hover {
-    background-color: #1c2833;
-    transform: scale(1.1);
+  background-color: #1c2833;
+  transform: scale(1.1);
 }
 
 /* Contenido principal */
 .contenido {
-    flex: 1;
-    padding: 40px;
-    overflow-y: auto;
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
 }
 
-/* Título */
 .titulo-cursos {
-    color: #2c3e50;
-    font-size: 32px;
-    text-align: center;
-    margin-top: 0;
+  color: #2c3e50;
+  font-size: 32px;
+  text-align: center;
 }
 
 /* Tarjetas de cursos */
 .cursos-contenedor {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
 }
 
 .curso-card {
-    width: 250px;
-    height: 380px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    text-align: center;
+  width: 250px;
+  height: 380px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .curso-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .curso-img {
-    height: 160px;
-    object-fit: contain;
-    background-color: #fff;
-    width: 100%;
+  height: 160px;
+  object-fit: contain;
+  background-color: #fff;
+  width: 100%;
 }
 
 .progreso {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 5px 10px;
-    border-radius: 10px;
-    font-size: 12px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 12px;
 }
 
 /* Responsive */
-@media (max-width: 700px) {
-    body {
-        flex-direction: column;
-    }
+@media (max-width: 768px) {
+  .layout-container {
+    flex-direction: column;
+  }
 
-    .barra-lateral {
-        width: 100%;
-        flex-direction: row;
-        justify-content: space-around;
-    }
+  .hamburger {
+    display: block;
+  }
 
-    .barra-lateral nav {
-        display: flex;
-        gap: 10px;
-    }
+  .barra-lateral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    z-index: 999;
+  }
 
-    .contenido {
-        padding: 20px;
-    }
+  .menu-toggle:checked ~ .layout-container .barra-lateral {
+    transform: translateX(0);
+  }
 
-    .cursos-contenedor {
-        flex-direction: column;
-        align-items: center;
-    }
+  .contenido {
+    padding: 20px;
+  }
 
-    .curso-card {
-        width: 90%;
-    }
+  .cursos-contenedor {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .curso-card {
+    width: 90%;
+  }
 }
