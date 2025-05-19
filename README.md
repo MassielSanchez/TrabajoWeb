@@ -17,13 +17,11 @@ Cada sección tiene su propio diseño y está orientada a simular un entorno aca
 
 ## 🚀 Cómo visualizar el sitio
 
-Puedes abrir las páginas directamente en tu navegador:
+Puedes abrir la página directamente en tu navegador:
 
-1. Descarga o clona este repositorio:
    ```bash
-   git clone https://github.com/MassielSanchez/TrabajoWeb.git
+   https://massielsanchez.github.io/TrabajoWeb/
    ```
-2. Abre `index.html` en tu navegador para comenzar.
 
 ## 👨‍💻 Integrantes del equipo
 
