@@ -8,8 +8,8 @@
 </head>
 <body>
 
-  <!-- Botón hamburguesa -->
-  <button id="btn-menu" class="btn-menu" aria-label="Abrir menú">&#9776;</button>
+<input type="checkbox" id="menu-toggle" class="menu-toggle">
+<label for="menu-toggle" class="btn-menu" aria-label="Abrir menú">&#9776;</label>
 
   <!-- Menú lateral -->
   <aside class="barra-lateral">
@@ -142,6 +142,18 @@
       <p>&copy; 2025 INTEC - Todos los derechos reservados</p>
     </footer>
   </main>
+  <script>
+    const btnMenu = document.getElementById('btn-menu');
+const barraLateral = document.querySelector('.barra-lateral');
+
+btnMenu.addEventListener('click', () => {
+  barraLateral.classList.toggle('active');
+});
+
+const carrerasGrid = document.querySelector('.carreras-grid');
+let carreraSeleccionada = null;
+let infoMostrada = null;
+  </script>
 
  <!--<script src="js/index.js"></script>-->
 

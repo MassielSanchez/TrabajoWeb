@@ -1,3 +1,39 @@
+.menu-toggle {
+  display: none;
+}
+
+/* Estilo del botón hamburguesa */
+.btn-menu {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1001;
+}
+
+/* Ocultar barra lateral por defecto */
+.barra-lateral {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Oculta la barra */
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+/* Mostrar barra lateral cuando el checkbox esté marcado */
+.menu-toggle:checked + .btn-menu + .barra-lateral {
+  left: 0;
+}
+
+
 /* Mobile First */
 * {
   box-sizing: border-box;
