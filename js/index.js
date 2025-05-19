@@ -1,3 +1,4 @@
+/*
 const btnMenu = document.getElementById('btn-menu');
 const barraLateral = document.querySelector('.barra-lateral');
 
@@ -168,3 +169,4 @@ carrerasGrid.addEventListener('click', (event) => {
     }
   }
 });
+*/
