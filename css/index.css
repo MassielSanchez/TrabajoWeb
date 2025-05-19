@@ -1,392 +1,503 @@
+/* index.css */
+
 .menu-toggle {
-  display: none;
+    display: none; /* Oculta el checkbox que controla la visibilidad del menú móvil */
 }
 
 /* Estilo del botón hamburguesa */
 .btn-menu {
-  font-size: 2rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  z-index: 1001;
+    font-size: 2rem; /* Tamaño del icono del menú */
+    background: none; /* Fondo transparente */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    position: fixed; /* Posición fija en la pantalla */
+    top: 1rem; /* Margen superior */
+    left: 1rem; /* Margen izquierdo */
+    z-index: 1001; /* Asegura que esté por encima de otros elementos */
 }
 
 /* Ocultar barra lateral por defecto */
 .barra-lateral {
-  position: fixed;
-  top: 0;
-  left: -250px; /* Oculta la barra */
-  width: 250px;
-  height: 100%;
-  background-color: #333;
-  color: white;
-  transition: left 0.3s ease;
-  z-index: 1000;
-  padding: 1rem;
+    position: fixed; /* Posición fija en la pantalla */
+    top: 0; /* Sin margen superior */
+    left: -250px; /* Oculta la barra moviéndola fuera de la pantalla */
+    width: 250px; /* Ancho de la barra lateral */
+    height: 100%; /* Altura del 100% de la ventana */
+    background-color: #333; /* Color de fondo de la barra lateral */
+    color: white; /* Color del texto en la barra lateral */
+    transition: left 0.3s ease; /* Transición suave para mostrar/ocultar */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    padding: 1rem; /* Espaciado interno */
 }
 
 /* Mostrar barra lateral cuando el checkbox esté marcado */
 .menu-toggle:checked + .btn-menu + .barra-lateral {
-  left: 0;
+    left: 0; /* Mueve la barra lateral a la posición visible */
 }
 
 
 /* Mobile First */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho y alto del elemento */
+    margin: 0; /* Elimina los márgenes predeterminados */
+    padding: 0; /* Elimina el espaciado interno predeterminado */
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f6f8;
-  color: #333;
-  display: flex;
+    font-family: Arial, sans-serif; /* Fuente de texto principal */
+    background-color: #f4f6f8; /* Color de fondo del cuerpo de la página */
+    color: #333; /* Color de texto principal */
+    display: flex; /* Usado para el layout, aunque puede no ser estrictamente necesario aquí */
 }
 
 .btn-menu {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  background-color: #1f2e43;
-  color: white;
-  font-size: 24px;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  z-index: 1001;
-  cursor: pointer;
+    position: fixed; /* Posición fija en la pantalla */
+    top: 15px; /* Margen superior */
+    left: 15px; /* Margen izquierdo */
+    background-color: #1f2e43; /* Color de fondo del botón menú (puede duplicar la regla anterior) */
+    color: white; /* Color del texto del botón menú (puede duplicar la regla anterior) */
+    font-size: 24px; /* Tamaño del icono del menú (puede duplicar la regla anterior) */
+    border: none; /* Sin borde (puede duplicar la regla anterior) */
+    padding: 10px; /* Espaciado interno (puede duplicar la regla anterior) */
+    border-radius: 5px; /* Bordes redondeados */
+    z-index: 1001; /* Asegura que esté por encima de otros elementos (puede duplicar la regla anterior) */
+    cursor: pointer; /* Cambia el cursor al pasar por encima (puede duplicar la regla anterior) */
 }
 
 .barra-lateral {
-  position: fixed;
-  top: 0;
-  left: -250px;
-  width: 250px;
-  height: 100vh;
-  background-color: #1f2e43;
-  color: white;
-  padding: 20px;
-  transition: left 0.3s ease;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    position: fixed; /* Posición fija en la pantalla (puede duplicar la regla anterior) */
+    top: 0; /* Sin margen superior (puede duplicar la regla anterior) */
+    left: -250px; /* Oculta la barra (puede duplicar la regla anterior) */
+    width: 250px; /* Ancho de la barra lateral (puede duplicar la regla anterior) */
+    height: 100vh; /* Altura del 100% de la ventana (puede duplicar la regla anterior) */
+    background-color: #1f2e43; /* Color de fondo de la barra lateral (puede duplicar la regla anterior) */
+    color: white; /* Color del texto en la barra lateral (puede duplicar la regla anterior) */
+    padding: 20px; /* Espaciado interno (puede duplicar la regla anterior) */
+    transition: left 0.3s ease; /* Transición suave (puede duplicar la regla anterior) */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos (puede duplicar la regla anterior) */
+    display: flex; /* Usado para el layout de los elementos internos */
+    flex-direction: column; /* Organiza los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
 }
 
 .barra-lateral.active {
-  left: 0;
+    left: 0; /* Muestra la barra lateral cuando la clase 'active' está presente */
 }
 
 .barra-lateral .logo {
-  width: 100px;
-  margin-bottom: 20px;
+    width: 100px; /* Ancho del logo */
+    margin-bottom: 20px; /* Margen inferior del logo */
 }
 
 .barra-lateral h1 {
-  font-size: 20px;
-  margin-bottom: 20px;
+    font-size: 20px; /* Tamaño del título */
+    margin-bottom: 20px; /* Margen inferior del título */
 }
 
 .barra-lateral nav {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+    display: flex; /* Usado para el layout de los enlaces de navegación */
+    flex-direction: column; /* Organiza los enlaces verticalmente */
+    width: 100%; /* Ocupa todo el ancho del contenedor padre */
 }
 
 .barra-lateral nav a {
-  color: white;
-  text-decoration: none;
-  padding: 12px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+    color: white; /* Color del texto del enlace */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    padding: 12px; /* Espaciado interno del enlace */
+    border-radius: 5px; /* Bordes redondeados del enlace */
+    transition: background-color 0.3s ease; /* Transición suave para el hover */
 }
 
 .barra-lateral nav a:hover {
-  background-color: #334a66;
+    background-color: #334a66; /* Color de fondo al pasar el ratón */
 }
 
 .contenido {
-  margin-left: 0;
-  padding: 20px;
-  width: 100%;
+    margin-left: 0; /* Margen izquierdo (se ajusta en la vista de escritorio) */
+    padding: 20px; /* Espaciado interno */
+    width: 100%; /* Ocupa todo el ancho disponible */
 }
 
 .bienvenida {
-  text-align: center;
-  margin-bottom: 30px;
-  margin-left: 30px;
-  margin-right: 30px;
+    text-align: center; /* Centra el texto */
+    margin-bottom: 30px; /* Margen inferior */
+    margin-left: 30px; /* Margen izquierdo */
+    margin-right: 30px; /* Margen derecho */
 }
 
 .bloque-info {
-  background-color: #e0e0e0;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 20px;
+    background-color: #e0e0e0; /* Color de fondo del bloque de información */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 12px; /* Bordes redondeados */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+/* Colores institucionales */
+:root {
+    --azul-intec: #003366;
+    --celeste-intec: #4FB3E7;
+    --blanco: #ffffff;
+}
+
+.bloque-info-nosotros, .contacto {
+    background-color: var(--blanco); /* Color de fondo blanco usando una variable */
+    padding: 2rem; /* Espaciado interno (2 veces el tamaño de la fuente raíz) */
+    border-radius: 12px; /* Bordes redondeados */
+    margin: 2rem 1rem; /* Márgenes superior/inferior y lateral */
+    box-shadow: 0 0 10px rgba(0, 51, 102, 0.1); /* Sombra suave */
+}
+
+.bloque-info-nosotros h2,
+.contacto h2 {
+    color: var(--azul-intec); /* Color del texto usando una variable */
+    margin-bottom: 1rem; /* Margen inferior */
+}
+
+.bloque-info-nosotros p,
+.contacto p {
+    color: #333; /* Color del texto */
+    line-height: 1.6; /* Espaciado entre líneas */
+}
+
+.formulario-contacto {
+    display: flex; /* Usado para el layout de los elementos del formulario */
+    flex-direction: column; /* Organiza los elementos verticalmente */
+    gap: 1rem; /* Espacio entre los elementos */
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 0.75rem; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño de la fuente */
+    width: 100%; /* Ocupa todo el ancho del contenedor padre */
+}
+
+.formulario-contacto button {
+    background-color: var(--azul-intec); /* Color de fondo usando una variable */
+    color: var(--blanco); /* Color del texto usando una variable */
+    border: none; /* Sin borde */
+    padding: 0.75rem; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s ease; /* Transición suave para el hover */
+}
+
+.formulario-contacto button:hover {
+    background-color: var(--celeste-intec); /* Color de fondo al pasar el ratón usando una variable */
+}
+
+.info-contacto {
+    margin-top: 1.5rem; /* Margen superior */
+    color: #444; /* Color del texto */
 }
 
 .carreras {
-  margin: 40px 0;
-  text-align: center;
+    margin: 40px 0; /* Márgenes superior e inferior */
+    text-align: center; /* Centra el texto */
 }
 
 .carreras-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta el minmax según el tamaño deseado */
-  gap: 15px;
-  margin-top: 20px;
+    display: grid; /* Usado para el layout de las tarjetas de carreras */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Crea columnas que se ajustan automáticamente */
+    gap: 15px; /* Espacio entre las tarjetas */
+    margin-top: 20px; /* Margen superior */
 }
 
 .carrera-card {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-top: 15px; /* Espacio para la imagen arriba */
-  padding-bottom: 15px; /* Espacio para el texto abajo */
+    background-color: #ffffff; /* Color de fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para el hover */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    display: flex; /* Usado para el layout de los elementos internos */
+    flex-direction: column; /* Organiza los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    padding-top: 15px; /* Espaciado interno superior */
+    padding-bottom: 15px; /* Espaciado interno inferior */
 }
 
 .carrera-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    transform: scale(1.05); /* Escala la tarjeta al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Sombra más pronunciada al pasar el ratón */
 }
 
 .carrera-imagen-contenedor {
-  width: 60px; /* Ajusta el ancho del contenedor de la imagen */
-  height: 60px; /* Ajusta la altura del contenedor de la imagen */
-  margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+    width: 60px; /* Ancho del contenedor de la imagen */
+    height: 60px; /* Alto del contenedor de la imagen */
+    margin-bottom: 10px; /* Margen inferior */
 }
 
 .carrera-imagen {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Asegura que el icono se ajuste sin recortarse */
-  display: block;
-  margin: 0 auto;
+    width: 100%; /* Ocupa todo el ancho del contenedor padre */
+    height: 100%; /* Ocupa toda la altura del contenedor padre */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin recortarse */
+    display: block; /* Se comporta como un elemento de bloque */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
 }
 
 .carrera-info {
-  text-align: center;
+    text-align: center; /* Centra el texto */
 }
 
 .carrera-info h3 {
-  margin: 0;
-  font-size: 0.9em; /* Ajusta el tamaño del texto */
-  color: #333;
+    margin: 0; /* Elimina los márgenes predeterminados */
+    font-size: 0.9em; /* Tamaño de la fuente */
+    color: #333; /* Color del texto */
 }
 
 footer {
-  text-align: center;
-  background-color: #1f2e43;
-  color: white;
-  padding: 10px;
-  margin-top: 20px;
+    text-align: center; /* Centra el texto */
+    background-color: #1f2e43; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px; /* Espaciado interno */
+    margin-top: 20px; /* Margen superior */
 }
 
 /* Desktop view */
 @media (min-width: 768px) {
-  .btn-menu {
-    display: none;
-  }
+    .btn-menu {
+        display: none; /* Oculta el botón del menú en pantallas grandes */
+    }
 
-  .barra-lateral {
-    position: relative;
-    left: 0;
-    width: 220px;
-  }
+    .barra-lateral {
+        position: relative; /* Permite que se posicione normalmente en el flujo */
+        left: 0; /* Muestra la barra lateral */
+        width: 220px; /* Ancho de la barra lateral en escritorio */
+    }
 
-  .contenido {
-    margin-left: 220px;
-  }
+    .contenido {
+        margin-left: 220px; /* Ajusta el margen para no ser tapado por la barra lateral */
+    }
 
-  .carreras-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
+    .carreras-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas más anchas en escritorio */
+    }
 }
 
-  .info-carrera-dinamico {
-    grid-column: 1 / -1; 
-    margin-top: 10px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    text-align: left;
-  }
+.info-carrera-dinamico {
+    grid-column: 1 / -1; /* Ocupa todo el ancho de la cuadrícula de carreras */
+    margin-top: 10px; /* Margen superior */
+    padding: 15px; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Color de fondo gris claro */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
 
 .info-carrera-dinamico {
-  display: flex;
-  flex-direction: column; 
-  align-items: flex-start; 
-  gap: 15px;
-  margin-top: 10px;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  text-align: left; 
+    display: flex; /* Usado para el layout de los elementos internos */
+    flex-direction: column; /* Organiza los elementos verticalmente */
+    align-items: flex-start; /* Alinea los elementos al inicio horizontalmente */
+    gap: 15px; /* Espacio entre los elementos */
+    margin-top: 10px; /* Margen superior (duplicado de la regla anterior) */
+    padding: 15px; /* Espaciado interno (duplicado de la regla anterior) */
+    border: 1px solid #ddd; /* Borde (duplicado de la regla anterior) */
+    border-radius: 5px; /* Bordes redondeados (duplicado de la regla anterior) */
+    background-color: #f9f9f9; /* Color de fondo gris claro (duplicado de la regla anterior) */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra suave (duplicado de la regla anterior) */
+    text-align: left; /* Alinea el texto a la izquierda (duplicado de la regla anterior) */
 }
 
 .imagen-carrera {
-  width: 500px;      
-  height: auto;     
-  max-height: 500px; 
-  object-fit: contain; 
-  border-radius: 5px;
-  margin: 0 auto 10px auto; 
+    width: 500px; /* Ancho de la imagen */
+    height: auto; /* Altura automática para mantener la proporción */
+    max-height: 500px; /* Altura máxima */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin recortarse */
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 0 auto 10px auto; /* Centra la imagen horizontalmente y añade margen inferior */
 }
 
 .info-carrera-dinamico h3 {
-  color: #1f2e43;
-  margin-bottom: 5px;
-  text-align: left; 
+    color: #1f2e43; /* Color del texto del título */
+    margin-bottom: 5px; /* Margen inferior */
+    text-align: left; /* Alinea el texto a la izquierda */
 }
 
 .info-carrera-dinamico p {
-  line-height: 1.4;
-  color: #555;
-  margin-bottom: 0;
-  text-align: left;
+    line-height: 1.4; /* Espaciado entre líneas */
+    color: #555; /* Color del texto */
+    margin-bottom: 0; /* Elimina el margen inferior predeterminado */
+    text-align: left; /* Alinea el texto a la izquierda */
 }
+
 @media (max-width: 600px) {
-  .imagen-carrera {
-    max-width: 95%; 
-  }
+    .imagen-carrera {
+        max-width: 95%; /* Ancho máximo en pantallas pequeñas */
+    }
 
-  .info-carrera-dinamico h3 {
-    font-size: 1.3em;
-  }
+    .info-carrera-dinamico h3 {font-size: 1.3em; /* Tamaño de la fuente más grande en pantallas pequeñas */
+    }
 
-  .info-carrera-dinamico p {
-    font-size: 0.9em;
-  }
+    .info-carrera-dinamico p {
+        font-size: 0.9em; /* Tamaño de la fuente más pequeño en pantallas pequeñas */
+    }
 }
+
 .imagen-principal {
-  max-width:100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width:100%; /* Ancho máximo del 100% del contenedor padre */
+    height: auto; /* Altura automática para mantener la proporción */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 @media (min-width: 768px) {
-  .imagen-principal {
-    max-width: 1000px;
-  }
+    .imagen-principal {
+        max-width: 1000px; /* Ancho máximo en pantallas grandes */
+    }
 }
+
 .titulos-otorgados {
-  margin-top: 10px;
-  text-align: left; 
+    margin-top: 10px; /* Margen superior */
+    text-align: left; /* Alinea el texto a la izquierda */
 }
 
 .titulos-otorgados h4 {
-  color: #333;
-  font-size: 1.1em;
-  margin-bottom: 5px;
+    color: #333; /* Color del texto */
+    font-size: 1.1em; /* Tamaño de la fuente */
+    margin-bottom: 5px; /* Margen inferior */
 }
 
 .titulos-otorgados ul {
-  list-style-type: disc; 
-  padding-left: 40px; 
-  color: #555;
+    list-style-type: disc; /* Viñetas de lista con disco */
+    padding-left: 40px; /* Espaciado interno izquierdo para la lista */
+    color: #555; /* Color del texto de la lista */
 }
 
 .titulos-otorgados li {
-  color: #555;
-  margin-bottom: 3px;
+    color: #555; /* Color del texto del elemento de la lista */
+    margin-bottom: 3px; /* Margen inferior del elemento de la lista */
 }
+
 .info-carrera-dinamico a {
-  color: #007bff; /* Color azul para el enlace */
-  text-decoration: none; /* Eliminar el subrayado predeterminado */
-  font-weight: bold;
+    color: #007bff; /* Color azul para el enlace */
+    text-decoration: none; /* Eliminar el subrayado predeterminado */
+    font-weight: bold; /* Texto en negrita */
 }
 
 .info-carrera-dinamico a:hover {
-  text-decoration: underline; /* Subrayar al pasar el ratón */
+    text-decoration: underline; /* Subrayar al pasar el ratón */
 }
+
 .info-carrera-dinamico {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 15px;
-  margin-top: 10px;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #ADD8E6; /* Celeste claro */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  text-align: left;
+    display: flex; /* Usado para el layout de los elementos internos (duplicado anterior) */
+    flex-direction: column; /* Organiza los elementos verticalmente (duplicado anterior) */
+    align-items: flex-start; /* Alinea los elementos al inicio horizontalmente (duplicado anterior) */
+    gap: 15px; /* Espacio entre los elementos (duplicado anterior) */
+    margin-top: 10px; /* Margen superior (duplicado anterior) */
+    padding: 15px; /* Espaciado interno (duplicado anterior) */
+    border: 1px solid #ddd; /* Borde (duplicado anterior) */
+    border-radius: 5px; /* Bordes redondeados (duplicado anterior) */
+    background-color: #ADD8E6; /* Celeste claro (sobrescribe la regla anterior) */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra suave (duplicado anterior) */
+    text-align: left; /* Alinea el texto a la izquierda (duplicado anterior) */
 }
 
 /* Barra superior solo visible en escritorio */
 .barra-superior {
-  display: none;
+    display: none; /* Oculta por defecto para móvil */
 }
 
 @media (min-width: 768px) {
-  .barra-superior {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    background-color: #1f2e43;
-    color: white;
-    padding: 0 20px;
-    z-index: 1002;
-  }
+    .barra-superior {
+        display: flex; /* Usado para el layout de los elementos internos */
+        justify-content: space-between; /* Espacia los elementos horizontalmente */
+        align-items: center; /* Centra los elementos verticalmente */
+        position: fixed; /* Posición fija en la pantalla */
+        top: 0; /* Sin margen superior */
+        left: 0; /* Sin margen izquierdo */
+        right: 0; /* Sin margen derecho */
+        height: 60px; /* Altura de la barra superior */
+        background-color: #1f2e43; /* Color de fondo */
+        color: white; /* Color del texto */
+        padding: 0 20px; /* Espaciado interno izquierdo y derecho */
+        z-index: 1002; /* Asegura que esté por encima de otros elementos */
+    }
 
-  .logo-superior {
-    height: 40px;
-  }
+    .logo-superior {
+        height: 40px; /* Altura del logo */
+    }
 
-  .nav-superior {
-    display: flex;
-    gap: 20px;
-  }
+    .nav-superior {
+        display: flex; /* Usado para el layout de los enlaces de navegación */
+        gap: 20px; /* Espacio entre los enlaces */
+    }
 
-  .nav-superior a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 8px 12px;
-    border-radius: 5px;
-  }
+    .nav-superior a {
+        color: white; /* Color del texto del enlace */
+        text-decoration: none; /* Elimina el subrayado */
+        font-weight: bold; /* Texto en negrita */
+        padding: 8px 12px; /* Espaciado interno */
+        border-radius: 5px; /* Bordes redondeados */
+    }
 
-  .nav-superior a:hover {
-    background-color: #334a66;
-  }
+    .nav-superior a:hover {
+        background-color: #334a66; /* Color de fondo al pasar el ratón */
+    }
 
-  /* Ocultar la barra lateral y botón hamburguesa en escritorio */
-  .barra-lateral,
-  .btn-menu {
-    display: none;
-  }
+    /* Ocultar la barra lateral y botón hamburguesa en escritorio */
+    .barra-lateral,
+    .btn-menu {
+        display: none;
+    }
 
-  /* Ajustar margen superior del contenido para no taparlo */
-  .contenido {
-    margin-left: 0;
-    margin-top: 60px;
-  }
+    /* Ajustar margen superior del contenido para no taparlo */
+    .contenido {
+        margin-left: 0;
+        margin-top: 60px;
+    }
 }
 
 .imagen-principal-contenedor {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+    display: flex; /* Centra la imagen */
+    justify-content: center; /* Centra horizontalmente */
+    margin-top: 20px; /* Margen superior */
+}
+
+.contacto {
+    background-color: #f5f5f5; /* Color de fondo de la sección de contacto */
+    padding: 40px 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+.formulario-contacto {
+    display: flex; /* Organiza los elementos internos */
+    flex-direction: column; /* En columna */
+    gap: 10px; /* Espacio entre elementos */
+    margin-top: 20px; /* Margen superior */
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 6px; /* Bordes redondeados */
+    font-size: 1em; /* Tamaño de la fuente */
+    width: 100%; /* Ancho completo del contenedor */
+    max-width: 500px; /* Ancho máximo */
+}
+
+.formulario-contacto button {
+    background-color: #e30000; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    padding: 12px; /* Espaciado interno */
+    border-radius: 6px; /* Bordes redondeados */
+    font-size: 1em; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor */
+    width: fit-content; /* Ancho según el contenido */
+}
+
+.formulario-contacto button:hover {
+    background-color: #c10000; /* Color de fondo al pasar el ratón */
+}
+
+.info-contacto {
+    margin-top: 30px; /* Margen superior */
+    font-size: 0.95em; /* Tamaño de la fuente */
 }
