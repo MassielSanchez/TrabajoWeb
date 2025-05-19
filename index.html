@@ -8,13 +8,24 @@
 </head>
 <body>
 
+<header class="barra-superior">
+  <img src="img/blanco.png" alt="Logo" class="logo-superior">
+  <nav class="nav-superior">
+    <a href="#inicio">Inicio</a>
+    <a href="#nosotros">Sobre Nosotros</a>
+    <a href="#carreras">Carreras</a>
+    <a href="#contacto">Contacto</a>
+    <a href="vistas/login.html" class="boton-cerrar">Iniciar sesión</a>
+  </nav>
+</header>
+
 <input type="checkbox" id="menu-toggle" class="menu-toggle">
 <label for="menu-toggle" class="btn-menu" aria-label="Abrir menú">&#9776;</label>
 
   <!-- Menú lateral -->
   <aside class="barra-lateral">
     <img src="img/blanco.png" alt="Logo" class="logo">
-    <h1>INTEC</h1>
+
     <nav>
       <a href="#inicio">Inicio</a>
       <a href="#nosotros">Sobre Nosotros</a>
@@ -29,14 +40,15 @@
     <section class="bienvenida" id="inicio">
       <h1>Bienvenidos a INTEC</h1>
       <p>Formamos líderes en tecnología para afrontar los retos del siglo XXI.</p>
-    </section>
-    <div class="imagen-principal-contenedor">
+          <div class="imagen-principal-contenedor">
       <img src="img/intec.webp" alt="Estudiantes" class="imagen-principal">
     </div>
     <section class="bloque-info" id="nosotros">
       <h2>¿Quiénes somos?</h2>
       <p>INTEC es una institución dedicada a formar profesionales en el campo de la tecnología y la innovación digital.</p>
     </section>
+    </section>
+
 
     <section class="carreras" id="carreras">
   <h2>Nuestras Carreras</h2>
@@ -142,19 +154,7 @@
       <p>&copy; 2025 INTEC - Todos los derechos reservados</p>
     </footer>
   </main>
-  <script>
-    const btnMenu = document.getElementById('btn-menu');
-const barraLateral = document.querySelector('.barra-lateral');
-
-btnMenu.addEventListener('click', () => {
-  barraLateral.classList.toggle('active');
-});
-
-const carrerasGrid = document.querySelector('.carreras-grid');
-let carreraSeleccionada = null;
-let infoMostrada = null;
-  </script>
-
+ 
  <!--<script src="js/index.js"></script>-->
 
 </body>

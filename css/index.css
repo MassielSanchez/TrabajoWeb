@@ -327,3 +327,59 @@ footer {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   text-align: left;
 }
+
+/* Barra superior solo visible en escritorio */
+.barra-superior {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .barra-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: #1f2e43;
+    color: white;
+    padding: 0 20px;
+    z-index: 1002;
+  }
+
+  .logo-superior {
+    height: 40px;
+  }
+
+  .nav-superior {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-superior a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+  }
+
+  .nav-superior a:hover {
+    background-color: #334a66;
+  }
+
+  /* Ocultar la barra lateral y botón hamburguesa en escritorio */
+  .barra-lateral,
+  .btn-menu {
+    display: none;
+  }
+
+  /* Ajustar margen superior del contenido para no taparlo */
+  .contenido {
+    margin-left: 0;
+    margin-top: 60px;
+  }
+}
+
