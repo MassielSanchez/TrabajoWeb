@@ -1,6 +1,6 @@
 # TrabajoWeb
 
-Proyecto web desarrollado como parte del trabajo grupal para la asignatura [Nombre de la Asignatura].
+Proyecto web desarrollado como parte del trabajo grupal para la asignatura Taller de Programación web.
 
 ## 📌 Descripción
 
@@ -14,14 +14,6 @@ Cada sección tiene su propio diseño y está orientada a simular un entorno aca
 
 ## 🗂️ Estructura del Proyecto
 
-```
-TrabajoWeb/
-├── css/                # Archivos de estilos CSS por sección
-├── img/                # Imágenes utilizadas en el proyecto
-├── pages/              # Páginas HTML del sitio web
-├── README.md           # Este archivo
-└── .gitignore          # Archivos a ignorar por Git
-```
 
 ## 🚀 Cómo visualizar el sitio
 
@@ -31,7 +23,7 @@ Puedes abrir las páginas directamente en tu navegador:
    ```bash
    git clone https://github.com/MassielSanchez/TrabajoWeb.git
    ```
-2. Abre `pages/Index.html` en tu navegador para comenzar.
+2. Abre `ndex.html` en tu navegador para comenzar.
 
 ## 👨‍💻 Integrantes del equipo
 
@@ -43,10 +35,6 @@ Puedes abrir las páginas directamente en tu navegador:
 
 - HTML5
 - CSS3
-
-## 📷 Capturas
-
-*(Opcional: puedes insertar imágenes o GIFs del proyecto si lo deseas)*
 
 ## ✅ Estado del Proyecto
 
