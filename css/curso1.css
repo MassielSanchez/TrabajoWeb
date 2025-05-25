@@ -1,0 +1,77 @@
+/* estilos_semanas.css */
+
+.semanas-container {
+    /* Mantenemos los estilos del contenedor general */
+}
+
+/* Oculta el checkbox original */
+.semana-toggle {
+    display: none;
+}
+
+.semana-item {
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.semana-header {
+    background-color: #f8f8f8; /* Color de fondo del encabezado */
+    color: #333;
+    cursor: pointer;
+    padding: 15px 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box; /* Para que el padding no aumente el width */
+}
+
+.semana-header:hover {
+    background-color: #f0f0f0;
+}
+
+/* Estilo para la flecha ▼ o ▲ */
+.semana-header .arrow::before {
+    content: '▼'; /* Flecha hacia abajo por defecto */
+    font-size: 1.2em;
+    margin-left: 10px;
+    display: inline-block; /* Permite la transformación */
+    transition: transform 0.3s ease;
+}
+
+.semana-content {
+    padding: 0 20px;
+    background-color: #fcfcfc;
+    max-height: 0; /* Oculto por defecto */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.semana-content ul {
+    list-style-type: disc;
+    margin: 10px 0 10px 20px;
+    padding: 0;
+}
+
+.semana-content li {
+    padding: 5px 0;
+    line-height: 1.5;
+}
+
+/* Regla CSS clave: Cuando el checkbox está marcado, muestra el contenido */
+.semana-toggle:checked + .semana-header + .semana-content {
+    max-height: 500px; /* Suficientemente grande para cualquier contenido */
+    padding: 15px 20px; /* El padding se aplica cuando está visible */
+}
+
+/* Cuando el checkbox está marcado, rota la flecha */
+.semana-toggle:checked + .semana-header .arrow::before {
+    content: '▲'; /* Cambia la flecha hacia arriba */
+}
