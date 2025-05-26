@@ -1,17 +1,17 @@
 /* Importa tus variables primero */
-@import"../css/modules/_variables.css";
+@import url(modules/_variables.css);
 
 /* Después, los estilos base */
-@import "../modules/_base.css";
+@import url(modules/_base.css);
 
 /* Luego, el layout general */
-@import "../modules/_layout.css";
+@import url(modules/_layout.css);
 
 /* Seguido de los componentes reutilizables */
-@import "../modules/_components.css";
+@import url(modules/_components.css);
 
 /* Finalmente, los estilos específicos de secciones */
-@import "../modules/_sections.css";
+@import url(modules/_sections.css);
 
 /* ================== */
 /* Responsive - móvil (Si quieres mantener todas las media queries aquí, o distribuirlas) */
@@ -37,8 +37,10 @@
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }
+
 /* Dentro de css/index.css */
-@import url('_variables.css'); /* Si _variables.css está en la misma carpeta 'css' */
+@import url('_variables.css');
+/* Si _variables.css está en la misma carpeta 'css' */
 @import url('_base.css');
 @import url('_layout.css');
 /* ... y así sucesivamente para todos los que te daban 404 */
