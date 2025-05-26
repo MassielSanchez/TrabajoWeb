@@ -1,0 +1,39 @@
+/* Importa tus variables primero */
+@import './modules/_variables.css';
+
+/* Después, los estilos base */
+@import './modules/_base.css';
+
+/* Luego, el layout general */
+@import './modules/_layout.css';
+
+/* Seguido de los componentes reutilizables */
+@import './modules/_components.css';
+
+/* Finalmente, los estilos específicos de secciones */
+@import './modules/_sections.css';
+
+/* ================== */
+/* Responsive - móvil (Si quieres mantener todas las media queries aquí, o distribuirlas) */
+/* ================== */
+
+@media (max-width: 600px) {
+    .imagen-carrera {
+        max-width: 95%;
+    }
+
+    .info-carrera-dinamico h3 {
+        font-size: 1.3em;
+    }
+
+    .info-carrera-dinamico p {
+        font-size: 0.9em;
+    }
+}
+
+/* Carreras grid para escritorio (Puedes dejarlo aquí o moverlo a _layout.css) */
+@media (min-width: 768px) {
+    .carreras-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
