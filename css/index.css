@@ -1,5 +1,5 @@
 /* Importa tus variables primero */
-@import "modules/_variables.css";
+@import"modules/_variables.css";
 
 /* Después, los estilos base */
 @import "modules/_base.css";
@@ -37,3 +37,8 @@
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }
+/* Dentro de css/index.css */
+@import url('_variables.css'); /* Si _variables.css está en la misma carpeta 'css' */
+@import url('_base.css');
+@import url('_layout.css');
+/* ... y así sucesivamente para todos los que te daban 404 */
