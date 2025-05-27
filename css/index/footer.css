@@ -1,0 +1,9 @@
+/* css/index/_footer.css */
+
+footer {
+    text-align: center;
+    background-color: var(--azul);
+    color: var(--blanco);
+    padding: 10px;
+    margin-top: 20px;
+}

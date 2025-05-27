@@ -1,58 +1,26 @@
-/* ================== */
-/* Formulario de contacto */
-/* ================== */
+/* css/index/main/_carreras.css */
 
-.formulario-contacto {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 20px;
+.carreras {
+    margin: 40px 0;
+    text-align: center;
 }
 
-.formulario-contacto input,
-.formulario-contacto textarea {
-    padding: 10px;
-    border: 1px solid var(--gris-borde);
-    border-radius: 6px;
-    font-size: 1em;
-    width: 100%;
-    max-width: 500px;
+.carreras h2 {
+    color: var(--azul);
+    margin-bottom: 1.5rem;
 }
-
-.formulario-contacto button {
-    font-weight: bold;
-    background: var(--gradiente-naranja-acento);
-    box-shadow: 0 4px 10px color-mix(in srgb, var(--naranja) 40%, transparent);
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    color: var(--blanco);
-    border: none;
-    padding: 12px;
-    border-radius: 6px;
-    font-size: 1em;
-    cursor: pointer;
-    width: fit-content;
-}
-
-.formulario-contacto button:hover {
-    background: linear-gradient(45deg, var(--naranja-hover), var(--naranja));
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 6px 15px color-mix(in srgb, var(--naranja) 50%, transparent);
-}
-
-.info-contacto {
-    margin-top: 30px;
-    font-size: 0.95em;
-}
-
-/* ================== */
-/* Carreras (grid y tarjetas) */
-/* ================== */
 
 .carreras-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 15px;
     margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .carreras-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 }
 
 .carrera-card {
@@ -98,12 +66,9 @@
     color: var(--gris-texto);
 }
 
-/* ================== */
 /* Información carrera dinámica */
-/* ================== */
-
 .info-carrera-dinamico {
-    grid-column: 1 / -1;
+    grid-column: 1 / -1; /* Ocupa todo el ancho del grid */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -140,10 +105,7 @@
     text-decoration: underline;
 }
 
-/* ================== */
-/* Imágenes principales */
-/* ================== */
-
+/* Imágenes principales para carreras */
 .imagen-carrera {
     width: 500px;
     height: auto;
@@ -151,17 +113,4 @@
     object-fit: contain;
     border-radius: 5px;
     margin: 0 auto 10px auto;
-}
-
-.imagen-principal {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.imagen-principal-contenedor {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
 }

@@ -99,11 +99,11 @@ body {
 }
 
 .carousel-btn.prev {
-    left: -15px;
+    left: 15px;
 }
 
 .carousel-btn.next {
-    right: -15px;
+    right: 15px;
 }
 
 /* El hover directo sobre el botón lo hace completamente opaco */

@@ -3,20 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INTEC - Instituto Tecnológico de Chimbote</title>
     <meta name="description"
         content="INTEC, Instituto Tecnológico de Chimbote, forma profesionales líderes en tecnología e innovación digital. Descubre nuestras carreras en Ingeniería de Sistemas, Software, Ciencia de Datos, Ciberseguridad y más.">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="icon" href="img/intec-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/index/index.css">
+        <link rel="icon" href="img/intec-removebg-preview.png" type="image/x-icon">
+    
     <script src="js/index.js" defer></script>
 </head>
 
 <body>
-
-    <header class="barra-superior"><a href="/" aria-label="Ir a la página de inicio">
-            <img src="img/logo-horizontal.jpg" alt="Logo del Instituto Tecnológico de Chimbote INTEC"
-                class="logo-superior">
+    <header class="barra-superior">
+        <a href="/" aria-label="Ir a la página de inicio">
+            <img src="img/logo-horizontal.jpg" alt="Logo del Instituto Tecnológico de Chimbote INTEC" class="logo-superior">
         </a>
         <nav class="nav-superior">
             <a href="#inicio">Inicio</a>
@@ -27,39 +27,41 @@
         </nav>
     </header>
 
-    <div class="menu-movil"><input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <div class="menu-movil">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="btn-menu" aria-label="Abrir menú">&#9776;</label>
 
-        <aside class="barra-lateral"><a href="/" aria-label="Ir a la página de inicio">
+        <aside class="barra-lateral">
+            <a href="/" aria-label="Ir a la página de inicio">
                 <img src="img/blanco.png" alt="Logo" class="logo">
             </a>
-            <nav><a href="#inicio">Inicio</a>
+            <nav>
+                <a href="#inicio">Inicio</a>
                 <a href="#nosotros">Sobre Nosotros</a>
                 <a href="#carreras">Carreras</a>
                 <a href="#contacto">Contacto</a>
                 <a href="vistas/login.html" class="boton-cerrar">Iniciar sesión</a>
             </nav>
-
         </aside>
     </div>
 
     <main class="contenido">
-<div class="carousel-wrapper">
-        <button id="prevBtn" class="carousel-btn prev">&#10094;</button>
-        <button id="nextBtn" class="carousel-btn next">&#10095;</button>
+        <div class="carousel-wrapper">
+            <button id="prevBtn" class="carousel-btn prev" aria-label="Diapositiva anterior">&#10094;</button>
+            <button id="nextBtn" class="carousel-btn next" aria-label="Siguiente diapositiva">&#10095;</button>
 
-        <div class="carousel-container">
-            <div class="carousel-slide">
-                <img src="img\index\baner1.jpg" alt="Descripción de la imagen 1">
-                <img src="img/index/baner2.jpg" alt="Descripción de la imagen 2">
-                <img src="img/index/baner3.jpg" alt="Descripción de la imagen 3">
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="img/index/baner1.jpg" alt="Estudiantes en INTEC - Imagen 1">
+                    <img src="img/index/baner2.jpg" alt="Modernas instalaciones de INTEC - Imagen 2">
+                    <img src="img/index/baner3.jpg" alt="Innovación tecnológica en INTEC - Imagen 3">
+                </div>
             </div>
         </div>
-    </div>
 
         <section class="bloque-info" id="nosotros">
             <h2>¿Quiénes somos?</h2>
-            <p>En INTEC (Instituto Tecnológico de Chimbote), formamos profesionales líderes en tecnología, con una
+            <p>En **INTEC** (Instituto Tecnológico de Chimbote), formamos profesionales líderes en tecnología, con una
                 sólida base académica y ética, preparados para afrontar los retos de la era digital.</p>
 
             <h3>Nuestra Misión</h3>
@@ -79,6 +81,7 @@
                 <li>Ética profesional</li>
             </ul>
         </section>
+
         <section class="que-estudiar">
             <h2>¿Qué estudiar en INTEC?</h2>
             <div class="cursos-grid">
@@ -125,8 +128,7 @@
             <div class="carreras-grid">
                 <div class="carrera carrera-card" data-carrera="sistemas">
                     <div class="carrera-imagen-contenedor">
-                        <img src="img/iconosistemas.png" alt="Imagen de Ingeniería de Sistemas" class="carrera-imagen"
-                            loading="lazy">
+                        <img src="img/iconosistemas.png" alt="Icono de Ingeniería de Sistemas" class="carrera-imagen" loading="lazy">
                     </div>
                     <div class="carrera-info">
                         <h3>Ingeniería de Sistemas</h3>
@@ -135,8 +137,7 @@
 
                 <div class="carrera carrera-card" data-carrera="software">
                     <div class="carrera-imagen-contenedor">
-                        <img src="img/iconosoftware.png" alt="Imagen de Ingeniería de Software" class="carrera-imagen"
-                            loading="lazy">
+                        <img src="img/iconosoftware.png" alt="Icono de Ingeniería de Software" class="carrera-imagen" loading="lazy">
                     </div>
                     <div class="carrera-info">
                         <h3>Ingeniería de Software</h3>
@@ -145,8 +146,7 @@
 
                 <div class="carrera carrera-card" data-carrera="datos">
                     <div class="carrera-imagen-contenedor">
-                        <img src="img/iconocienciadedatos.png" alt="Imagen de Ciencia de Datos" class="carrera-imagen"
-                            loading="lazy">
+                        <img src="img/iconocienciadedatos.png" alt="Icono de Ciencia de Datos" class="carrera-imagen" loading="lazy">
                     </div>
                     <div class="carrera-info">
                         <h3>Ciencia de Datos</h3>
@@ -155,8 +155,7 @@
 
                 <div class="carrera carrera-card" data-carrera="ciberseguridad">
                     <div class="carrera-imagen-contenedor">
-                        <img src="img/iconociberseguridad.png" alt="Imagen de Ciberseguridad" class="carrera-imagen"
-                            loading="lazy">
+                        <img src="img/iconociberseguridad.png" alt="Icono de Ciberseguridad" class="carrera-imagen" loading="lazy">
                     </div>
                     <div class="carrera-info">
                         <h3>Ciberseguridad</h3>
@@ -165,8 +164,7 @@
 
                 <div class="carrera carrera-card" data-carrera="web">
                     <div class="carrera-imagen-contenedor">
-                        <img src="img/iconodesarrolloweb.png" alt="Imagen de Desarrollo Web" class="carrera-imagen"
-                            loading="lazy">
+                        <img src="img/iconodesarrolloweb.png" alt="Icono de Desarrollo Web" class="carrera-imagen" loading="lazy">
                     </div>
                     <div class="carrera-info">
                         <h3>Desarrollo Web</h3>
@@ -175,8 +173,7 @@
 
                 <div class="carrera carrera-card" data-carrera="ia">
                     <div class="carrera-imagen-contenedor">
-                        <img src="img/iconoia.png" alt="Imagen de Inteligencia Artificial" class="carrera-imagen"
-                            loading="lazy">
+                        <img src="img/iconoia.png" alt="Icono de Inteligencia Artificial" class="carrera-imagen" loading="lazy">
                     </div>
                     <div class="carrera-info">
                         <h3>Inteligencia Artificial</h3>
@@ -185,8 +182,7 @@
 
                 <div class="carrera carrera-card" data-carrera="redes">
                     <div class="carrera-imagen-contenedor">
-                        <img src="img/iconoredes.png" alt="Imagen de Redes y Telecomunicaciones" class="carrera-imagen"
-                            loading="lazy">
+                        <img src="img/iconoredes.png" alt="Icono de Redes y Telecomunicaciones" class="carrera-imagen" loading="lazy">
                     </div>
                     <div class="carrera-info">
                         <h3>Redes y Telecomunicaciones</h3>
@@ -195,8 +191,7 @@
 
                 <div class="carrera carrera-card" data-carrera="electronica">
                     <div class="carrera-imagen-contenedor">
-                        <img src="img/iconoelectronica.png" alt="Imagen de Ingeniería Electrónica"
-                            class="carrera-imagen" loading="lazy">
+                        <img src="img/iconoelectronica.png" alt="Icono de Ingeniería Electrónica" class="carrera-imagen" loading="lazy">
                     </div>
                     <div class="carrera-info">
                         <h3>Ingeniería Electrónica</h3>
@@ -205,8 +200,7 @@
 
                 <div class="carrera carrera-card" data-carrera="ti">
                     <div class="carrera-imagen-contenedor">
-                        <img src="img/iconoti.png" alt="Imagen de Administración de TI" class="carrera-imagen"
-                            loading="lazy">
+                        <img src="img/iconoti.png" alt="Icono de Administración de TI" class="carrera-imagen" loading="lazy">
                     </div>
                     <div class="carrera-info">
                         <h3>Administración de TI</h3>
@@ -215,8 +209,7 @@
 
                 <div class="carrera carrera-card" data-carrera="robotica">
                     <div class="carrera-imagen-contenedor">
-                        <img src="img/iconorobotica.png" alt="Imagen de Robótica y Automatización"
-                            class="carrera-imagen" loading="lazy">
+                        <img src="img/iconorobotica.png" alt="Icono de Robótica y Automatización" class="carrera-imagen" loading="lazy">
                     </div>
                     <div class="carrera-info">
                         <h3>Robótica y Automatización</h3>
@@ -248,12 +241,11 @@
                 <p><strong>Dirección:</strong> Av. Tecnológica 123, Chimbote, Perú</p>
             </div>
         </section>
-
-        <footer>
-            <p><small>&copy; 2025 INTEC - Instituto Tecnológico de Chimbote. Todos los derechos reservados.</small></p>
-        </footer>
-
     </main>
+
+    <footer>
+        <p><small>&copy; 2025 INTEC - Instituto Tecnológico de Chimbote. Todos los derechos reservados.</small></p>
+    </footer>
 
 </body>
 

@@ -1,9 +1,9 @@
-/* Para un scroll más suave (opcional) */
+/* css/global/_base.css */
+
 html {
     scroll-behavior: smooth;
 }
 
-/* Reset y configuración global */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,15 +12,16 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    color: var(--blanco); /* Este color blanco en el body podría ser un error si luego quieres texto gris. Revisa si es intencional. */
+    color: var(--gris-texto); /* Cambiado de var(--blanco) a var(--gris-texto) para que el texto por defecto sea legible. Si es intencional, puedes revertirlo. */
     background-image: url(../../img/fondo-total.png);
-    display: flex; /* Esto usualmente no va en el body a menos que uses flexbox para el layout principal */
+    /* display: flex;  Eliminado, ya que usualmente no va en el body a menos que uses flexbox para el layout principal */
 }
 
 a {
     color: var(--azul-link);
     transition: color 0.2s ease;
 }
+
 a:hover {
     color: var(--celeste);
     text-decoration: none;
