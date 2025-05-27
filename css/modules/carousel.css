@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #0d131f;
+    /* Eliminar o ajustar las propiedades de flexbox y altura si quieres espacio arriba/abajo */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* min-height: 100vh; */
+    color: white;
+}
+
+/* ----------------------------------------------- */
+/* Contenedor para la zona de interacción de los botones */
+/* ----------------------------------------------- */
+.carousel-wrapper {
+    position: relative;
+    
+    display: flex;
+    justify-content: center; /* Mantener esto si quieres centrar horizontalmente el carrusel */
+    align-items: center;
+    padding: 0;
+    margin-top: 50px;    /* AÑADE ESPACIO SUPERIOR */
+    margin-bottom: 50px; /* AÑADE ESPACIO INFERIOR */
+    /* Si el body ya no centra el contenido, este margin moverá el wrapper */
+}
+
+/* Para que el wrapper tenga la misma altura que el carrusel y los botones se posicionen correctamente */
+.carousel-wrapper::before {
+    content: '';
+    display: block;
+    padding-bottom: calc(284.8 / 854.4 * 100%);
+    position: absolute;
+    width: 90vw;
+    max-width: 1600px;
+    z-index: -1;
+    visibility: hidden;
+}
+
+
+.carousel-container {
+    width: 90vw;
+    max-width: 1600px;
+
+    height: 0;
+    padding-bottom: calc(284.8 / 854.4 * 100%); /* Proporción exacta 854.4x284.8 */
+
+    overflow: hidden; /* Esto ya está bien para ocultar el desbordamiento DENTRO del carrusel */
+    position: relative;
+
+    background-color: #1a222f;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.carousel-slide {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ----------------------------------------------- */
+/* CAMBIOS PARA LOS BOTONES: VISIBILIDAD INICIAL POR JS */
+/* ----------------------------------------------- */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background: none;
+    border: none;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+
+    color: white;
+    cursor: pointer;
+    font-size: 40px;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 20;
+
+    transition: opacity 0.3s ease-in-out;
+}
+
+.carousel-btn.prev {
+    left: -15px;
+}
+
+.carousel-btn.next {
+    right: -15px;
+}
+
+/* El hover directo sobre el botón lo hace completamente opaco */
+.carousel-btn:hover {
+    opacity: 1;
+}
+
+/* ----------------------------------------------- */
+
+/* Puntos de navegación (sin cambios) */
+.carousel-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 20;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dot.active {
+    background-color: white;
+    transform: scale(1.3);
+}
+
+/* Opcional: Para asegurar que no haya ninguna barra horizontal a nivel de página */
+html, body {
+    overflow-x: hidden;
+}

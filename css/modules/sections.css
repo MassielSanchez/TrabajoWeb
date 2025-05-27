@@ -8,7 +8,8 @@
 }
 
 .bloque-info {
-    background-color: var(--gris-borde-claro);
+    color: var(--gris-texto);
+    background-color: var(--gris-fondo);
     padding: 20px;
     border-radius: 12px;
     margin-bottom: 20px;

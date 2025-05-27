@@ -43,8 +43,21 @@
         </aside>
     </div>
 
-    <main class="contenido">
+    
 
+    <main class="contenido">
+<div class="carousel-wrapper">
+        <button id="prevBtn" class="carousel-btn prev">&#10094;</button>
+        <button id="nextBtn" class="carousel-btn next">&#10095;</button>
+
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="img\index\baner1.jpg" alt="Descripción de la imagen 1">
+                <img src="img/index/baner2.jpg" alt="Descripción de la imagen 2">
+                <img src="img/index/baner3.jpg" alt="Descripción de la imagen 3">
+            </div>
+        </div>
+    </div>
 
         <section class="bloque-info" id="nosotros">
             <h2>¿Quiénes somos?</h2>
@@ -108,64 +121,6 @@
                 </a>
             </div>
         </section>
-
-       <section class="modalidades">
-    <h2>Nuestras Modalidades de Estudio</h2>
-    <div class="carousel-container">
-        <input type="radio" id="mod1" name="modalidad-slide" checked>
-        <input type="radio" id="mod2" name="modalidad-slide">
-        <input type="radio" id="mod3" name="modalidad-slide">
-        <div class="carousel-track">
-            <div class="card modalidad-card">
-                <div class="modalidad-imagen-superior">
-                    <img src="img/modalidad-presencial.jpg" alt="Estudio Presencial">
-                </div>
-                <h3>Presencial</h3>
-                <p>Clases en nuestras modernas aulas y laboratorios...</p>
-                <ul>...</ul>
-                <a href="#" class="btn-info">Ver detalles</a>
-            </div>
-
-            <div class="card modalidad-card">
-                <div class="modalidad-imagen-superior">
-                    <img src="img/integracion_comercial_16_1_II.jpg"Estudio Semipresencial">
-                </div>
-                <h3>Semipresencial</h3>
-                <p>Combina lo mejor del aprendizaje en línea...</p>
-                <ul>...</ul>
-                <a href="#" class="btn-info">Ver detalles</a>
-            </div>
-
-            <div class="card modalidad-card">
-                <div class="modalidad-imagen-superior">
-                    <img src="img/virtual.webp" alt="Estudio 100% Virtual">
-                </div>
-                <h3>100% Virtual</h3>
-                <p>Estudia desde cualquier lugar, a tu propio ritmo...</p>
-                <ul>...</ul>
-                <a href="#" class="btn-info">Ver detalles</a>
-            </div>
-
-            </div>
-
-        <div class="flechas">
-            <label for="mod1" class="carousel-button prev"><i class="fas fa-chevron-left"></i></label>
-            <label for="mod2" class="carousel-button next"><i class="fas fa-chevron-right"></i></label>
-
-            <label for="mod1" class="carousel-button prev"><i class="fas fa-chevron-left"></i></label>
-            <label for="mod3" class="carousel-button next"><i class="fas fa-chevron-right"></i></label>
-
-            <label for="mod2" class="carousel-button prev"><i class="fas fa-chevron-left"></i></label>
-            <label for="mod1" class="carousel-button next"><i class="fas fa-chevron-right"></i></label>
-        </div>
-
-        <div class="carousel-dots">
-            <label for="mod1" class="dot"></label>
-            <label for="mod2" class="dot"></label>
-            <label for="mod3" class="dot"></label>
-            </div>
-    </div>
-</section>
 
         <section class="carreras" id="carreras">
             <h2>Nuestras Carreras</h2>
