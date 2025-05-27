@@ -161,3 +161,145 @@ carrerasGrid.addEventListener('click', (event) => {
     }
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const carouselSlide = document.querySelector('.carousel-slide');
+    const carouselContainer = document.querySelector('.carousel-container');
+    const carouselWrapper = document.querySelector('.carousel-wrapper'); // Referencia al nuevo wrapper
+    const carouselImages = document.querySelectorAll('.carousel-slide img');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+    const carouselDotsContainer = document.createElement('div');
+    carouselDotsContainer.classList.add('carousel-dots');
+    carouselContainer.appendChild(carouselDotsContainer);
+
+    let counter = 0;
+    let imageWidth; 
+
+    function createDots() {
+        carouselImages.forEach((_, index) => {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (index === 0) {
+                dot.classList.add('active');
+            }
+            dot.dataset.index = index;
+            dot.addEventListener('click', () => {
+                counter = index;
+                slideCarousel();
+                updateDots();
+            });
+            carouselDotsContainer.appendChild(dot);
+        });
+    }
+
+    function updateDots() {
+        document.querySelectorAll('.dot').forEach((dot, index) => {
+            if (index === counter) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    function calculateImageWidth() {
+        imageWidth = carouselContainer.clientWidth; 
+        slideCarousel(); 
+    }
+
+    function slideCarousel() {
+        carouselSlide.style.transform = `translateX(${-counter * imageWidth}px)`;
+    }
+
+    createDots();
+    calculateImageWidth(); 
+    updateDots();
+
+    window.addEventListener('resize', calculateImageWidth);
+
+    nextBtn.addEventListener('click', () => {
+        if (counter >= carouselImages.length - 1) {
+            counter = 0;
+        } else {
+            counter++;
+        }
+        slideCarousel();
+        updateDots();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (counter <= 0) {
+            counter = carouselImages.length - 1;
+        } else {
+            counter--;
+        }
+        slideCarousel();
+        updateDots();
+    });
+
+    // -----------------------------------------------
+    // Lógica para mostrar/ocultar los botones en la zona extendida
+    // -----------------------------------------------
+
+    // Estado inicial: Ocultar y deshabilitar los botones al cargar
+    prevBtn.style.opacity = '0';
+    prevBtn.style.pointerEvents = 'none';
+    nextBtn.style.opacity = '0';
+    nextBtn.style.pointerEvents = 'none';
+
+    // Manejador para el mouseenter del wrapper
+    carouselWrapper.addEventListener('mouseenter', () => {
+        // Al entrar al wrapper, los botones se muestran (pero pueden ser ocultados por el container)
+        prevBtn.style.opacity = '0.7';
+        prevBtn.style.pointerEvents = 'auto';
+        nextBtn.style.opacity = '0.7';
+        nextBtn.style.pointerEvents = 'auto';
+    });
+
+    // Manejador para el mouseleave del wrapper
+    carouselWrapper.addEventListener('mouseleave', () => {
+        // Al salir del wrapper, los botones se ocultan
+        prevBtn.style.opacity = '0';
+        prevBtn.style.pointerEvents = 'none';
+        nextBtn.style.opacity = '0';
+        nextBtn.style.pointerEvents = 'none';
+    });
+
+    // Manejador para el mouseenter del carouselContainer
+    carouselContainer.addEventListener('mouseenter', () => {
+        // Si el ratón entra en el contenedor principal, los botones se ocultan
+        prevBtn.style.opacity = '0';
+        prevBtn.style.pointerEvents = 'none';
+        nextBtn.style.opacity = '0';
+        nextBtn.style.pointerEvents = 'none';
+    });
+
+    // Manejador para el mouseleave del carouselContainer
+    // Este evento es CRUCIAL. Si el ratón sale del container PERO sigue dentro del wrapper,
+    // los botones deben volver a aparecer.
+    carouselContainer.addEventListener('mouseleave', (event) => {
+        // Comprobar si el ratón todavía está dentro del carouselWrapper
+        // event.relatedTarget es el elemento al que el ratón se movió
+        if (carouselWrapper.contains(event.relatedTarget)) {
+            // Si el ratón sigue en el wrapper, mostrar los botones
+            prevBtn.style.opacity = '0.7';
+            prevBtn.style.pointerEvents = 'auto';
+            nextBtn.style.opacity = '0.7';
+            nextBtn.style.pointerEvents = 'auto';
+        }
+        // Si sale completamente del wrapper, el mouseleave del wrapper se encargará.
+    });
+    
+    // Opcional: Carrusel automático
+     setInterval(() => {
+         if (counter >= carouselImages.length - 1) {
+             counter = 0;
+         } else {
+             counter++;
+         }
+         slideCarousel();
+         updateDots();
+     }, 5000);
+});

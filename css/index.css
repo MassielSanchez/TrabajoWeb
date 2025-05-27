@@ -16,6 +16,9 @@
 /*diseño de Nuestra Filosofia*/
 @import url('./modules/filosofia.css');
 
+@import url('modules/carousel.css'); /* Ajusta la ruta si no usas la carpeta 'modules' */
+
+
 
 
 /* ================== */
