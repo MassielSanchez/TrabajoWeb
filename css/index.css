@@ -1,17 +1,17 @@
 /* Importa tus variables primero */
-@import url('_variables.css');
+@import url('./modules/variables.css');
 
 /* Después, los estilos base */
-@import url('_base.css');
+@import url('./modules/base.css');
 
 /* Luego, el layout general */
-@import url('_layout.css');
+@import url('./modules/layout.css');
 
 /* Seguido de los componentes reutilizables */
-@import url('_components.css');
+@import url('./modules/components.css');
 
 /* Finalmente, los estilos específicos de secciones */
-@import url('_sections.css');
+@import url('./modules/sections.css');
 
 
 /* ================== */
