@@ -1,17 +1,18 @@
 /* Importa tus variables primero */
-@import url(modules/_variables.css);
+@import url('./modules/_variables.css');
 
 /* Después, los estilos base */
-@import url(modules/_base.css);
+@import url('./modules/_base.css');
 
 /* Luego, el layout general */
-@import url(modules/_layout.css);
+@import url('./modules/_layout.css');
 
 /* Seguido de los componentes reutilizables */
-@import url(modules/_components.css);
+@import url('./modules/_components.css');
 
 /* Finalmente, los estilos específicos de secciones */
-@import url(modules/_sections.css);
+@import url('./modules/_sections.css');
+
 
 /* ================== */
 /* Responsive - móvil (Si quieres mantener todas las media queries aquí, o distribuirlas) */
