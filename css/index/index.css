@@ -1,10 +1,10 @@
 /* css/index/index.css */
 
 /* 1. Importar variables globales */
-@import url('../../global/variables.css');
+@import url('../global/variables.css');
 
 /* 2. Importar estilos base globales */
-@import url('../../global/base.css');
+@import url('../global/base.css');
 
 /* 3. Estilos de layout y componentes principales de la página */
 @import url('./header.css');

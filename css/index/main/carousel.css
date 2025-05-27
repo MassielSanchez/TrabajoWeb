@@ -1,6 +1,5 @@
 body {
     margin: 0;
-    font-family: 'Inter', sans-serif;
     background-color: #0d131f;
     /* Eliminar o ajustar las propiedades de flexbox y altura si quieres espacio arriba/abajo */
     /* display: flex; */

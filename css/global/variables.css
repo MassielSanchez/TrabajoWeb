@@ -1,6 +1,7 @@
+/* css/global/_variables.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-/* Variables de colores */
 :root {
     /* 🔵 Azules y celestes */
     --azul: #003366;
