@@ -13,6 +13,10 @@
 /* Finalmente, los estilos específicos de secciones */
 @import url('./modules/sections.css');
 
+/*diseño de Nuestra Filosofia*/
+@import url('./modules/filosofia.css');
+
+
 
 /* ================== */
 /* Responsive - móvil (Si quieres mantener todas las media queries aquí, o distribuirlas) */
