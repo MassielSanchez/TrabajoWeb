@@ -1,18 +1,7 @@
-body {
-    margin: 0;
-    background-color: #0d131f;
-    /* Eliminar o ajustar las propiedades de flexbox y altura si quieres espacio arriba/abajo */
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* min-height: 100vh; */
-    color: white;
-}
-
 /* ----------------------------------------------- */
 /* Contenedor para la zona de interacción de los botones */
 /* ----------------------------------------------- */
-.carousel-wrapper {
+.main-main-carousel-wrapper {
     position: relative;
     
     display: flex;
@@ -25,7 +14,7 @@ body {
 }
 
 /* Para que el wrapper tenga la misma altura que el carrusel y los botones se posicionen correctamente */
-.carousel-wrapper::before {
+.main-main-carousel-wrapper::before {
     content: '';
     display: block;
     padding-bottom: calc(284.8 / 854.4 * 100%);
@@ -37,7 +26,7 @@ body {
 }
 
 
-.carousel-container {
+.main-main-carousel-container {
     width: 90vw;
     max-width: 1600px;
 
@@ -53,7 +42,7 @@ body {
                 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
-.carousel-slide {
+.main-carousel-slide {
     display: flex;
     position: absolute;
     top: 0;
@@ -63,7 +52,7 @@ body {
     transition: transform 0.5s ease-in-out;
 }
 
-.carousel-slide img {
+.main-carousel-slide img {
     min-width: 100%;
     height: 100%;
     object-fit: cover;
@@ -73,7 +62,7 @@ body {
 /* ----------------------------------------------- */
 /* CAMBIOS PARA LOS BOTONES: VISIBILIDAD INICIAL POR JS */
 /* ----------------------------------------------- */
-.carousel-btn {
+.main-carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -97,23 +86,23 @@ body {
     transition: opacity 0.3s ease-in-out;
 }
 
-.carousel-btn.prev {
+.main-carousel-btn.prev {
     left: 15px;
 }
 
-.carousel-btn.next {
+.main-carousel-btn.next {
     right: 15px;
 }
 
 /* El hover directo sobre el botón lo hace completamente opaco */
-.carousel-btn:hover {
+.main-carousel-btn:hover {
     opacity: 1;
 }
 
 /* ----------------------------------------------- */
 
 /* Puntos de navegación (sin cambios) */
-.carousel-dots {
+.main-carousel-main-dots {
     position: absolute;
     bottom: 15px;
     left: 50%;
@@ -123,7 +112,7 @@ body {
     z-index: 20;
 }
 
-.dot {
+.main-dot {
     width: 8px;
     height: 8px;
     background-color: rgba(255, 255, 255, 0.4);
@@ -132,7 +121,7 @@ body {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.dot.active {
+.main-dot.active {
     background-color: white;
     transform: scale(1.3);
 }

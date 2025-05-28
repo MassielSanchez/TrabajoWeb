@@ -13,7 +13,7 @@ html {
 body {
     font-family: 'Poppins', sans-serif;
     color: var(--gris-texto); /* Cambiado de var(--blanco) a var(--gris-texto) para que el texto por defecto sea legible. Si es intencional, puedes revertirlo. */
-    background-image: url(../../img/fondo-total.png);
+    background-image: url(../../img/fondo-total.webp);
     /* display: flex;  Eliminado, ya que usualmente no va en el body a menos que uses flexbox para el layout principal */
 }
 

@@ -163,43 +163,43 @@ carrerasGrid.addEventListener('click', (event) => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const carouselSlide = document.querySelector('.carousel-slide');
-    const carouselContainer = document.querySelector('.carousel-container');
-    const carouselWrapper = document.querySelector('.carousel-wrapper'); // Referencia al nuevo wrapper
-    const carouselImages = document.querySelectorAll('.carousel-slide img');
+    const carouselSlide = document.querySelector('.main-carousel-slide');
+    const carouselContainer = document.querySelector('.main-carousel-container');
+    const carouselWrapper = document.querySelector('.main-main-carousel-wrapper'); // Referencia al nuevo wrapper
+    const carouselImages = document.querySelectorAll('.main-carousel-slide img');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     
-    const carouselDotsContainer = document.createElement('div');
-    carouselDotsContainer.classList.add('carousel-dots');
-    carouselContainer.appendChild(carouselDotsContainer);
+    const carouselmain-dotsContainer = document.createElement('div');
+    carouselmain-dotsContainer.classList.add('main-carousel-main-dots');
+    carouselContainer.appendChild(carouselmain-dotsContainer);
 
     let counter = 0;
     let imageWidth; 
 
-    function createDots() {
+    function createmain-dots() {
         carouselImages.forEach((_, index) => {
-            const dot = document.createElement('span');
-            dot.classList.add('dot');
+            const main-dot = document.createElement('span');
+            main-dot.classList.add('main-dot');
             if (index === 0) {
-                dot.classList.add('active');
+                main-dot.classList.add('active');
             }
-            dot.dataset.index = index;
-            dot.addEventListener('click', () => {
+            main-dot.dataset.index = index;
+            main-dot.addEventListener('click', () => {
                 counter = index;
                 slideCarousel();
-                updateDots();
+                updatemain-dots();
             });
-            carouselDotsContainer.appendChild(dot);
+            carouselmain-dotsContainer.appendChild(main-dot);
         });
     }
 
-    function updateDots() {
-        document.querySelectorAll('.dot').forEach((dot, index) => {
+    function updatemain-dots() {
+        document.querySelectorAll('.main-dot').forEach((main-dot, index) => {
             if (index === counter) {
-                dot.classList.add('active');
+                main-dot.classList.add('active');
             } else {
-                dot.classList.remove('active');
+                main-dot.classList.remove('active');
             }
         });
     }
@@ -213,9 +213,9 @@ document.addEventListener('DOMContentLoaded', () => {
         carouselSlide.style.transform = `translateX(${-counter * imageWidth}px)`;
     }
 
-    createDots();
+    createmain-dots();
     calculateImageWidth(); 
-    updateDots();
+    updatemain-dots();
 
     window.addEventListener('resize', calculateImageWidth);
 
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
             counter++;
         }
         slideCarousel();
-        updateDots();
+        updatemain-dots();
     });
 
     prevBtn.addEventListener('click', () => {
@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
             counter--;
         }
         slideCarousel();
-        updateDots();
+        updatemain-dots();
     });
 
     // -----------------------------------------------
@@ -300,6 +300,6 @@ document.addEventListener('DOMContentLoaded', () => {
              counter++;
          }
          slideCarousel();
-         updateDots();
+         updatemain-dots();
      }, 5000);
 });
