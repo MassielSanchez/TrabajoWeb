@@ -1,7 +1,7 @@
 /* ----------------------------------------------- */
 /* Contenedor para la zona de interacción de los botones */
 /* ----------------------------------------------- */
-.main-main-carousel-wrapper {
+.mainCarouselWrapper {
     position: relative;
     
     display: flex;
@@ -14,7 +14,7 @@
 }
 
 /* Para que el wrapper tenga la misma altura que el carrusel y los botones se posicionen correctamente */
-.main-main-carousel-wrapper::before {
+.mainCarouselWrapper::before {
     content: '';
     display: block;
     padding-bottom: calc(284.8 / 854.4 * 100%);
@@ -26,7 +26,7 @@
 }
 
 
-.main-main-carousel-container {
+.mainCarouselContainer {
     width: 90vw;
     max-width: 1600px;
 
@@ -42,7 +42,7 @@
                 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
-.main-carousel-slide {
+.mainCarouselSlide {
     display: flex;
     position: absolute;
     top: 0;
@@ -52,7 +52,7 @@
     transition: transform 0.5s ease-in-out;
 }
 
-.main-carousel-slide img {
+.mainCarouselSlide img {
     min-width: 100%;
     height: 100%;
     object-fit: cover;
@@ -62,7 +62,7 @@
 /* ----------------------------------------------- */
 /* CAMBIOS PARA LOS BOTONES: VISIBILIDAD INICIAL POR JS */
 /* ----------------------------------------------- */
-.main-carousel-btn {
+.mainCarouselBtn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -86,23 +86,23 @@
     transition: opacity 0.3s ease-in-out;
 }
 
-.main-carousel-btn.prev {
+.mainCarouselBtn.prev {
     left: 15px;
 }
 
-.main-carousel-btn.next {
+.mainCarouselBtn.next {
     right: 15px;
 }
 
 /* El hover directo sobre el botón lo hace completamente opaco */
-.main-carousel-btn:hover {
+.mainCarouselBtn:hover {
     opacity: 1;
 }
 
 /* ----------------------------------------------- */
 
 /* Puntos de navegación (sin cambios) */
-.main-carousel-main-dots {
+.mainCarouselDots {
     position: absolute;
     bottom: 15px;
     left: 50%;
@@ -112,7 +112,7 @@
     z-index: 20;
 }
 
-.main-dot {
+.mainDot {
     width: 8px;
     height: 8px;
     background-color: rgba(255, 255, 255, 0.4);
@@ -121,7 +121,7 @@
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.main-dot.active {
+.mainDot.active {
     background-color: white;
     transform: scale(1.3);
 }

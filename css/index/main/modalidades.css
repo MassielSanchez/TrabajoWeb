@@ -20,7 +20,7 @@
 
 /* Contenedor del carrusel (oculta el overflow) */
 /* Este es el que en tu CSS original era '.carrusel-modalidades .carrusel' */
-.carousel-item img {
+.carouselitem img {
   width: 100%;
   height: auto;
   border-radius: 10px;
@@ -29,13 +29,13 @@
 
 
 /* Inputs ocultos (necesarios en el HTML) */
-.modalidades-carousel-container input[type="radio"] {
+.modalidadesCarouselContainer input[type="radio"] {
     display: none;
 }
 
 /* El "track" que contiene todas las tarjetas */
 /* Este es el que en tu CSS original era '.carrusel-modalidades .slides' */
-.modalidades-carousel-track { /* Usaremos esta clase para el contenedor de los slides */
+.modalidadesCarouselTrack { /* Usaremos esta clase para el contenedor de los slides */
     display: flex;
     width: 300%; /* Si tienes 3 slides, ocupa el 300% del ancho del contenedor */
     height: 100%;
@@ -141,7 +141,7 @@
 
 
 /* Flechas de navegación (cambié los selectores de tu CSS original a clases genéricas) */
-.carousel-button {
+.carouselButton {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -157,20 +157,20 @@
     display: none; /* Se mostrarán solo las flechas del slide activo */
 }
 
-.carousel-button:hover {
+.carouselButton:hover {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-.carousel-button.prev {
+.carouselButton.prev {
     left: 15px;
 }
 
-.carousel-button.next {
+.carouselButton.next {
     right: 15px;
 }
 
-/* Puntos de navegación (modalidades-dots) */
-.modalidades-carousel-modalidades-dots {
+/* Puntos de navegación (modalidadesDots) */
+.modalidadesCarouselDots {
     position: absolute;
     bottom: 20px;
     width: 100%;
@@ -178,7 +178,7 @@
     z-index: 30;
 }
 
-.modalidades-dot {
+.modalidadesDot {
     cursor: pointer;
     height: 15px;
     width: 15px;
@@ -189,7 +189,7 @@
     transition: background-color 0.3s ease;
 }
 
-.modalidades-dot:hover {
+.modalidadesDot:hover {
     background-color: #717171; /* Gris más oscuro al pasar el mouse */
 }
 
@@ -201,15 +201,15 @@
 /* y que tendrás 3 slides en total. Si tienes más, expande esto. */
 
 /* Cuando 'mod1' está checked, mueve el track para mostrar la primera tarjeta/grupo */
-#mod1:checked ~ .modalidades-carousel-track {
+#mod1:checked ~ .modalidadesCarouselTrack {
     transform: translateX(0%);
 }
 /* Cuando 'mod2' está checked, mueve el track para mostrar la segunda tarjeta/grupo */
-#mod2:checked ~ .modalidades-carousel-track {
+#mod2:checked ~ .modalidadesCarouselTrack {
     transform: translateX(calc(-100% / 3)); /* Mueve una tarjeta de 3 (33.33%) */
 }
 /* Cuando 'mod3' está checked, mueve el track para mostrar la tercera tarjeta/grupo */
-#mod3:checked ~ .modalidades-carousel-track {
+#mod3:checked ~ .modalidadesCarouselTrack {
     transform: translateX(calc(-200% / 3)); /* Mueve dos tarjetas de 3 (66.66%) */
 }
 
@@ -237,10 +237,10 @@
 }
 
 
-/* Activar el punto de navegación (modalidades-dot) según el slide seleccionado */
-#mod1:checked ~ .modalidades-carousel-modalidades-dots label[for="mod1"],
-#mod2:checked ~ .modalidades-carousel-modalidades-dots label[for="mod2"],
-#mod3:checked ~ .modalidades-carousel-modalidades-dots label[for="mod3"] {
+/* Activar el punto de navegación (modalidadesDot) según el slide seleccionado */
+#mod1:checked ~ .modalidadesCarouselDots label[for="mod1"],
+#mod2:checked ~ .modalidadesCarouselDots label[for="mod2"],
+#mod3:checked ~ .modalidadesCarouselDots label[for="mod3"] {
     background-color: var(--azul); /* Color activo de los puntos */
 }
 
@@ -253,13 +253,13 @@
     .modalidad-card {
         width: calc(100% / 2); /* Muestra 2 tarjetas */
     }
-    .modalidades-carousel-track {
+    .modalidadesCarouselTrack {
         width: 150%; /* 3 slides * 50% */
     }
     /* Lógica de movimiento para 2 slides por vista */
-    #mod1:checked ~ .modalidades-carousel-track { transform: translateX(0%); }
-    #mod2:checked ~ .modalidades-carousel-track { transform: translateX(calc(-100% / 2)); } /* Mueve 50% */
-    #mod3:checked ~ .modalidades-carousel-track { transform: translateX(calc(-200% / 2)); } /* Mueve 100% */
+    #mod1:checked ~ .modalidadesCarouselTrack { transform: translateX(0%); }
+    #mod2:checked ~ .modalidadesCarouselTrack { transform: translateX(calc(-100% / 2)); } /* Mueve 50% */
+    #mod3:checked ~ .modalidadesCarouselTrack { transform: translateX(calc(-200% / 2)); } /* Mueve 100% */
 
     /* Altura de la imagen en tarjetas */
     .modalidad-imagen-superior { height: 150px; }
@@ -269,29 +269,29 @@
     .modalidad-card {
         width: calc(100% - 20px); /* Muestra 1 tarjeta, dejando 10px de margen a cada lado */
     }
-    .modalidades-carousel-track {
+    .modalidadesCarouselTrack {
         width: 300%; /* 3 slides * 100% */
     }
     /* Lógica de movimiento para 1 slide por vista */
-    #mod1:checked ~ .modalidades-carousel-track { transform: translateX(0%); }
-    #mod2:checked ~ .modalidades-carousel-track { transform: translateX(calc(-100% - 20px)); } /* Mueve 100% del ancho de la tarjeta + su margen */
-    #mod3:checked ~ .modalidades-carousel-track { transform: translateX(calc(-200% - 40px)); } /* Mueve 200% del ancho de la tarjeta + sus márgenes */
+    #mod1:checked ~ .modalidadesCarouselTrack { transform: translateX(0%); }
+    #mod2:checked ~ .modalidadesCarouselTrack { transform: translateX(calc(-100% - 20px)); } /* Mueve 100% del ancho de la tarjeta + su margen */
+    #mod3:checked ~ .modalidadesCarouselTrack { transform: translateX(calc(-200% - 40px)); } /* Mueve 200% del ancho de la tarjeta + sus márgenes */
 
     /* Altura de la imagen en tarjetas */
     .modalidad-imagen-superior { height: 120px; }
     
     /* Ocultar botones de navegación en móviles muy pequeños si molestan */
-    .carousel-button { display: none; }
-    .modalidades-carousel-modalidades-dots { bottom: 10px; }
+    .carouselButton { display: none; }
+    .modalidadesCarouselDots { bottom: 10px; }
 }
 
 /* --------------------------------------------------------------------- */
 /* AUTO SLIDE con animación (Opcional: Si quieres que se mueva solo)   */
 /* Requiere que el contenedor principal del carrusel tenga la clase 'auto' */
-/* Por ejemplo: <div class="modalidades-carousel-container auto"> ... </div>         */
+/* Por ejemplo: <div class="modalidadesCarouselContainer auto"> ... </div>         */
 /* --------------------------------------------------------------------- */
 
-.modalidades-carousel-container.auto .modalidades-carousel-track {
+.modalidadesCarouselContainer.auto .modalidadesCarouselTrack {
     animation: deslizarModalidades 16s infinite; /* Ajusta la duración según tus slides */
 }
 
@@ -308,6 +308,6 @@
 }
 
 /* Evitar que la animación funcione si el usuario selecciona manual */
-.modalidades-carousel-container input[type="radio"]:checked ~ .modalidades-carousel-track {
+.modalidadesCarouselContainer input[type="radio"]:checked ~ .modalidadesCarouselTrack {
     animation: none;
 }
