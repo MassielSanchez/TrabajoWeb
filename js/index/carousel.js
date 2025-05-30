@@ -15,7 +15,7 @@ export function initializeCarousel() {
     }
 
     const mainCarouselDotsContainer = document.createElement('div');
-    mainCarouselDotsContainer.classList.add('mainCarouseldots');
+    mainCarouselDotsContainer.classList.add('mainCarouselDots');
     // Asegurarse de que mainCarouselContainer exista antes de adjuntar el contenedor de puntos
     if (mainCarouselContainer) {
         mainCarouselContainer.appendChild(mainCarouselDotsContainer);
