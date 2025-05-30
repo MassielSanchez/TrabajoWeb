@@ -16,7 +16,6 @@
         height: 64px;
         background: var(--blanco);
         box-shadow: 0 3px 10px rgba(0,0,0,0.12);
-        color: var(--blanco); /* Este color blanco en el header podría ser un error si quieres texto azul. Revisa si es intencional. */
         padding: 0 64px;
         z-index: 1002;
     }
