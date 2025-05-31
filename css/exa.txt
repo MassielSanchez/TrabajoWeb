@@ -188,3 +188,22 @@ R1	G0/0/0	2001:3000:acad:c::1	fe80::3	2001:3000:acad:c::/64	N/A
 R1	G0/0/1	2001:3000:acad:c::2	fe80::3	2001:3000:acad:c::/64	N/A
 PC-A	F0/6	2001:3000:acad:c::10	fe80::a	2001:3000:acad:c::/64	2001:3000:acad:c::2
 PC-B	G0/0/0	2001:3000:acad:c::20	fe80::b	2001:3000:acad:c::/64	2001:3000:acad
+
+
+===========================================
+PREGUNTA 5 – Tabla de direccionamiento IPv6
+===========================================
+
+Topología:
+- PC-A conectado a Switch S1 (puerto F0/6)
+- S1 conectado a Router R1 por F0/5 → G0/0/1
+- R1 conectado a PC-B por G0/0/0
+- Prefijo asignado: 2001:3000:acad:c::/64
+
+Tabla de direccionamiento IPv6:
+Dispositivo | Interfaz   | Dirección IPv6                     | LLA       | Prefijo                | Gateway
+------------|------------|------------------------------------|-----------|-------------------------|-------------------------
+R1         | G0/0/0     | 2001:3000:acad:c::1                | fe80::3   | 2001:3000:acad:c::/64  | N/A
+R1         | G0/0/1     | 2001:3000:acad:c::2                | fe80::3   | 2001:3000:acad:c::/64  | N/A
+PC-A       | F0/6       | 2001:3000:acad:c::10               | fe80::a   | 2001:3000:acad:c::/64  | 2001:3000:acad:c::2
+PC-B       | G0/0/0     | 2001:3000:acad:c::20               | fe80::b   | 2001:3000:acad:c::/64  | 2001:3000:acad:c::1
