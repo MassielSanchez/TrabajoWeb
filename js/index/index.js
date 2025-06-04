@@ -10,7 +10,7 @@ import { setupCarrerasGrid } from './carreras.js';
 // Por ejemplo, para el menú móvil, o el formulario de contacto, etc.
 // import { setupMobileMenu } from './aside.js';
 // import { setupContactForm } from './contacto.js';
-
+// import....
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('js/index/index.js: DOMContentLoaded - Initializing page components.');
@@ -25,3 +25,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // setupMobileMenu();
     // setupContactForm();
 });
+
