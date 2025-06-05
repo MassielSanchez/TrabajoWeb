@@ -87,45 +87,29 @@ button:hover {
     text-decoration: underline;
 }
 
+
 /* Estilos para el campo de contraseña con ojito */
 .password-wrapper {
     position: relative;
     width: 100%;
+    /* Asegúrate de que el ancho sea el mismo que el del input */
 }
 
-.toggle-password {
-    display: none;
-}
-
-.password-input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    padding-right: 40px; /* espacio para el ojito */
-}
-
-.password-visible {
-    display: none;
-}
-
-.toggle-password:checked ~ .password-visible {
-    display: block;
-}
-
-.toggle-password:checked ~ .password-hidden {
-    display: none;
+/* El input dentro del wrapper */
+.password-wrapper input[type="password"],
+.password-wrapper input[type="text"] { /* Agregamos type="text" para cuando el JS cambie el tipo */
+    width: calc(100% - 40px); /* Ajusta el ancho para dejar espacio al ícono */
+    padding-right: 35px; /* Espacio para el ojito */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
 }
 
 .toggle-icon {
     position: absolute;
-    right: 15px;
+    right: 10px; /* Ajusta la posición a la derecha */
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    font-size: 18px;
+    font-size: 18px; /* Tamaño del ojito */
     color: #888;
 }
 
