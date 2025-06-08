@@ -13,6 +13,7 @@ body {
     align-items: center;
     height: 100vh;
     padding: 10px;
+    position: relative;
 }
 
 .login-card {
@@ -25,6 +26,26 @@ body {
     align-items: center;
     width: 100%;
     max-width: 320px;
+    padding-top: 50px;
+}
+
+.back-button {
+    position: absolute; 
+    top: 20px; 
+    left: 20px; 
+    text-decoration: none; 
+    color: #fff; 
+    background-color: rgba(0, 0, 0, 0.3); 
+    padding: 8px 15px; 
+    border-radius: 5px;
+    font-size: 14px; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 10; 
+}
+
+.back-button:hover {
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: #ffffff; 
 }
 
 .logo {
