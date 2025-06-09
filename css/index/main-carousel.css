@@ -5,35 +5,22 @@
     position: relative;
     background-color: var(--azul);
     display: flex;
-    justify-content: center; /* Mantener esto si quieres centrar horizontalmente el carrusel */
+    justify-content: center;
     align-items: center;
     padding: 0;
-    padding-top: 64px;    /* AÑADE ESPACIO SUPERIOR */
-    padding-bottom: 64px; /* AÑADE ESPACIO INFERIOR */
-    /* Si el body ya no centra el contenido, este margin moverá el wrapper */
+
+    min-height: 92vh;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
-/* Para que el wrapper tenga la misma altura que el carrusel y los botones se posicionen correctamente */
-.mainCarouselWrapper::before {
-    content: '';
-    display: block;
-    padding-bottom: calc(284.8 / 854.4 * 100%);
-    position: absolute;
-    width: 90vw;
-    max-width: 1600px;
-    z-index: -1;
-    visibility: hidden;
-}
-
-
+/* El mainCarouselContainer ahora define su propia altura con padding-bottom */
 .mainCarouselContainer {
     width: 90vw;
-    max-width: 1600px;
+    height: 0; /* Se mantiene en 0 porque el padding-bottom define la altura visual */
+    padding-bottom: calc(284.8 / 966.4 * 100%); /* Define la relación de aspecto */
 
-    height: 0;
-    padding-bottom: calc(284.8 / 854.4 * 100%); /* Proporción exacta 854.4x284.8 */
-
-    overflow: hidden; /* Esto ya está bien para ocultar el desbordamiento DENTRO del carrusel */
+    overflow: hidden;
     position: relative;
 
     background-color: #1a222f;
@@ -69,7 +56,7 @@
 
     background: none;
     border: none;
-    padding: 0;
+    padding: 0; /* Esto es un reset útil para botones */
     width: 50px;
     height: 50px;
 
@@ -125,4 +112,3 @@
     background-color: white;
     transform: scale(1.3);
 }
-
