@@ -48,7 +48,7 @@ function handleLogin() {
                 if (userType === 'u') {
                     window.location.href = "inicioalumno.html";
                 } else if (userType === 'c') {
-                    window.location.href = "inicioprofesor.html";
+                   window.location.href = "inicioprofesor.html";
                 } else {
                     alert('Tipo de usuario desconocido. Redirigiendo a página general.');
                     window.location.href = "inicio.html";

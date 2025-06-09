@@ -1,0 +1,284 @@
+/* css/inicioprofesor.css */
+
+/* Estilos Generales y Reseteos */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5; /* Un gris claro para el fondo general */
+    color: #333;
+    overflow-x: hidden; /* Evita el scroll horizontal no deseado */
+}
+
+/* Estilos para el contenedor principal (layout) */
+.layout-container {
+    display: flex;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease; /* Transición para cuando el menú se abre/cierra */
+}
+
+/* ------------------- Barra Lateral (Sidebar) ------------------- */
+.barra-lateral {
+    width: 250px; /* Ancho de la barra lateral */
+    background-color: #2c3e50; /* Un color oscuro para la barra */
+    color: #ecf0f1; /* Texto claro */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed; /* Fija la barra lateral */
+    height: 100%; /* Ocupa toda la altura */
+    left: 0;
+    top: 0;
+    z-index: 1000; /* Asegura que esté por encima del contenido */
+    transform: translateX(0); /* Por defecto visible en escritorio */
+    transition: transform 0.3s ease; /* Para la animación de entrada/salida en móvil */
+}
+
+/* Estilos para el logo en la barra lateral */
+.barra-lateral .logo {
+    width: 80px; /* Tamaño del logo */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Título de la plataforma en la barra lateral */
+.barra-lateral h1 {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Estilos para la navegación en la barra lateral */
+.barra-lateral nav {
+    width: 100%;
+}
+
+.barra-lateral nav a {
+    display: block;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    color: #ecf0f1; /* Color de texto de los enlaces */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 500;
+}
+
+.barra-lateral nav a:hover {
+    background-color: #34495e; /* Color al pasar el ratón */
+    color: #ffffff;
+}
+
+/* Estilos para el botón de cerrar sesión (si tiene una clase específica) */
+.barra-lateral .boton-cerrar {
+    margin-top: 30px;
+    background-color: #e74c3c; /* Rojo para cerrar sesión */
+}
+
+.barra-lateral .boton-cerrar:hover {
+    background-color: #c0392b;
+}
+
+/* ------------------- Menú Hamburguesa (para dispositivos móviles) ------------------- */
+.menu-toggle {
+    display: none; /* Oculta el checkbox */
+}
+
+.hamburger {
+    display: none; /* Oculta el icono de hamburguesa por defecto en escritorio */
+    font-size: 2em;
+    color: #2c3e50;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001; /* Por encima de la barra lateral cuando está cerrada */
+    cursor: pointer;
+    background-color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Cuando el menú está abierto en móvil */
+.barra-lateral.open {
+    transform: translateX(0);
+}
+
+.layout-container.menu-open .contenido {
+    /* Aquí podrías añadir un overlay si el menú se superpone al contenido */
+}
+
+
+/* ------------------- Contenido Principal ------------------- */
+.contenido {
+    flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
+    margin-left: 250px; /* Margen para dejar espacio a la barra lateral fija */
+    padding: 30px;
+    transition: margin-left 0.3s ease; /* Transición para el margen al abrir/cerrar menú */
+}
+
+.titulo-cursos {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+.cursos-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Columnas responsivas */
+    gap: 30px; /* Espacio entre las tarjetas de curso */
+    padding-bottom: 50px; /* Espacio al final del contenedor */
+}
+
+/* Estilos para cada tarjeta de curso */
+.curso-card {
+    background-color: #ffffff; /* Fondo blanco para las tarjetas */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden; /* Para que la imagen no se desborde */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empuja el botón al final */
+    padding-bottom: 15px; /* Espacio para el botón */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.curso-card:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.curso-img {
+    width: 100%;
+    height: 180px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    display: block;
+    border-bottom: 1px solid rgba(0,0,0,0.05); /* Separador sutil */
+}
+
+.curso-info {
+    padding: 15px;
+    flex-grow: 1; /* Permite que la info crezca y empuje el botón */
+    color: #333; /* Texto oscuro por defecto, las clases bg- los cambiarán a blanco si es necesario */
+}
+
+/* Colores de texto para las tarjetas con fondo de Bootstrap */
+.curso-card.bg-info .curso-info,
+.curso-card.bg-secondary .curso-info,
+.curso-card.bg-warning .curso-info, /* Bootstrap warning no es blanco por defecto */
+.curso-card.bg-success .curso-info,
+.curso-card.bg-danger .curso-info,
+.curso-card.bg-primary .curso-info,
+.curso-card.bg-dark .curso-info {
+    color: #ffffff; /* Asegura que el texto sea blanco para fondos oscuros */
+}
+
+
+.curso-info h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.curso-info p {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.curso-info em {
+    font-style: normal; /* Quita la cursiva por defecto */
+    font-size: 0.85em;
+    color: rgba(255,255,255,0.8); /* Gris más claro para el nombre del profesor en tarjetas oscuras */
+}
+/* Para tarjetas blancas */
+.curso-card:not(.bg-warning):not(.bg-success):not(.bg-danger):not(.bg-primary):not(.bg-dark):not(.bg-info):not(.bg-secondary) .curso-info em {
+    color: #666; /* Un color de texto más suave para nombres de profesor en tarjetas claras */
+}
+
+
+/* Estilo para el botón "Gestionar Curso" dentro de la tarjeta */
+.curso-card .btn {
+    display: block; /* Para que el botón ocupe su propia línea */
+    width: calc(100% - 30px); /* Ancho del botón menos el padding lateral de la tarjeta */
+    margin: 0px auto 0px auto; /* Centrar y sin margen superior (ya está en el padding-bottom de la tarjeta) */
+    padding: 8px 15px;
+    background-color: #f8f9fa; /* Fondo blanco para el botón */
+    color: #3498db; /* Texto azul para el botón */
+    border: 1px solid #dee2e6; /* Borde sutil */
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.curso-card .btn:hover {
+    background-color: #e2e6ea; /* Fondo más oscuro al pasar el mouse */
+    color: #2980b9;
+    transform: translateY(-1px); /* Ligero efecto de levantamiento */
+}
+
+
+/* ------------------- Media Queries (Responsividad) ------------------- */
+
+/* Para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+    .barra-lateral {
+        width: 250px; /* Mantiene el ancho del menú cuando está abierto */
+        transform: translateX(-250px); /* Oculta la barra lateral por defecto */
+        box-shadow: none; /* Sin sombra cuando está oculto */
+    }
+
+    .barra-lateral.open {
+        transform: translateX(0); /* Muestra la barra lateral */
+        box-shadow: 2px 0 5px rgba(0,0,0,0.2); /* Sombra cuando está abierta */
+    }
+
+    .hamburger {
+        display: block; /* Muestra el icono de hamburguesa */
+    }
+
+    .contenido {
+        margin-left: 0; /* No hay margen fijo para el contenido */
+        padding: 20px; /* Reduce el padding del contenido */
+    }
+
+    .layout-container.menu-open .contenido {
+        /* Opcional: Oscurecer el contenido o empujarlo ligeramente cuando el menú está abierto */
+        /* filter: brightness(0.5); */
+        /* margin-left: 250px; /* Si quieres que el contenido se empuje */
+    }
+
+    .titulo-cursos {
+        font-size: 2em;
+        margin-top: 50px; /* Espacio para que el título no quede debajo del hamburguesa */
+    }
+
+    .cursos-contenedor {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas muy pequeñas */
+        gap: 20px;
+    }
+}
+
+/* Para pantallas medianas (tabletas y algunos portátiles pequeños) */
+@media (max-width: 992px) and (min-width: 769px) {
+    .barra-lateral {
+        width: 200px; /* Un poco más estrecha la barra lateral */
+    }
+
+    .contenido {
+        margin-left: 200px;
+    }
+
+    .cursos-contenedor {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 25px;
+    }
+}
