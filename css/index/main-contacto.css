@@ -4,7 +4,7 @@
     background-color: var(--blanco); /* Cambiado de gris-claro por consistencia con nosotros */
     padding: 2rem; /* Ajustado para consistencia */
     border-radius: 12px;
-    margin: 2rem 1rem; /* Ajustado para consistencia */
+    margin: 4rem 4rem; /* Ajustado para consistencia */
     box-shadow: 0 0 10px rgba(0, 51, 102, 0.1);
 }
 

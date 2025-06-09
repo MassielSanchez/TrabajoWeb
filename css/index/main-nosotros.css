@@ -6,13 +6,7 @@
     padding: 20px;
     border-radius: 12px;
     margin-bottom: 20px;
-}
-
-.bloque-info-nosotros { /* Este selector ya existía, lo usamos para la sección Nosotros */
-    background-color: var(--blanco);
-    padding: 2rem;
-    border-radius: 12px;
-    margin: 2rem 1rem;
+    margin: 4rem 4rem;
     box-shadow: 0 0 10px rgba(0, 51, 102, 0.1);
 }
 
@@ -26,7 +20,6 @@
     line-height: 1.6;
 }
 
-/* Puedes añadir más estilos específicos de la sección "Quiénes somos" aquí */
 .bloque-info h3 { /* Estilos para los h3 dentro de .bloque-info */
     color: var(--azul);
     margin-top: 1.5rem;
