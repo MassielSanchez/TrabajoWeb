@@ -1,3 +1,8 @@
+/*
+ * Archivo: css/login.css
+ * Descripción: Estilos para la página de login.
+ */
+
 /* Estilos base: pensados para móviles primero */
 body {
     margin: 0;
@@ -13,7 +18,7 @@ body {
     align-items: center;
     height: 100vh;
     padding: 10px;
-    position: relative;
+    position: relative; /* Mantener por si acaso, aunque el logo estará dentro del card */
 }
 
 .login-card {
@@ -26,32 +31,27 @@ body {
     align-items: center;
     width: 100%;
     max-width: 320px;
-    padding-top: 50px;
+    padding-top: 50px; /* Espacio para el logo en la parte superior */
+    position: relative; /* Para que el contenido interno se posicione relativo a él si es necesario */
 }
 
-.back-button {
-    position: absolute; 
-    top: 20px; 
-    left: 20px; 
-    text-decoration: none; 
-    color: #fff; 
-    background-color: rgba(0, 0, 0, 0.3); 
-    padding: 8px 15px; 
-    border-radius: 5px;
-    font-size: 14px; 
-    transition: background-color 0.3s ease, color 0.3s ease;
-    z-index: 10; 
-}
-
-.back-button:hover {
-    background-color: rgba(0, 0, 0, 0.5); 
-    color: #ffffff; 
+/* --- ESTILOS DEL LOGO COMO ENLACE --- */
+.logo-link {
+    display: block; /* Para que el enlace ocupe su propia línea y el margin auto funcione */
+    text-decoration: none; /* Quita el subrayado predeterminado de los enlaces */
+    margin-bottom: 20px; /* Asegura un espacio debajo del logo */
+    line-height: 0; /* Elimina espacio extra debajo de la imagen dentro del enlace */
 }
 
 .logo {
     width: 100px;
-    margin-bottom: 20px;
+    /* margin-bottom se mueve al .logo-link para un mejor control del espaciado */
 }
+
+/* --- ELIMINADO: ESTILOS DEL BOTÓN "REGRESAR" DE LA ESQUINA SUPERIOR --- */
+/* Ya no necesitamos .back-button porque el logo será el enlace. */
+/* Si tenías más estilos aquí para .back-button, asegúrate de eliminarlos. */
+
 
 .login-card h2 {
     margin: 10px 0 20px 0;
@@ -59,14 +59,23 @@ body {
     text-align: center;
 }
 
+label {
+    align-self: flex-start;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+    display: block;
+}
+
 input[type="text"],
 input[type="password"] {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 5px 0 15px 0;
     border: 1px solid #ccc;
     border-radius: 8px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
 }
 
 input:focus {
@@ -108,7 +117,7 @@ button:hover {
     text-decoration: underline;
 }
 
-/* Estilos para el campo de contraseña con ojito */
+/* Estilos para el campo de contraseña con ojito (si lo usas en el futuro) */
 .password-wrapper {
     position: relative;
     width: 100%;
@@ -125,7 +134,8 @@ button:hover {
     border: 1px solid #ccc;
     border-radius: 8px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    padding-right: 40px; /* espacio para el ojito */
+    padding-right: 40px;
+    box-sizing: border-box;
 }
 
 .password-visible {
@@ -150,10 +160,29 @@ button:hover {
     color: #888;
 }
 
+/* --- ESTILOS PARA MENSAJES DE ÉXITO/ERROR (si se usan en login.html) --- */
+.error-message {
+    color: #d9534f;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 0.95em;
+    text-align: center;
+}
+
+.success-message {
+    color: #5cb85c;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 0.95em;
+    text-align: center;
+}
+
+
 /* Desktop y tablets más grandes (min-width = Mobile First) */
 @media (min-width: 768px) {
     .login-card {
         padding: 40px;
+        padding-top: 60px;
     }
 
     .logo {
@@ -169,4 +198,6 @@ button:hover {
     .nosotros {
         font-size: 14px;
     }
+
+    /* ELIMINADO: AJUSTE PARA EL BACK-BUTTON EN PANTALLAS GRANDES */
 }
