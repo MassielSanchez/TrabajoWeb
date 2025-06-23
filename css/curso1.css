@@ -1,7 +1,131 @@
-/* estilos_semanas.css */
+/* Box-sizing global para facilitar el diseño responsivo y evitar problemas de ancho */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 
+/* Resetear márgenes y paddings predeterminados del navegador para HTML y BODY */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Asegurar que ocupan el 100% del ancho disponible */
+    min-height: 100vh; /* Ocupar al menos el alto completo de la ventana */
+    overflow-x: hidden; 
+}
+
+/* Estilos generales del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6f0ff;
+    display: flex; /* Usamos flexbox en el body para centrar el main-content-wrapper si no lo centrará el margin: auto */
+    justify-content: center; /* Centra horizontalmente el contenido del body */
+    align-items: flex-start; /* Alinea al inicio verticalmente (arriba) */
+    min-height: 100vh; /* Asegura que el body tenga al menos el alto de la ventana */
+}
+
+/* Nuevo contenedor principal para centrar todo el contenido */
+.main-content-wrapper {
+    width: 100%; /* Ocupa todo el ancho disponible dentro del body */
+    max-width: 5000px; /* Ancho máximo para todo el contenido en pantallas grandes */
+    margin: 0 auto; /* Centra este contenedor dentro del body */
+    padding: 20px; /* Espacio interno alrededor de todo el contenido */
+    display: flex; /* También lo hacemos flex para apilar sus propios hijos */
+    flex-direction: column;
+    align-items: center; /* Centra los elementos como h2, tabla, acordeón dentro de sí mismo */
+    background-color: transparent; /* El wrapper no tiene color de fondo, solo el body */
+}
+
+/* Estilos de los encabezados principales */
+h2 {
+    color: #2c3e50;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center; /* Asegurarse de que el texto del h2 también esté centrado */
+    width: 100%;
+}
+
+/* Estilos para la tabla de información del curso */
+.course-info-table {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    width: 80%; /* Esto define el ancho relativo */
+    max-width: 900px; /* Esto define el ancho máximo */
+    border-radius: 10px;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.course-info-table th,
+.course-info-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.course-info-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Estilos para las filas de encabezado dentro de la tabla */
+.table-header-row th,
+.table-header-row td {
+    background-color: #ff9770;
+    font-size: 18px;
+    text-align: center;
+    color: #2c3e50;
+    padding: 10px;
+}
+
+/* Estilos para las listas dentro de la tabla */
+.course-info-table ul {
+    list-style-type: disc;
+    margin: 0;
+    padding-left: 20px;
+}
+
+/* Estilos para los enlaces de materiales generales */
+.material-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.material-link:hover {
+    text-decoration: underline;
+}
+
+/* Contenedor de las semanas (acordeón) */
 .semanas-container {
-    /* Mantenemos los estilos del contenedor general */
+    width: 80%; /* Asegurar el mismo ancho que la tabla */
+    max-width: 900px; /* Asegurar el mismo ancho máximo que la tabla */
+    text-align: left;
+    margin: 20px 0; /* Margen vertical, el centrado horizontal lo hace el padre */
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 0;
+    overflow: hidden;
+    /* margin: auto; Ya no es necesario si el padre (main-content-wrapper) lo centra con align-items: center */
+}
+
+/* Encabezado del contenedor de semanas */
+.semanas-container h3 {
+    color: #2c3e50;
+    text-align: center;
+    background-color: #ff9770;
+    padding: 15px 10px;
+    border-radius: 8px 8px 0 0;
+    margin: 0;
+    font-size: 20px;
+}
+
+/* Estilos de cada item (semana) del acordeón */
+.semana-item {
+    margin: 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.semana-item:last-child {
+    border-bottom: none;
 }
 
 /* Oculta el checkbox original */
@@ -9,15 +133,9 @@
     display: none;
 }
 
-.semana-item {
-    margin-bottom: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
+/* Estilo del encabezado de la semana (la parte clickeable) */
 .semana-header {
-    background-color: #f8f8f8; /* Color de fondo del encabezado */
+    background-color: #f8f8f8;
     color: #333;
     cursor: pointer;
     padding: 15px 20px;
@@ -30,7 +148,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-sizing: border-box; /* Para que el padding no aumente el width */
+    box-sizing: border-box;
 }
 
 .semana-header:hover {
@@ -39,19 +157,28 @@
 
 /* Estilo para la flecha ▼ o ▲ */
 .semana-header .arrow::before {
-    content: '▼'; /* Flecha hacia abajo por defecto */
+    content: '▼';
     font-size: 1.2em;
     margin-left: 10px;
-    display: inline-block; /* Permite la transformación */
+    display: inline-block;
     transition: transform 0.3s ease;
 }
 
+/* Contenido de la semana (oculto/visible) */
 .semana-content {
     padding: 0 20px;
     background-color: #fcfcfc;
-    max-height: 0; /* Oculto por defecto */
+    max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+/* Estilos para los títulos de materiales y actividades dentro de la semana */
+.semana-content h4 {
+    color: #2c3e50;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 1.1em;
 }
 
 .semana-content ul {
@@ -67,11 +194,35 @@
 
 /* Regla CSS clave: Cuando el checkbox está marcado, muestra el contenido */
 .semana-toggle:checked + .semana-header + .semana-content {
-    max-height: 500px; /* Suficientemente grande para cualquier contenido */
-    padding: 15px 20px; /* El padding se aplica cuando está visible */
+    max-height: 1000px;
+    padding: 15px 20px;
 }
 
 /* Cuando el checkbox está marcado, rota la flecha */
 .semana-toggle:checked + .semana-header .arrow::before {
-    content: '▲'; /* Cambia la flecha hacia arriba */
+    content: '▲';
+}
+
+/* Estilo para el botón de volver a Mis Cursos */
+.back-to-courses-btn {
+    color: white;
+    background-color: #27ae60;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-courses-btn:hover {
+    background-color: #219150;
+}
+
+/* Media Queries para responsividad, si fuera necesario ajustar para móviles */
+@media (max-width: 768px) {
+    .main-content-wrapper {
+        padding: 10px; /* Menos padding en pantallas pequeñas */
+    }
 }

@@ -5,15 +5,14 @@
     <title>Lógica de Programación</title>
     <link rel="stylesheet" href="../css/curso1.css">
 </head>
-<body style="font-family: Arial, sans-serif; background-color: #e6f0ff; margin: 0; padding: 0;">
+<body>
 
+    <div class="main-content-wrapper">
+        <h2>Lógica de Programación</h2>
 
-    <center>
-        <h2 style="color: #2c3e50; margin-top: 30px;">Lógica de Programación</h2>
-
-        <table border="0" cellpadding="10" cellspacing="0" style="background-color: #ffffff; border: 1px solid #ccc; width: 80%; border-radius: 10px;">
-            <tr style="background-color:#ff9770;">
-                <th colspan="2" style="padding: 10px; font-size: 18px;">Información del Curso</th>
+        <table class="course-info-table">
+            <tr class="table-header-row">
+                <th colspan="2">Información del Curso</th>
             </tr>
             <tr>
                 <td><strong>Docente:</strong></td>
@@ -39,31 +38,36 @@
                     </ul>
                 </td>
             </tr>
-            <tr>
-                <td colspan="2" style="background-color:#ff9770; padding: 10px; font-size: 18px; text-align: center;"><strong>Recursos del Curso</strong></td>
+            <tr class="table-header-row">
+                <td colspan="2"><strong>Recursos Generales del Curso</strong></td>
             </tr>
             <tr>
                 <td colspan="2">
                     <ul>
-                        <li><a href="/pdf/Silabo_LogicadeProgramacion.pdf" target="_blank" style="color: #007bff; text-decoration: none;">Descargar Sílabo del Curso (PDF)</a></li>
-                        <li><a href="/pptx/Presentacion_LogicadeProgramacion.pptx" target="_blank" style="color: #007bff; text-decoration: none;">Presentación de Introducción (PPTX)</a></li>
-                        <li><a href="https://www.diagrams.net/" target="_blank" style="color: #007bff; text-decoration: none;">Herramienta Online para Diagramas de Flujo</a></li>
+                        <li><a href="/pdf/Silabo_LogicadeProgramacion.pdf" target="_blank" class="material-link">[PDF] Descargar Sílabo del Curso</a></li>
+                        <li><a href="/pptx/Presentacion_LogicadeProgramacion.pptx" target="_blank" class="material-link">[PPTX] Presentación de Introducción</a></li>
+                        <li><a href="https://www.diagrams.net/" target="_blank" class="material-link">[Enlace] Herramienta Online para Diagramas de Flujo</a></li>
                     </ul>
                 </td>
             </tr>
         </table>
 
-        <div class="semanas-container" style="width: 80%; text-align: left; margin: 20px auto; background-color: #ffffff; border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
-            <h3 style="color: #2c3e50; text-align: center; background-color: #ff9770; padding: 10px; border-radius: 8px;">Contenido (16 Semanas)</h3>
+        <div class="semanas-container">
+            <h3>Contenido del Curso por Semana (16 Semanas)</h3>
 
             <div class="semana-item">
                 <input type="checkbox" id="semana1" class="semana-toggle">
                 <label for="semana1" class="semana-header">Semana 01: Introducción a la lógica de programación y algoritmos <span class="arrow"></span></label>
                 <div class="semana-content">
+                    <h4>Materiales:</h4>
                     <ul>
-                        <li>Conceptos básicos de la computación, hardware y software.</li>
-                        <li>Problema, algoritmo y programa.</li>
-                        <li>Actividades: Foro de presentación, Ejercicio 1.</li>
+                        <li><a href="/pptx/curso1/C1-SEMANA01.pptx" target="_blank" class="material-link">[PPTX] Lectura: Conceptos Básicos de Programación</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=6DcGWI7Z3XE&t=28s" target="_blank" class="material-link">[Video] Video Introductorio: Hardware y Software</a></li>
+                    </ul>
+                    <h4>Actividades:</h4>
+                    <ul>
+                        <li>Foro de presentación.</li>
+                        <li>Ejercicio 1: Identificación de Problemas.</li>
                     </ul>
                 </div>
             </div>
@@ -72,12 +76,14 @@
                 <input type="checkbox" id="semana2" class="semana-toggle">
                 <label for="semana2" class="semana-header">Semana 02: Estructura de un algoritmo. Reglas básicas de escritura <span class="arrow"></span></label>
                 <div class="semana-content">
+                    <h4>Materiales:</h4>
                     <ul>
-                        <li>Fases de la resolución de problemas.</li>
-                        <li>Características de un algoritmo.</li>
-                        <li>Tipos de datos, variables y constantes.</li>
-                        <li>Operadores.</li>
-                        <li>Actividades: Tarea 1.</li>
+                        <li><a href="https://www.youtube.com/watch?v=VLVRrm1iPYY" target="_blank" class="material-link">[Video] Video Introductorio: Estructura de un Algoritmo</a></li>
+                        <li><a href="/pptx/curso1/C1-SEMANA02.pptx" target="_blank" class="material-link">[PPTX] Presentación: Variables y Operadores</a></li>
+                    </ul>
+                    <h4>Actividades:</h4>
+                    <ul>
+                        <li>Tarea 1: Creación de Pseudocódigos Simples.</li>
                     </ul>
                 </div>
             </div>
@@ -86,11 +92,15 @@
                 <input type="checkbox" id="semana3" class="semana-toggle">
                 <label for="semana3" class="semana-header">Semana 03: Diagramas de flujo: conceptos y símbolos <span class="arrow"></span></label>
                 <div class="semana-content">
+                    <h4>Materiales:</h4>
                     <ul>
-                        <li>Símbolos estándares y su significado.</li>
-                        <li>Reglas de construcción de diagramas de flujo.</li>
+                        <li><a href="/pptx/curso1/C1-SEMANA03.pptx" target="_blank" class="material-link">[PPTX] Manual: Conceptos y Símbolos de Diagramas de Flujo</a></li>
+                        <li><a href="https://miro.com/es/signup/" target="_blank" class="material-link">[Enlace] Ejemplos Interacivos de Diagramas de Flujo</a></li>
+                    </ul>
+                    <h4>Actividades:</h4>
+                    <ul>
+                        <li>Foro de dudas sobre diagramación.</li>
                         <li>Ejercicios prácticos de diagramación.</li>
-                        <li>Actividades: Foro de dudas.</li>
                     </ul>
                 </div>
             </div>
@@ -99,11 +109,14 @@
                 <input type="checkbox" id="semana4" class="semana-toggle">
                 <label for="semana4" class="semana-header">Semana 04: Pseudocódigo: estructura y sintaxis básica <span class="arrow"></span></label>
                 <div class="semana-content">
+                    <h4>Materiales:</h4>
                     <ul>
-                        <li>Estructura básica de un pseudocódigo.</li>
-                        <li>Sintaxis para entrada, procesamiento y salida de datos.</li>
-                        <li>Primeros programas en pseudocódigo.</li>
-                        <li>Actividades: Tarea 2.</li>
+                        <li><a href="/pptx/curso1/C1-SEMANA04.pptx" target="_blank" class="material-link">[PPTX] Guía: Estructura y Sintaxis de Pseudocódigo</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=VjKCLeWkZMI&t=523s" target="_blank" class="material-link">[Video] Tutorial: Tus Primeros Pseudocódigos</a></li>
+                    </ul>
+                    <h4>Actividades:</h4>
+                    <ul>
+                        <li>Tarea 2: Implementación de Pseudocódigos.</li>
                     </ul>
                 </div>
             </div>
@@ -112,11 +125,14 @@
                 <input type="checkbox" id="semana5" class="semana-toggle">
                 <label for="semana5" class="semana-header">Semana 05: Variables, tipos de datos y operadores <span class="arrow"></span></label>
                 <div class="semana-content">
+                    <h4>Materiales:</h4>
                     <ul>
-                        <li>Declaración y uso de variables y constantes.</li>
-                        <li>Tipos de datos numéricos, alfanuméricos, lógicos.</li>
-                        <li>Operadores aritméticos, relacionales y lógicos.</li>
-                        <li>Actividades: Ejercicios de aplicación.</li>
+                        <li><a href="/materiales/semana5/Apuntes_VariablesDatos.pdf" target="_blank" class="material-link">[PDF] Apuntes: Variables, Tipos de Datos y Operadores</a></li>
+                        <li><a href="/materiales/semana5/Ejercicios_Operadores.docx" target="_blank" class="material-link">[DOCX] Ejercicios de Aplicación de Operadores</a></li>
+                    </ul>
+                    <h4>Actividades:</h4>
+                    <ul>
+                        <li>Ejercicios de aplicación.</li>
                     </ul>
                 </div>
             </div>
@@ -125,11 +141,14 @@
                 <input type="checkbox" id="semana6" class="semana-toggle">
                 <label for="semana6" class="semana-header">Semana 06: Estructuras condicionales simples y compuestas <span class="arrow"></span></label>
                 <div class="semana-content">
+                    <h4>Materiales:</h4>
                     <ul>
-                        <li>Sentencia SI-ENTONCES.</li>
-                        <li>Sentencia SI-ENTONCES-SINO.</li>
-                        <li>Condicionales anidados.</li>
-                        <li>Actividades: Tarea 3.</li>
+                        <li><a href="/materiales/semana6/Tutorial_Condicionales.pdf" target="_blank" class="material-link">[PDF] Tutorial: Estructuras Condicionales</a></li>
+                        <li><a href="https://codepen.io/ejemplos/condicionales" target="_blank" class="material-link">[Enlace] Ejemplos Interacivos de Condicionales</a></li>
+                    </ul>
+                    <h4>Actividades:</h4>
+                    <ul>
+                        <li>Tarea 3: Problemas con Condicionales.</li>
                     </ul>
                 </div>
             </div>
@@ -138,11 +157,14 @@
                 <input type="checkbox" id="semana7" class="semana-toggle">
                 <label for="semana7" class="semana-header">Semana 07: Estructuras repetitivas: mientras y para<span class="arrow"></span></label>
                 <div class="semana-content">
+                    <h4>Materiales:</h4>
                     <ul>
-                        <li>Bucle MIENTRAS.</li>
-                        <li>Bucle PARA.</li>
-                        <li>Uso y ejemplos.</li>
-                        <li>Actividades: Ejercicios prácticos.</li>
+                        <li><a href="/materiales/semana7/Guia_Bucles.pdf" target="_blank" class="material-link">[PDF] Guía Completa de Bucles (Mientras y Para)</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=bucles_ejemplos" target="_blank" class="material-link">[Video] Ejemplos Prácticos de Estructuras Repetitivas</a></li>
+                    </ul>
+                    <h4>Actividades:</h4>
+                    <ul>
+                        <li>Ejercicios prácticos de bucles.</li>
                     </ul>
                 </div>
             </div>
@@ -151,6 +173,12 @@
                 <input type="checkbox" id="semana8" class="semana-toggle">
                 <label for="semana8" class="semana-header">Semana 08: Ejercicios integradores y repaso general <span class="arrow"></span></label>
                 <div class="semana-content">
+                    <h4>Materiales:</h4>
+                    <ul>
+                        <li><a href="/materiales/semana8/Ejercicios_Integradores.pdf" target="_blank" class="material-link">[PDF] Compendio de Ejercicios Integradores</a></li>
+                        <li><a href="/materiales/semana8/Preguntas_Repaso.docx" target="_blank" class="material-link">[DOCX] Preguntas de Repaso para Examen Parcial</a></li>
+                    </ul>
+                    <h4>Actividades:</h4>
                     <ul>
                         <li>Resolución de problemas con combinación de estructuras.</li>
                         <li>Repaso de los temas vistos hasta la fecha.</li>
@@ -161,7 +189,7 @@
 
             <div class="semana-item">
                 <input type="checkbox" id="semana9" class="semana-toggle">
-                <label for="semana9" class="semana-header">Semana 09: Evaluación Parcial 1 [cite: 6]<span class="arrow"></span></label>
+                <label for="semana9" class="semana-header">Semana 09: Evaluación Parcial 1<span class="arrow"></span></label>
                 <div class="semana-content">
                     <p>Evaluación de los conocimientos y habilidades adquiridos en las semanas 1 a 8.</p>
                 </div>
@@ -171,11 +199,14 @@
                 <input type="checkbox" id="semana10" class="semana-toggle">
                 <label for="semana10" class="semana-header">Semana 10: Subprocesos y funciones básicas en pseudocódigo<span class="arrow"></span></label>
                 <div class="semana-content">
+                    <h4>Materiales:</h4>
                     <ul>
-                        <li>Concepto de subprocesos y funciones.</li>
-                        <li>Creación y uso de funciones sin retorno de valor.</li>
-                        <li>Creación y uso de funciones con retorno de valor.</li>
-                        <li>Actividades: Tarea 4.</li>
+                        <li><a href="/materiales/semana10/Guia_FuncionesPseudocodigo.pdf" target="_blank" class="material-link">[PDF] Guía: Subprocesos y Funciones en Pseudocódigo</a></li>
+                        <li><a href="/materiales/semana10/Ejercicios_Funciones.pptx" target="_blank" class="material-link">[PPTX] Ejercicios de Funciones sin y con Retorno</a></li>
+                    </ul>
+                    <h4>Actividades:</h4>
+                    <ul>
+                        <li>Tarea 4: Implementación de Funciones.</li>
                     </ul>
                 </div>
             </div>
@@ -184,11 +215,14 @@
                 <input type="checkbox" id="semana11" class="semana-toggle">
                 <label for="semana11" class="semana-header">Semana 11: Vectores y matrices: introducción y uso<span class="arrow"></span></label>
                 <div class="semana-content">
+                    <h4>Materiales:</h4>
                     <ul>
-                        <li>Concepto de estructuras de datos.</li>
-                        <li>Declaración y manejo de vectores (arreglos unidimensionales).</li>
-                        <li>Introducción a matrices (arreglos bidimensionales).</li>
-                        <li>Actividades: Ejercicios de manejo de arreglos.</li>
+                        <li><a href="/materiales/semana11/Lectura_VectoresMatrices.pdf" target="_blank" class="material-link">[PDF] Introducción a Vectores y Matrices</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=tutorial_arrays" target="_blank" class="material-link">[Video] Tutorial: Manejo de Arreglos Unidimensionales</a></li>
+                    </ul>
+                    <h4>Actividades:</h4>
+                    <ul>
+                        <li>Ejercicios de manejo de arreglos.</li>
                     </ul>
                 </div>
             </div>
@@ -197,8 +231,14 @@
                 <input type="checkbox" id="semana12" class="semana-toggle">
                 <label for="semana12" class="semana-header">Semana 12: Diagramas de flujo con estructuras complejas <span class="arrow"></span></label>
                 <div class="semana-content">
+                    <h4>Materiales:</h4>
                     <ul>
-                        <li>Diseño de diagramas de flujo para problemas con funciones y arreglos.</li>
+                        <li><a href="/materiales/semana12/Ejemplos_DF_Complejos.pdf" target="_blank" class="material-link">[PDF] Ejemplos de Diagramas de Flujo con Funciones y Arreglos</a></li>
+                        <li><a href="https://app.diagrams.net/?lightbox=1#G1234567890" target="_blank" class="material-link">[Enlace] Práctica Interactiva de Diagramación Avanzada</a></li>
+                    </ul>
+                    <h4>Actividades:</h4>
+                    <ul>
+                        <li>Diseño de diagramas de flujo para problemas complejos.</li>
                         <li>Práctica avanzada de diagramación.</li>
                     </ul>
                 </div>
@@ -208,10 +248,15 @@
                 <input type="checkbox" id="semana13" class="semana-toggle">
                 <label for="semana13" class="semana-header">Semana 13: Optimización de algoritmos y buenas prácticas<span class="arrow"></span></label>
                 <div class="semana-content">
+                    <h4>Materiales:</h4>
                     <ul>
-                        <li>Conceptos de eficiencia algorítmica.</li>
-                        <li>Buenas prácticas en la escritura de pseudocódigo.</li>
-                        <li>Refactorización de algoritmos.</li>
+                        <li><a href="/materiales/semana13/Presentacion_Optimizacion.pptx" target="_blank" class="material-link">[PPTX] Presentación: Eficiencia y Buenas Prácticas Algorítmicas</a></li>
+                        <li><a href="/materiales/semana13/Articulo_Refactorizacion.pdf" target="_blank" class="material-link">[PDF] Artículo: Refactorización de Algoritmos</a></li>
+                    </ul>
+                    <h4>Actividades:</h4>
+                    <ul>
+                        <li>Análisis de eficiencia algorítmica.</li>
+                        <li>Aplicación de buenas prácticas.</li>
                     </ul>
                 </div>
             </div>
@@ -220,6 +265,12 @@
                 <input type="checkbox" id="semana14" class="semana-toggle">
                 <label for="semana14" class="semana-header">Semana 14: Proyecto final: diseño y codificación de solución algorítmica <span class="arrow"></span></label>
                 <div class="semana-content">
+                    <h4>Materiales:</h4>
+                    <ul>
+                        <li><a href="/materiales/semana14/Requisitos_ProyectoFinal.pdf" target="_blank" class="material-link">[PDF] Documento de Requisitos del Proyecto Final</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=guia_proyecto" target="_blank" class="material-link">[Video] Guía para el Desarrollo del Proyecto Final</a></li>
+                    </ul>
+                    <h4>Actividades:</h4>
                     <ul>
                         <li>Presentación de requisitos del proyecto final.</li>
                         <li>Sesión de consultas y guía para el desarrollo.</li>
@@ -239,16 +290,22 @@
                 <input type="checkbox" id="semana16" class="semana-toggle">
                 <label for="semana16" class="semana-header">Semana 16: Presentación de proyectos y cierre del curso <span class="arrow"></span></label>
                 <div class="semana-content">
+                    <h4>Materiales:</h4>
+                    <ul>
+                        <li><a href="/materiales/semana16/Formato_PresentacionProyecto.pdf" target="_blank" class="material-link">[PDF] Formato para la Presentación de Proyectos</a></li>
+                    </ul>
+                    <h4>Actividades:</h4>
                     <ul>
                         <li>Presentación y defensa de los proyectos finales.</li>
                         <li>Conclusiones del curso y despedida.</li>
                     </ul>
                 </div>
             </div>
+        </div>
 
         <br>
-        <a href="../vistas/inicio.html" style="color: white; background-color: #27ae60; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Volver a Mis Cursos</a>
-    </center>
+        <a href="../vistas/inicioalumno.html" class="back-to-courses-btn">Volver a Mis Cursos</a>
+    </div>
 
 </body>
 </html>
