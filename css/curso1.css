@@ -104,7 +104,6 @@ h2 {
     border-radius: 10px;
     padding: 0;
     overflow: hidden;
-    /* margin: auto; Ya no es necesario si el padre (main-content-wrapper) lo centra con align-items: center */
 }
 
 /* Encabezado del contenedor de semanas */
