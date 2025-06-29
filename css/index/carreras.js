@@ -200,17 +200,14 @@ function crearInfoCarrera(info) {
     div.classList.add('info-carrera-dinamico');
 
     let mallaHTML = '';
-    if (info.mallaCurricularPDF && info.mallaCurricularPDF !== 'img/default-icon.png' && info.mallaCurricularPDF !== 'ruta/al/tu/default-pdf.pdf') { // Reemplaza 'ruta/al/tu/default-pdf.pdf' si tienes un PDF predeterminado
-        mallaHTML = `
-            <div class="malla-curricular-bloque"> <p><a href="${info.mallaCurricularPDF}" target="_blank" class="btn-malla" rel="noopener noreferrer">📄 Ver Malla Curricular</a></p>
-            </div>
-        `;
+    if (info.mallaCurricularPDF && info.mallaCurricularPDF !== 'img/default-icon.png') {
+        mallaHTML = `<p><a href="${info.mallaCurricularPDF}" target="_blank" class="btn-malla" rel="noopener noreferrer">📄 Ver Malla Curricular</a></p>`;
     }
 
     div.innerHTML = `
         <div class="info-carrera-contenido">
             <div class="info-texto">
-                <p class="carrera-descripcion-corta">${info.descripcion || ''}</p> 
+            <p class="descripcion-corta">${info.descripcion_corta}</p>
                 <p class="descripcion-larga">${info.descripcionLarga}</p>
             <div class="info-imagen">
                 <img src="${info.imagen}" alt="Imagen de ${info.titulo}" class="imagen-carrera" 
@@ -232,10 +229,6 @@ function crearInfoCarrera(info) {
 
     return div;
 }
-
-// Variable global para rastrear el panel de información abierto actualmente
-let currentOpenInfoPanel = null;
-let currentOpenCarreraId = null;
 
 // Función para configurar eventos del grid
 function setupCarrerasGrid() {
@@ -262,33 +255,16 @@ function handleCarreraClick(event) {
     const carreraId = carreraElemento.dataset.carrera;
     console.log('🎯 Carrera clickeada:', carreraId);
     
-    // 1. Verificar si el panel actual es el mismo que se acaba de cliquear
-    if (currentOpenInfoPanel && currentOpenCarreraId === carreraId) {
-        currentOpenInfoPanel.remove(); // Elimina el panel
-        currentOpenInfoPanel = null; // Resetea la referencia
-        currentOpenCarreraId = null; // Resetea el ID
-        console.log('Panel cerrado para:', carreraId);
-        return; // Salimos de la función, ya se manejó el clic
+    // Remover información previa si existe
+    const existente = document.querySelector('.info-carrera-dinamico');
+    if (existente) {
+        existente.remove();
     }
 
-    // 2. Si hay un panel abierto (y no es el mismo que se acaba de cliquear), ciérralo primero
-    if (currentOpenInfoPanel) {
-        currentOpenInfoPanel.remove();
-        currentOpenInfoPanel = null;
-        currentOpenCarreraId = null;
-        console.log('Panel anterior cerrado.');
-    }
-
-    // 3. Abrir el nuevo panel
     const info = infoCarreras[carreraId];
     if (info) {
         const nuevoInfoDiv = crearInfoCarrera(info);
-        
-        carreraElemento.after(nuevoInfoDiv); // Insertar después del card clickeado
-
-        currentOpenInfoPanel = nuevoInfoDiv; // Almacena la referencia al panel recién abierto
-        currentOpenCarreraId = carreraId; // Almacena el ID de la carrera que lo abrió
-        console.log('Panel abierto para:', carreraId);
+        carreraElemento.parentNode.insertBefore(nuevoInfoDiv, carreraElemento.nextSibling);
         
         // Scroll suave hacia la información
         setTimeout(() => {

@@ -1,22 +1,46 @@
 /* css/index/main-carreras.css */
 
+/* Fallbacks para variables CSS no definidas */
+:root {
+    --azul: #2c3e50;
+    --azul-oscuro: #1a252f;
+    --blanco: #ffffff;
+    --celeste-claro: #f0f8ff;
+    --gris-texto: #333333;
+    --gris-texto-suave: #666666;
+    --gris-borde-claro: #dee2e6;
+    --gris-fondo: #f8f9fa;
+    --sombra-card: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --sombra-card-hover: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
 .carreras {
     margin: 4rem 2rem;
     text-align: center;
 }
 
 .carreras h2 {
-    color: var(--azul, #2c3e50);
+    color: var(--azul); 
     margin-bottom: 1.5rem;
     font-size: 2.5rem;
+    font-weight: 700;  
 }
 
 .carreras-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px; 
     margin-top: 30px;
     justify-items: center;
+    align-items: stretch; /* Importante: hace que todas las tarjetas tengan la misma altura */
+    max-width: 1200px; 
+    margin: 30px auto 0;
+}
+
+@media (max-width: 1200px) {  
+    .carreras-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 767px) {
@@ -29,15 +53,8 @@
     }
     
     .carreras-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Aumenté el mínimo */
         gap: 15px;
-    }
-}
-
-@media (min-width: 768px) {
-    .carreras-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 25px;
     }
 }
 
@@ -51,16 +68,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
     padding: 20px 15px;
-    min-height: 200px;
     border: 2px solid transparent;
     position: relative;
+    width: 100%; 
+    min-height: 200px; 
+    max-height: 280px; 
 }
 
 .carrera-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--sombra-card-hover);
     border-color: var(--azul, #2c3e50);
 }
 
@@ -72,9 +90,10 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    border-radius: 50%;
-    background-color: var(--celeste-claro, #f8f9fa);
-    padding: 10px;
+    background-color: transparent;
+    padding: 0;
+    transition: transform 0.3s ease;
+    flex-shrink: 0; 
 }
 
 .carrera-imagen {
@@ -82,7 +101,6 @@
     height: 100%;
     object-fit: contain;
     display: block;
-    border-radius: 50%;
 }
 
 .carrera-info {
@@ -91,6 +109,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100%;
+    min-height: 0; 
 }
 
 .carrera-info h3 {
@@ -99,17 +119,26 @@
     color: var(--gris-texto, #333);
     font-weight: 600;
     line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 2.6em; /* Altura fija para 2 líneas */
 }
 
 .carrera-descripcion-corta {
-    font-size: 0.9em;
+    font-size: 1.5m;
+    font-weight: bold;
     color: var(--gris-texto-suave, #666);
     line-height: 1.4;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    flex: 1; /* Ocupa el espacio disponible */
+    min-height: 4.2em; /* Altura fija para 3 líneas */
 }
 
 .carrera-duracion {
@@ -120,6 +149,8 @@
     padding: 5px 10px;
     border-radius: 15px;
     margin-top: auto;
+    flex-shrink: 0; 
+    white-space: nowrap; 
 }
 
 /* Estados de carga y error */
@@ -186,10 +217,23 @@
         grid-template-columns: 1fr;
         gap: 15px;
     }
+    
+    /* Ajustes adicionales para móvil */
+    .carrera-card {
+        min-height: 250px;
+        max-height: 250px;
+    }
+    
+    .carrera-info h3 {
+        font-size: 1em;
+    }
+    
+    .carrera-descripcion-corta {
+        font-size: 0.85em;
+    }
 }
 
 .info-texto {
-    flex: 1;
 }
 
 .info-carrera-dinamico h3 {
@@ -212,11 +256,7 @@
 }
 
 .titulos-otorgados {
-    background-color: var(--blanco, #ffffff);
-    padding: 15px;
-    border-radius: 8px;
-    margin: 15px 0;
-    border-left: 4px solid var(--azul, #2c3e50);
+    
 }
 
 .titulos-otorgados ul {
@@ -250,7 +290,8 @@
     max-width: 250px;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    margin: 20px auto;
 }
 
 .imagen-carrera {
@@ -259,38 +300,4 @@
     object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.btn-cerrar-info {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease;
-}
-
-.btn-cerrar-info:hover {
-    background-color: #c0392b;
-}
-
-/* Fallbacks para variables CSS no definidas */
-:root {
-    --azul: #2c3e50;
-    --azul-oscuro: #1a252f;
-    --blanco: #ffffff;
-    --celeste-claro: #f0f8ff;
-    --gris-texto: #333333;
-    --gris-texto-suave: #666666;
-    --gris-borde-claro: #dee2e6;
-    --gris-fondo: #f8f9fa;
 }
