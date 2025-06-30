@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $validas = 0;
 
     foreach ($respuestas as $r) {
-        $sql = "SELECT respuesta FROM respuestas_seguridad WHERE id_usuario = ? AND id_pregunta = ?";
+        $sql = "SELECT respuesta_hash FROM respuestas_seguridad WHERE id_usuario = ? AND id_pregunta = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ss", $id_usuario, $r['id_pregunta']);
         $stmt->execute();
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $stmt->bind_result($hash);
             $stmt->fetch();
 
-            if (password_verify(trim($r['respuesta']), $hash)) {
+            if ($hash && password_verify(trim($r['respuesta']), $hash)) {
                 $validas++;
             }
         }
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($validas === 3) {
         $_SESSION['reset_user'] = $id_usuario;
-        header("Location: reset_password.html");
+        header("Location: ../vistas/reset_password.html?id_usuario=$id_usuario");
         exit();
     } else {
         echo "<script>alert('Una o más respuestas son incorrectas.'); window.history.back();</script>";
@@ -51,3 +51,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     header("Location: login.html");
     exit();
 }
+?>
