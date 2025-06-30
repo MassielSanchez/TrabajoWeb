@@ -1,34 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Sistema Académico</title>
     <link rel="stylesheet" href="../css/login.css">
-    <link rel="icon" href="../img/intec-removebg-preview.png" type="image/png"> </head>
+    <link rel="icon" href="../img/intec-removebg-preview.png" type="image/png">
+</head>
+
 <body>
 
     <div class="login-container">
-        <form id="loginForm" action="inicio.html" method="get" class="login-card">
-            <a href="../index.html" class="logo-link"> <img src="../img/intec-removebg-preview.png" alt="Logo" class="logo">
+        <form id="loginForm" action="../api/login.php" method="POST" class="login-card">
+            <a href="../index.html" class="logo-link">
+                <img src="../img/intec-removebg-preview.png" alt="Logo" class="logo">
             </a>
             <h2>Acceso al Sistema Académico</h2>
-            
-            <label for="username">Usuario:</label>
-            <input type="text" id="username" name="usuario" 
-                   pattern="[uc][0-9]{8}" 
-                   title="Debe comenzar con 'u' o 'c' seguido de 8 dígitos" 
-                   required>
+
+            <label for="username">Usuario (ID):</label>
+            <input type="text" id="username" name="id_usuario" pattern="[CI][0-9]{8}"
+                title="Debe comenzar con 'C' (docente) o 'I' (estudiante) seguido de 8 dígitos" required>
 
             <label for="password">Contraseña:</label>
             <input type="password" id="password" name="contrasena" required>
+            <!-- Mensaje de error -->
+            <div id="mensaje-error" class="mensaje-error" style="display:none;">
+                ❌ Usuario o contraseña incorrectos.
+            </div>
+
 
             <button type="submit">Ingresar</button>
 
             <a href="forgot_password.html" class="forgot-password">¿Olvidaste tu contraseña?</a>
+
         </form>
     </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        if (params.has("error") && params.get("error") === "credenciales") {
+            document.getElementById("mensaje-error").style.display = "block";
+        }
+    </script>
 
-    <script src="../js/index/login.js"></script> 
 </body>
+
 </html>
