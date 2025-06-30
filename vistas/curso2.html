@@ -1,20 +1,18 @@
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Introducción al Desarrollo Web</title>
+    <link rel="stylesheet" href="../css/curso2.css">
 </head>
-<body style="font-family: Arial, sans-serif; background-color: #e6f0ff; margin: 0; padding: 0;">
+<body>
 
+    <div class="main-content-wrapper">
+        <h2>Introducción al Desarrollo Web</h2>
 
-    <center>
-        <h2 style="color: #2c3e50; margin-top: 30px;">Introducción al Desarrollo Web</h2>
-
-        <table border="0" cellpadding="10" cellspacing="0" style="background-color: #ffffff; border: 1px solid #ccc; width: 80%; border-radius: 10px;">
-            <tr style="background-color: #ff70a6;">
-                <th colspan="2" style="padding: 10px; font-size: 18px;">Información del Curso</th>
+        <table class="course-info-table">
+            <tr class="table-header-row">
+                <th colspan="2">Información del Curso</th>
             </tr>
             <tr>
                 <td><strong>Docente:</strong></td>
@@ -42,9 +40,112 @@
             </tr>
         </table>
 
-        <br>
-        <a href="../vistas/inicioalumno.html" style="color: white; background-color: #27ae60; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Volver a Mis Cursos</a>
-    </center>
+        <div class="semanas-container">
+            <h3>Contenido del Curso por Semana (16 Semanas)</h3>
+
+            <div class="semana-item">
+                <input type="checkbox" id="semana1" class="semana-toggle">
+                <label for="semana1" class="semana-header">Semana 01: Introducción al desarrollo web y conceptos básicos de Internet <span class="arrow"></span></label>
+                
+            </div>
+
+            <div class="semana-item">
+                <input type="checkbox" id="semana2" class="semana-toggle">
+                <label for="semana2" class="semana-header">Semana 02: ¿Qué es HTML? Estructura básica de una página web <span class="arrow"></span></label>
+                
+            </div>
+
+            <div class="semana-item">
+                <input type="checkbox" id="semana3" class="semana-toggle">
+                <label for="semana3" class="semana-header">Semana 03: Etiquetas de texto: títulos, párrafos, saltos de línea, énfasis <span class="arrow"></span></label>
+                
+            </div>
+
+            <div class="semana-item">
+                <input type="checkbox" id="semana4" class="semana-toggle">
+                <label for="semana4" class="semana-header">Semana 04: Inserción de imágenes y enlaces <span class="arrow"></span></label>
+            
+            </div>
+
+            <div class="semana-item">
+                <input type="checkbox" id="semana5" class="semana-toggle">
+                <label for="semana5" class="semana-header">Semana 05: Listas ordenadas y desordenadas <span class="arrow"></span></label>
+                
+            </div>
+
+            <div class="semana-item">
+                <input type="checkbox" id="semana6" class="semana-toggle">
+                <label for="semana6" class="semana-header">Semana 06: Tablas en HTML: estructura y ejemplos prácticos <span class="arrow"></span></label>
+                
+            </div>
+
+            <div class="semana-item">
+                <input type="checkbox" id="semana7" class="semana-toggle">
+                <label for="semana7" class="semana-header">Semana 07: Formularios básicos: input, select, textarea, botón<span class="arrow"></span></label>
+                
+            </div>
+
+            <div class="semana-item">
+                <input type="checkbox" id="semana8" class="semana-toggle">
+                <label for="semana8" class="semana-header">Semana 08: Ejercicios prácticos y repaso general <span class="arrow"></span></label>
+                
+            </div>
+
+            <div class="semana-item">
+                <input type="checkbox" id="semana9" class="semana-toggle">
+                <label for="semana9" class="semana-header">Semana 09: Evaluación Parcial 1<span class="arrow"></span></label>
+                <div class="semana-content">
+                    <p>Evaluación de los conocimientos y habilidades adquiridos en las semanas 1 a 8.</p>
+                </div>
+            </div>
+
+            <div class="semana-item">
+                <input type="checkbox" id="semana10" class="semana-toggle">
+                <label for="semana10" class="semana-header">Semana 10: Introducción al diseño web: buenas prácticas, accesibilidad y usabilidad<span class="arrow"></span></label>
+                
+            </div>
+
+            <div class="semana-item">
+                <input type="checkbox" id="semana11" class="semana-toggle">
+                <label for="semana11" class="semana-header">Semana 11: Introducción al CSS: estilos en línea, internos y externos<span class="arrow"></span></label>
+                
+            </div>
+
+            <div class="semana-item">
+                <input type="checkbox" id="semana12" class="semana-toggle">
+                <label for="semana12" class="semana-header">Semana 12: Selectores y propiedades comunes de CSS <span class="arrow"></span></label>
+                
+            </div>
+
+            <div class="semana-item">
+                <input type="checkbox" id="semana13" class="semana-toggle">
+                <label for="semana13" class="semana-header">Semana 13: Maquetación básica con div, span y clases<span class="arrow"></span></label>
+                
+            </div>
+
+            <div class="semana-item">
+                <input type="checkbox" id="semana14" class="semana-toggle">
+                <label for="semana14" class="semana-header">Semana 14: Proyecto web: planificación y diseño de una página estática <span class="arrow"></span></label>
+                
+            </div>
+
+            <div class="semana-item">
+                <input type="checkbox" id="semana15" class="semana-toggle">
+                <label for="semana15" class="semana-header">Semana 15: Evaluación Parcial 2 <span class="arrow"></span></label>
+                <div class="semana-content">
+                    <p>Evaluación de los conocimientos y habilidades adquiridos desde la semana 10 hasta la 14.</p>
+                </div>
+            </div>
+
+            <div class="semana-item">
+                <input type="checkbox" id="semana16" class="semana-toggle">
+                <label for="semana16" class="semana-header">Semana 16: Presentación de proyectos finales y cierre del curso <span class="arrow"></span></label>
+                
+             </div>
+    </div>
+    <br>
+        <a href="../vistas/inicioalumno.html" class="back-to-courses-btn">Volver a Mis Cursos</a>
+    </div>
 
 </body>
 </html>
