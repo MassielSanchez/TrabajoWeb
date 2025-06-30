@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Cursos - Profesor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/gestion_curso_profesor.css">
+    <link rel="icon" href="../img/intec-removebg-preview.png" type="image/png">
+</head>
+<body>
+
+<input type="checkbox" id="menu-toggle" class="menu-toggle">
+<label for="menu-toggle" class="hamburger">&#9776;</label>
+
+<div class="layout-container">
+    <aside class="barra-lateral">
+        <img src="../img/blanco.png" alt="Logo de la plataforma" class="logo">
+        <h1>Mi Plataforma</h1>
+        <nav>
+            <a href="#" class="boton-calificaciones">Calificaciones</a>
+            <a href="#" class="boton-horario">Horario</a>
+            <a href="#" class="boton-archivos">Gestionar Archivos</a>
+            <a href="#" class="boton-cerrar">Cerrar sesión</a>
+        </nav>
+    </aside>
+
+     <main class="contenido">
+        <div class="curso-header">
+            <h1 id="curso-titulo">Fundamentos de la Computación</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="#">Mis Cursos</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        Gestión de Contenidos
+                    </li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="gestion-panel">
+                <h2><i class="fas fa-cogs"></i> Gestión de Contenidos del Curso</h2>
+                
+                <div class="week-selector-container">
+                    <label for="weekSelect">
+                        <i class="fas fa-calendar-week"></i> Seleccionar Semana:
+                    </label>
+                    <select id="weekSelect" onchange="showWeekContent(this.value)">
+                        <option value="">-- Seleccione una Semana --</option>
+                        <option value="week1">Semana 1</option>
+                        <option value="week2">Semana 2</option>
+                        <option value="week3">Semana 3</option>
+                        <option value="week4">Semana 4</option>
+                        <option value="week5">Semana 5</option>
+                        <option value="week6">Semana 6</option>
+                        <option value="week7">Semana 7</option>
+                        <option value="week8">Semana 8</option>
+                        <option value="week9">Semana 9</option>
+                        <option value="week10">Semana 10</option>
+                        <option value="week11">Semana 11</option>
+                        <option value="week12">Semana 12</option>
+                        <option value="week13">Semana 13</option>
+                        <option value="week14">Semana 14</option>
+                        <option value="week15">Semana 15</option>
+                        <option value="week16">Semana 16</option>
+                    </select>
+                </div>
+            </div>          
+
+
+                <!-- Panel de Contenido (Columna Derecha) -->
+            <div class="contenido-panel">
+                <!-- Mensaje por defecto -->
+                <div id="default-message" class="default-message">
+                    <i class="fas fa-arrow-left"></i>
+                    <h3>Selecciona una semana</h3>
+                    <p>Elige una semana del menú lateral para ver y gestionar su contenido.</p>
+                </div>
+
+                <!-- Semana 1 con contenido -->
+                <div class="week-content" id="week1-content">
+                    <div class="week-header">
+                        <h3 class="week-title">Semana 1 - Introducción</h3>
+                        <button class="add-material-btn" onclick="addMaterial('Semana 1')">
+                            <i class="fas fa-plus"></i> Agregar Material
+                        </button>
+                    </div>
+                    
+                    <div class="materials-list">
+                        <div class="material-item">
+                            <div class="material-header">
+                                <div class="material-content">
+                                    <div class="file-type-icon file-type-pdf">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </div>
+                                    <div class="material-info">
+                                        <h4>Presentación: Introducción a la Computación</h4>
+                                        <p>Material introductorio del curso - Subido el 15 de Enero, 2025</p>
+                                    </div>
+                                </div>
+                                <div class="material-actions">
+                                    <button class="btn btn-outline-primary btn-sm">
+                                        <i class="fas fa-eye"></i> Ver
+                                    </button>
+                                    <button class="btn btn-outline-success btn-sm">
+                                        <i class="fas fa-edit"></i> Editar
+                                    </button>
+                                    <button class="btn btn-outline-danger btn-sm">
+                                        <i class="fas fa-trash"></i> Eliminar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="material-item">
+                            <div class="material-header">
+                                <div class="material-content">
+                                    <div class="file-type-icon file-type-video">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                    <div class="material-info">
+                                        <h4>Video: Historia de la Computación</h4>
+                                        <p>Video explicativo de 45 minutos - Subido el 16 de Enero, 2025</p>
+                                    </div>
+                                </div>
+                                <div class="material-actions">
+                                    <button class="btn btn-outline-primary btn-sm">
+                                        <i class="fas fa-eye"></i> Ver
+                                    </button>
+                                    <button class="btn btn-outline-success btn-sm">
+                                        <i class="fas fa-edit"></i> Editar
+                                    </button>
+                                    <button class="btn btn-outline-danger btn-sm">
+                                        <i class="fas fa-trash"></i> Eliminar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Semana 2 vacía -->
+                <div class="week-content" id="week2-content">
+                    <div class="week-header">
+                        <h3 class="week-title">Semana 2 - Conceptos Básicos</h3>
+                        <button class="add-material-btn" onclick="addMaterial('Semana 2')">
+                            <i class="fas fa-plus"></i> Agregar Material
+                        </button>
+                    </div>
+                    
+                    <div class="empty-state">
+                        <i class="fas fa-folder-open"></i>
+                        <h3>No hay materiales aún</h3>
+                        <p>Agrega el primer material educativo para esta semana.</p>
+                    </div>
+                </div>
+
+                <!-- Resto de semanas (ejemplo de algunas más) -->
+                <div class="week-content" id="week3-content">
+                    <div class="week-header">
+                        <h3 class="week-title">Semana 3</h3>
+                        <button class="add-material-btn" onclick="addMaterial('Semana 3')">
+                            <i class="fas fa-plus"></i> Agregar Material
+                        </button>
+                    </div>
+                    
+                    <div class="empty-state">
+                        <i class="fas fa-folder-open"></i>
+                        <h3>No hay materiales aún</h3>
+                        <p>Agrega el primer material educativo para esta semana.</p>
+                    </div>
+                </div>
+
+                <div class="week-content" id="week4-content">
+                    <div class="week-header">
+                        <h3 class="week-title">Semana 4 </h3>
+                        <button class="add-material-btn" onclick="addMaterial('Semana 4')">
+                            <i class="fas fa-plus"></i> Agregar Material
+                        </button>
+                    </div>
+                    
+                    <div class="empty-state">
+                        <i class="fas fa-folder-open"></i>
+                        <h3>No hay materiales aún</h3>
+                        <p>Agrega el primer material educativo para esta semana.</p>
+                    </div>
+                </div>
+                <div class="week-content" id="week5-content">
+                    <div class="week-header">
+                        <h3 class="week-title">Semana 5 </h3>
+                        <button class="add-material-btn" onclick="addMaterial('Semana 5')">
+                            <i class="fas fa-plus"></i> Agregar Material
+                        </button>
+                    </div>
+                    
+                    <div class="empty-state">
+                        <i class="fas fa-folder-open"></i>
+                        <h3>No hay materiales aún</h3>
+                        <p>Agrega el primer material educativo para esta semana.</p>
+                    </div>
+                </div>
+                <div class="week-content" id="week6-content">
+                    <div class="week-header">
+                        <h3 class="week-title">Semana 6 </h3>
+                        <button class="add-material-btn" onclick="addMaterial('Semana 6')">
+                            <i class="fas fa-plus"></i> Agregar Material
+                        </button>
+                    </div>
+                    
+                    <div class="empty-state">
+                        <i class="fas fa-folder-open"></i>
+                        <h3>No hay materiales aún</h3>
+                        <p>Agrega el primer material educativo para esta semana.</p>
+                    </div>
+                </div>
+                <div class="week-content" id="week7-content">
+                    <div class="week-header">
+                        <h3 class="week-title">Semana 7 </h3>
+                        <button class="add-material-btn" onclick="addMaterial('Semana 7')">
+                            <i class="fas fa-plus"></i> Agregar Material
+                        </button>
+                    </div>
+                    
+                    <div class="empty-state">
+                        <i class="fas fa-folder-open"></i>
+                        <h3>No hay materiales aún</h3>
+                        <p>Agrega el primer material educativo para esta semana.</p>
+                    </div>
+                </div>
+                <div class="week-content" id="week8-content">
+                    <div class="week-header">
+                        <h3 class="week-title">Semana 8 </h3>
+                        <button class="add-material-btn" onclick="addMaterial('Semana 8')">
+                            <i class="fas fa-plus"></i> Agregar Material
+                        </button>
+                    </div>
+                    
+                    <div class="empty-state">
+                        <i class="fas fa-folder-open"></i>
+                        <h3>No hay materiales aún</h3>
+                        <p>Agrega el primer material educativo para esta semana.</p>
+                    </div>
+                </div>
+                <div class="week-content" id="week9-content">
+                    <div class="week-header">
+                        <h3 class="week-title">Semana 9 </h3>
+                        <button class="add-material-btn" onclick="addMaterial('Semana 9')">
+                            <i class="fas fa-plus"></i> Agregar Material
+                        </button>
+                    </div>
+                    
+                    <div class="empty-state">
+                        <i class="fas fa-folder-open"></i>
+                        <h3>No hay materiales aún</h3>
+                        <p>Agrega el primer material educativo para esta semana.</p>
+                    </div>
+                </div>
+                <div class="week-content" id="week10-content">
+                    <div class="week-header">
+                        <h3 class="week-title">Semana 10 </h3>
+                        <button class="add-material-btn" onclick="addMaterial('Semana 10')">
+                            <i class="fas fa-plus"></i> Agregar Material
+                        </button>
+                    </div>
+                    
+                    <div class="empty-state">
+                        <i class="fas fa-folder-open"></i>
+                        <h3>No hay materiales aún</h3>
+                        <p>Agrega el primer material educativo para esta semana.</p>
+                    </div>
+                </div>
+                <div class="week-content" id="week11-content">
+                    <div class="week-header">
+                        <h3 class="week-title">Semana 11</h3>
+                        <button class="add-material-btn" onclick="addMaterial('Semana 11')">
+                            <i class="fas fa-plus"></i> Agregar Material
+                        </button>
+                    </div>
+                    
+                    <div class="empty-state">
+                        <i class="fas fa-folder-open"></i>
+                        <h3>No hay materiales aún</h3>
+                        <p>Agrega el primer material educativo para esta semana.</p>
+                    </div>
+                </div>
+                <div class="week-content" id="week12-content">
+                    <div class="week-header">
+                        <h3 class="week-title">Semana 12</h3>
+                        <button class="add-material-btn" onclick="addMaterial('Semana 12')">
+                            <i class="fas fa-plus"></i> Agregar Material
+                        </button>
+                    </div>
+                    
+                    <div class="empty-state">
+                        <i class="fas fa-folder-open"></i>
+                        <h3>No hay materiales aún</h3>
+                        <p>Agrega el primer material educativo para esta semana.</p>
+                    </div>
+                </div><div class="week-content" id="week13-content">
+                    <div class="week-header">
+                        <h3 class="week-title">Semana 13</h3>
+                        <button class="add-material-btn" onclick="addMaterial('Semana 13')">
+                            <i class="fas fa-plus"></i> Agregar Material
+                        </button>
+                    </div>
+                    
+                    <div class="empty-state">
+                        <i class="fas fa-folder-open"></i>
+                        <h3>No hay materiales aún</h3>
+                        <p>Agrega el primer material educativo para esta semana.</p>
+                    </div>
+                </div><div class="week-content" id="week14-content">
+                    <div class="week-header">
+                        <h3 class="week-title">Semana 14</h3>
+                        <button class="add-material-btn" onclick="addMaterial('Semana 14')">
+                            <i class="fas fa-plus"></i> Agregar Material
+                        </button>
+                    </div>
+                    
+                    <div class="empty-state">
+                        <i class="fas fa-folder-open"></i>
+                        <h3>No hay materiales aún</h3>
+                        <p>Agrega el primer material educativo para esta semana.</p>
+                    </div>
+                </div><div class="week-content" id="week15-content">
+                    <div class="week-header">
+                        <h3 class="week-title">Semana 15</h3>
+                        <button class="add-material-btn" onclick="addMaterial('Semana 15')">
+                            <i class="fas fa-plus"></i> Agregar Material
+                        </button>
+                    </div>
+                    
+                    <div class="empty-state">
+                        <i class="fas fa-folder-open"></i>
+                        <h3>No hay materiales aún</h3>
+                        <p>Agrega el primer material educativo para esta semana.</p>
+                    </div>
+                </div>
+                <div class="week-content" id="week16-content">
+                    <div class="week-header">
+                        <h3 class="week-title">Semana 16</h3>
+                        <button class="add-material-btn" onclick="addMaterial('Semana 16')">
+                            <i class="fas fa-plus"></i> Agregar Material
+                        </button>
+                    </div>
+                    
+                    <div class="empty-state">
+                        <i class="fas fa-folder-open"></i>
+                        <h3>No hay materiales aún</h3>
+                        <p>Agrega el primer material educativo para esta semana.</p>
+                    </div>
+                </div>
+                <div class="week-content" id="week17-content">
+                    <div class="week-header">
+                        <h3 class="week-title">Semana 17</h3>
+                        <button class="add-material-btn" onclick="addMaterial('Semana 17')">
+                            <i class="fas fa-plus"></i> Agregar Material
+                        </button>
+                    </div>
+                    
+                    <div class="empty-state">
+                        <i class="fas fa-folder-open"></i>
+                        <h3>No hay materiales aún</h3>
+                        <p>Agrega el primer material educativo para esta semana.</p>
+                    </div>
+                </div>
+                <div class="week-content" id="week18-content">
+                    <div class="week-header">
+                        <h3 class="week-title">Semana 18</h3>
+                        <button class="add-material-btn" onclick="addMaterial('Semana 18')">
+                            <i class="fas fa-plus"></i> Agregar Material
+                        </button>
+                    </div>
+                    
+                    <div class="empty-state">
+                        <i class="fas fa-folder-open"></i>
+                        <h3>No hay materiales aún</h3>
+                        <p>Agrega el primer material educativo para esta semana.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="../js/index/gestion_curso_profesor.js"></script>
+
+</body>
+</html>

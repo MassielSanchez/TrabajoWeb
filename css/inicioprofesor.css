@@ -108,7 +108,6 @@ body {
 }
 
 .layout-container.menu-open .contenido {
-    /* Aquí podrías añadir un overlay si el menú se superpone al contenido */
 }
 
 
@@ -251,9 +250,8 @@ body {
     }
 
     .layout-container.menu-open .contenido {
-        /* Opcional: Oscurecer el contenido o empujarlo ligeramente cuando el menú está abierto */
-        /* filter: brightness(0.5); */
-        /* margin-left: 250px; /* Si quieres que el contenido se empuje */
+        filter: brightness(0.5); 
+        margin-left: 250px; 
     }
 
     .titulo-cursos {
