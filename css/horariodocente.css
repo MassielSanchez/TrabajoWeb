@@ -1,0 +1,126 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f4f6f9;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.tabla-horario {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.tabla-horario th,
+.tabla-horario td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+  height: 45px;
+  font-size: 13px;
+}
+
+.tabla-horario th {
+  background-color: #e3e3e3;
+  font-weight: bold;
+}
+
+/* Colores de cursos presenciales */
+.fundamentos { background-color: #17a2b8; color: white; }
+.fundamentosp { background-color: #dc3545; color: white; }
+.algebra { background-color: #ffc107; color: white; }
+.introduccion { background-color: #28a745; color: white; }
+.pensamiento{ background-color: #007bff; color: white; }
+
+
+/* Estilo para cursos virtuales desplegables */
+.virtual-container {
+  background-color: #861639;
+  color: white;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.virtual-cursos {
+  background-color: #b2245d;
+  color: white;
+  padding: 10px;
+  display: none;
+  border-radius: 0 0 6px 6px;
+}
+
+.virtual-container:hover + .virtual-cursos {
+  display: block;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.boton-regresar {
+  background-color: #27ae60;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin-right: auto; /* Empuja el título al centro */
+}
+
+.boton-regresar:hover {
+  background-color: #219150;
+}
+
+.header-container h2 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+}
+
+.header-spacer {
+  width: 90px; /* Mismo ancho que el botón para balancear */
+  visibility: hidden;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .header-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .boton-regresar {
+    order: 1;
+    margin: 0 0 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .header-container h2 {
+    position: static;
+    transform: none;
+    order: 2;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .header-spacer {
+    display: none;
+  }
+}
