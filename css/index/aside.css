@@ -1,0 +1,92 @@
+/* css/index/_aside.css */
+
+.menu-toggle {
+    display: none;
+}
+
+.btn-menu {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 24px;
+    background-color: var(--azul);
+    box-shadow: var(--sombra-media);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: var(--blanco);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1001;
+    cursor: pointer;
+}
+
+.btn-menu:focus {
+    outline: 2px solid var(--azul-link);
+    outline-offset: 2px;
+}
+
+/* Mostrar barra lateral cuando el checkbox esté marcado */
+.menu-toggle:checked + .btn-menu + .barra-lateral {
+    left: 0;
+}
+
+/* Barra lateral */
+.barra-lateral {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    color: var(--blanco);
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--gradiente-azul-principal);
+    box-shadow: 3px 0px 15px rgba(0,0,0,0.1);
+    border-right: 1px solid var(--azul-hover);
+}
+
+.barra-lateral.active {
+    left: 0;
+}
+
+.barra-lateral .logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.barra-lateral h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.barra-lateral nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.barra-lateral nav a {
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.barra-lateral nav a:hover {
+    background-color: var(--azul-hover);
+    transform: translateX(5px);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Ocultar barra lateral y botón menú hamburguesa en escritorio */
+@media (min-width: 768px) {
+    .barra-lateral,
+    .btn-menu {
+        display: none;
+    }
+}

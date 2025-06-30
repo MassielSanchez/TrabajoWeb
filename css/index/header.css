@@ -1,0 +1,45 @@
+/* css/index/_header.css */
+
+.barra-superior {
+    display: none; /* Oculto por defecto para móviles */
+}
+
+@media (min-width: 768px) {
+    .barra-superior {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 64px;
+        background: var(--blanco);
+        box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+        padding: 0 64px;
+        z-index: 1002;
+    }
+
+    .logo-superior {
+        height: 40px;
+    }
+
+    .nav-superior {
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-superior a {
+        color: var(--azul);
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 12px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .nav-superior a:hover {
+        background-color: var(--celeste);
+        position: relative;
+    }
+}

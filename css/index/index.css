@@ -1,0 +1,37 @@
+/* css/index/index.css */
+
+/* 1. Importar variables globales */
+@import url('../global/variables.css');
+
+/* 2. Importar estilos base globales */
+@import url('../global/base.css');
+
+/* 3. Estilos de layout y componentes principales de la página */
+@import url('./header.css');
+@import url('./aside.css');
+@import url('./footer.css');
+
+/* 4. Estilos específicos de las secciones del main */
+@import url('./main-carousel.css');
+@import url('./main-nosotros.css');
+@import url('./main-que-estudiar.css'); /* Antiguas "modalidades" y "cursos" si se combinan */
+@import url('./main-carreras.css');
+@import url('./main-contacto.css');
+@import url('./main-filosofia.css'); /* Si es una sección independiente dentro del main */
+@import url('./main-modalidades.css'); /* Si es una sección independiente dentro del main */
+
+/* Media Queries generales o que afectan a múltiples componentes si no pueden ir en parciales */
+/* Puedes dejar aquí las media queries globales que afecten a varios elementos.
+   Las que solo afectan a un componente específico (ej. .carreras-grid),
+   deben ir en el archivo de ese componente (ej. _carreras.css) */
+
+/* Ejemplo: Ajuste del margen superior del contenido para no taparlo en escritorio */
+@media (min-width: 768px) {
+    .contenido {
+        margin-left: 0;
+        margin-top: 60px; /* Ajusta según la altura final de tu header fijo */
+    }
+}
+
+/* Ojo: Las media queries específicas de un componente, como la de .carreras-grid,
+   ya se movieron a su archivo correspondiente (_carreras.css) */

@@ -1,0 +1,40 @@
+/* css/global/_variables.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+    /* 🔵 Azules y celestes */
+    --azul: #003366;
+    --azul-hover: #334a66;
+    --azul-link: #007bff;
+
+    --celeste: #4FB3E7;
+    --celeste-claro: #ADD8E6;
+
+    /* 🟠 Acento (naranja en lugar de rojo) */
+    --naranja: #FF6B35;
+    --naranja-hover: #e85c2c;
+
+    /* ⚪ Grises y neutros */
+    --gris-fondo: #f4f6f8;
+    --gris-claro: #f5f5f5;
+    --gris-borde: #ccc;
+    --gris-borde-claro: #e0e0e0;
+
+    --gris-texto: #333333;
+    --gris-texto-suave: #555555;
+
+    /* ⚫ Básicos */
+    --blanco: #ffffff;
+    --negro: #000000;
+
+    /* Nuevas variables sugeridas para efectos */
+    --sombra-ligera: 0 2px 5px rgba(0,0,0,0.07);
+    --sombra-media: 0 5px 15px rgba(0,0,0,0.1);
+    --sombra-profunda: 0 8px 25px rgba(0,0,0,0.15);
+
+    --gradiente-azul-principal: linear-gradient(170deg, var(--azul), color-mix(in srgb, var(--azul) 80%, var(--negro)));
+    --gradiente-naranja-acento: linear-gradient(45deg, var(--naranja), color-mix(in srgb, var(--naranja) 90%, var(--naranja-hover)));
+    --gradiente-celeste-suave: linear-gradient(135deg, var(--celeste-claro), color-mix(in srgb, var(--celeste-claro) 85%, var(--blanco)));
+    --fondo-textura-sutil: linear-gradient(to bottom, var(--gris-fondo), color-mix(in srgb, var(--gris-fondo) 95%, var(--gris-texto-suave) 2%));
+}

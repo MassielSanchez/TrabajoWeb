@@ -1,0 +1,114 @@
+/* ----------------------------------------------- */
+/* Contenedor para la zona de interacción de los botones */
+/* ----------------------------------------------- */
+.mainCarouselWrapper {
+    position: relative;
+    background-color: var(--azul);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+    min-height: 100vh;
+    padding-top: 0;
+    padding-bottom: 0;
+    
+}
+
+/* El mainCarouselContainer ahora define su propia altura con padding-bottom */
+.mainCarouselContainer {
+    width: 90vw;
+    height: 30vw; 
+
+    overflow: hidden;
+    position: relative;
+
+    background-color: #1a222f;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.mainCarouselSlide {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.mainCarouselSlide img {
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ----------------------------------------------- */
+/* CAMBIOS PARA LOS BOTONES: VISIBILIDAD INICIAL POR JS */
+/* ----------------------------------------------- */
+.mainCarouselBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background: none;
+    border: none;
+    padding: 0; /* Esto es un reset útil para botones */
+    width: 50px;
+    height: 50px;
+
+    color: white;
+    cursor: pointer;
+    font-size: 40px;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 20;
+
+    transition: opacity 0.3s ease-in-out;
+}
+
+.mainCarouselBtn.prev {
+    left: 15px;
+}
+
+.mainCarouselBtn.next {
+    right: 15px;
+}
+
+/* El hover directo sobre el botón lo hace completamente opaco */
+.mainCarouselBtn:hover {
+    opacity: 1;
+}
+
+/* ----------------------------------------------- */
+
+/* Puntos de navegación (sin cambios) */
+.mainCarouselDots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 20;
+}
+
+.mainDot {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.mainDot.active {
+    background-color: white;
+    transform: scale(1.3);
+}
