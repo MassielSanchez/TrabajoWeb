@@ -1,113 +1,42 @@
 /* css/inicioprofesor.css */
 
 /* Estilos Generales y Reseteos */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f2f5; /* Un gris claro para el fondo general */
-    color: #333;
-    overflow-x: hidden; /* Evita el scroll horizontal no deseado */
-}
 
-/* Estilos para el contenedor principal (layout) */
-.layout-container {
-    display: flex;
-    min-height: 100vh;
-    transition: margin-left 0.3s ease; /* Transición para cuando el menú se abre/cierra */
-}
+        :root {
+            --color-primary: #3498db;
+            --color-danger: #e74c3c;
+            --color-warning: #f39c12;
+            --color-success: #27ae60;
+            --color-purple: #9b59b6;
+            --color-text: #2c3e50;
+            --color-text-light: #7f8c8d;
+            --border-radius: 10px;
+            --transition: all 0.3s ease;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
 
-/* ------------------- Barra Lateral (Sidebar) ------------------- */
-.barra-lateral {
-    width: 250px; /* Ancho de la barra lateral */
-    background-color: #2c3e50; /* Un color oscuro para la barra */
-    color: #ecf0f1; /* Texto claro */
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed; /* Fija la barra lateral */
-    height: 100%; /* Ocupa toda la altura */
-    left: 0;
-    top: 0;
-    z-index: 1000; /* Asegura que esté por encima del contenido */
-    transform: translateX(0); /* Por defecto visible en escritorio */
-    transition: transform 0.3s ease; /* Para la animación de entrada/salida en móvil */
-}
+        /* Layout Container */
+        .layout-container {
+            display: flex;
+            min-height: 100vh;
+            transition: margin-left 0.3s ease;
+        }
 
-/* Estilos para el logo en la barra lateral */
-.barra-lateral .logo {
-    width: 80px; /* Tamaño del logo */
-    height: auto;
-    margin-bottom: 20px;
-}
-
-/* Título de la plataforma en la barra lateral */
-.barra-lateral h1 {
-    font-size: 1.5em;
-    margin-bottom: 30px;
-    color: #ffffff;
-    text-align: center;
-}
-
-/* Estilos para la navegación en la barra lateral */
-.barra-lateral nav {
-    width: 100%;
-}
-
-.barra-lateral nav a {
-    display: block;
-    padding: 12px 20px;
-    margin-bottom: 10px;
-    color: #ecf0f1; /* Color de texto de los enlaces */
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    font-weight: 500;
-}
-
-.barra-lateral nav a:hover {
-    background-color: #34495e; /* Color al pasar el ratón */
-    color: #ffffff;
-}
-
-/* Estilos para el botón de cerrar sesión (si tiene una clase específica) */
-.barra-lateral .boton-cerrar {
-    margin-top: 30px;
-    background-color: #e74c3c; /* Rojo para cerrar sesión */
-}
-
-.barra-lateral .boton-cerrar:hover {
-    background-color: #c0392b;
-}
-
-/* ------------------- Menú Hamburguesa (para dispositivos móviles) ------------------- */
-.menu-toggle {
-    display: none; /* Oculta el checkbox */
-}
-
-.hamburger {
-    display: none; /* Oculta el icono de hamburguesa por defecto en escritorio */
-    font-size: 2em;
-    color: #2c3e50;
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1001; /* Por encima de la barra lateral cuando está cerrada */
-    cursor: pointer;
-    background-color: #ffffff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* ------------------- Contenido Principal ------------------- */
+        /* Contenido Principal */
         .contenido {
             flex-grow: 1;
-            margin-left: 250px;
+            margin-left: 50px;
             padding: 30px;
             transition: margin-left 0.3s ease;
+            width: calc(100% - 250px);
         }
 
         .curso-header {
@@ -135,7 +64,7 @@ body {
             text-decoration: underline;
         }
 
-        /* ------------------- Layout de Dos Columnas ------------------- */
+        /* Layout de Dos Columnas */
         .main-content-wrapper {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -143,15 +72,13 @@ body {
             min-height: 600px;
         }
 
-        /* ------------------- Panel de Gestión (Columna Izquierda) ------------------- */
+        /* Panel de Gestión */
         .gestion-panel {
             background-color: #ffffff;
             border-radius: 10px;
             padding: 25px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             height: fit-content;
-            position: sticky;
-            top: 30px;
         }
 
         .gestion-panel h2 {
@@ -198,160 +125,102 @@ body {
             border-color: #3498db;
         }
 
-        /* ------------------- Panel de Contenido (Columna Derecha) ------------------- */
+        /* Botones de Agregar Material */
+        .material-buttons {
+            display: none;
+            margin-top: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .material-buttons.active {
+            display: grid;
+        }
+
+        .material-btn {
+            background-color: #fff;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            color: #2c3e50;
+        }
+
+        .material-btn:hover {
+            border-color: #3498db;
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .material-btn i {
+            font-size: 1.5em;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .material-btn.tarea {
+            border-color: #e74c3c;
+        }
+
+        .material-btn.tarea:hover {
+            border-color: #c0392b;
+            background-color: #fdf2f2;
+        }
+
+        .material-btn.tarea i {
+            color: #e74c3c;
+        }
+
+        .material-btn.foro {
+            border-color: #f39c12;
+        }
+
+        .material-btn.foro:hover {
+            border-color: #e67e22;
+            background-color: #fef9e7;
+        }
+
+        .material-btn.foro i {
+            color: #f39c12;
+        }
+
+        .material-btn.ppt {
+            border-color: #9b59b6;
+        }
+
+        .material-btn.ppt:hover {
+            border-color: #8e44ad;
+            background-color: #f8f4fd;
+        }
+
+        .material-btn.ppt i {
+            color: #9b59b6;
+        }
+
+        .material-btn.video {
+            border-color: #27ae60;
+        }
+
+        .material-btn.video:hover {
+            border-color: #229954;
+            background-color: #f0f8f5;
+        }
+
+        .material-btn.video i {
+            color: #27ae60;
+        }
+
+        /* Panel de Contenido */
         .contenido-panel {
             background-color: #ffffff;
             border-radius: 10px;
             padding: 25px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            min-height: 600px;
-        }
-
-        .week-content {
-            display: none;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .week-content.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .week-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #e9ecef;
-        }
-
-        .week-title {
-            color: #2c3e50;
-            font-size: 1.8em;
-            font-weight: 600;
-            margin: 0;
-        }
-
-        .add-material-btn {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .add-material-btn:hover {
-            background-color: #2980b9;
-            transform: translateY(-2px);
-        }
-
-        .add-material-btn i {
-            margin-right: 8px;
-        }
-
-        /* ------------------- Lista de Materiales ------------------- */
-        .materials-list {
-            space-y: 15px;
-        }
-
-        .material-item {
-            background-color: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 15px;
-            transition: box-shadow 0.3s ease;
-        }
-
-        .material-item:hover {
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .material-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .material-content {
-            display: flex;
-            align-items: center;
-            flex-grow: 1;
-        }
-
-        .file-type-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            font-size: 1.5em;
-            color: white;
-        }
-
-        .file-type-pdf {
-            background-color: #e74c3c;
-        }
-
-        .file-type-video {
-            background-color: #9b59b6;
-        }
-
-        .material-info h4 {
-            margin: 0 0 5px 0;
-            color: #2c3e50;
-            font-size: 1.1em;
-            font-weight: 600;
-        }
-
-        .material-info p {
-            margin: 0;
-            color: #7f8c8d;
-            font-size: 0.9em;
-        }
-
-        .material-actions {
-            display: flex;
-            gap: 8px;
-        }
-
-        .material-actions .btn {
-            padding: 6px 12px;
-            font-size: 0.85em;
-        }
-
-        /* ------------------- Estado Vacío ------------------- */
-        .empty-state {
-            text-align: center;
-            padding: 60px 20px;
-            color: #7f8c8d;
-        }
-
-        .empty-state i {
-            font-size: 4em;
-            margin-bottom: 20px;
-            color: #bdc3c7;
-        }
-
-        .empty-state h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-
-        .empty-state p {
-            font-size: 1em;
-            margin: 0;
+            min-height: 500px;
         }
 
         .default-message {
@@ -372,48 +241,331 @@ body {
             color: #2c3e50;
         }
 
-        /* ------------------- Media Queries ------------------- */
+        /* Lista de Materiales */
+        .materials-list {
+            display: none;
+        }
+
+        .materials-list.active {
+            display: block;
+        }
+
+        .materials-list h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #7f8c8d;
+        }
+
+        .empty-state i {
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: #3498db;
+        }
+
+        .empty-state h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .material-item {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .material-item:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .material-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .material-content {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        .file-type-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.5em;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .file-type-tarea {
+            background-color: #e74c3c;
+        }
+
+        .file-type-foro {
+            background-color: #f39c12;
+        }
+
+        .file-type-ppt {
+            background-color: #9b59b6;
+        }
+
+        .file-type-video {
+            background-color: #27ae60;
+        }
+
+        .material-info {
+            flex-grow: 1;
+        }
+
+        .material-info h4 {
+            margin: 0 0 5px 0;
+            color: #2c3e50;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .material-info p {
+            margin: 0;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        .material-actions {
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .material-actions .btn {
+            padding: 6px 12px;
+            font-size: 0.85em;
+            border-radius: 4px;
+        }
+
+        .btn-outline-primary {
+            border-color: #3498db;
+            color: #3498db;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .btn-outline-danger {
+            border-color: #e74c3c;
+            color: #e74c3c;
+        }
+
+        .btn-outline-danger:hover {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        /* Estilos para todos los formularios de materiales */
+.material-form {
+    display: none;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    border: 1px solid #e9ecef;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.material-form.active {
+  display: block;
+}
+
+.material-form:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+/* Encabezado del formulario */
+.material-form h3 {
+    color: #2c3e50;
+    border-bottom: 2px solid #f8f9fa;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.material-form h3 i {
+    margin-right: 12px;
+    font-size: 1.2em;
+    color: #3498db; /* Color del ícono */
+}
+
+/* Campos de formulario */
+.material-form .form-label {
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.material-form .form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    padding: 10px 15px;
+    transition: border-color 0.3s ease;
+}
+
+.material-form .form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.material-form textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Texto de ayuda */
+.material-form .form-text {
+    color: #6c757d;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+/* Botones */
+.material-form .btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.material-form .btn-secondary {
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+    color: #495057;
+}
+
+.material-form .btn-secondary:hover {
+    background-color: #e9ecef;
+}
+
+.material-form .btn-primary {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+.material-form .btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+/* ===== ESTILOS ESPECÍFICOS POR TIPO DE FORMULARIO ===== */
+/* Tarea */
+#tarea-form h3 i {
+    color: #e74c3c; /* Rojo */
+}
+
+/* PPT */
+#ppt-form h3 i {
+    color: #9b59b6; /* Morado */
+}
+
+/* Video */
+#video-form h3 i {
+    color: #27ae60; /* Verde */
+}
+
+/* Foro */
+#foro-form h3 i {
+    color: #f39c12; /* Amarillo/naranja */
+}
+
+/* Input de archivos */
+.material-form input[type="file"] {
+    padding: 8px;
+    border: 2px dashed #dee2e6;
+    background-color: #f8f9fa;
+}
+
+.material-form input[type="file"]:hover {
+    border-color: #3498db;
+    background-color: #f0f8ff;
+}
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .main-content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .material-buttons {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
-            .barra-lateral {
-                transform: translateX(-250px);
-                box-shadow: none;
-            }
 
-            .barra-lateral.open {
+            .menu-toggle:checked ~ .layout-container .barra-lateral {
                 transform: translateX(0);
-                box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-            }
-
-            .hamburger {
-                display: block;
             }
 
             .contenido {
                 margin-left: 0;
                 padding: 20px;
+                width: 100%;
             }
 
-            .main-content-wrapper {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .gestion-panel {
-                position: static;
+            .material-buttons {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .curso-header h1 {
                 font-size: 2em;
-                margin-top: 50px;
             }
+
+            .material-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .material-content {
+                width: 100%;
+            }
+
+            .material-actions {
+                width: 100%;
+                justify-content: flex-end;
+            }
+            .material-form {
+                padding: 20px;
+            }
+            .material-form h3 {
+                font-size: 1.2rem;
+    }
         }
 
-        @media (max-width: 992px) and (min-width: 769px) {
-            .barra-lateral {
-                width: 200px;
-            }
-
-            .contenido {
-                margin-left: 200px;
+        @media (max-width: 480px) {
+            .material-buttons {
+                grid-template-columns: 1fr;
             }
         }

@@ -35,12 +35,11 @@ h2 {
 
 /* Colores de cursos presenciales */
 .fundamentos { background-color: #17a2b8; color: white; }
-.intro-web { background-color: #dc3545; color: white; }
+.herramientas { background-color: #dc3545; color: white; }
 .logica { background-color: #ffc107; color: white; }
-.diseno { background-color: #28a745; color: white; }
-.algoritmos { background-color: #007bff; color: white; }
-.bases { background-color: #6c757d; color: white; }
-.moviles { background-color: #343a40; color: white; }
+.diseño { background-color: #28a745; color: white; }
+.introduccion { background-color: #6c757d; color: white; }
+
 
 /* Estilo para cursos virtuales desplegables */
 .virtual-container {

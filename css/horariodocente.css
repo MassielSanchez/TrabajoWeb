@@ -34,11 +34,11 @@ h2 {
 }
 
 /* Colores de cursos presenciales */
-.fundamentos { background-color: #17a2b8; color: white; }
-.fundamentosp { background-color: #dc3545; color: white; }
-.algebra { background-color: #ffc107; color: white; }
-.introduccion { background-color: #28a745; color: white; }
-.pensamiento{ background-color: #007bff; color: white; }
+.fundamentos { background-color: #53bfcf; color: white; }
+.algebra { background-color: #4f8c46; color: white; }
+.pensamiento { background-color: #0f110f; color: white; }
+.introduccion { background-color: #d52b2b; color: white; }
+.fundamentosp{ background-color: #7b7c83; color: white; }
 
 
 /* Estilo para cursos virtuales desplegables */
@@ -79,7 +79,7 @@ h2 {
   border-radius: 5px;
   font-weight: bold;
   transition: background-color 0.3s;
-  margin-right: auto; /* Empuja el título al centro */
+  margin-right: auto;
 }
 
 .boton-regresar:hover {
