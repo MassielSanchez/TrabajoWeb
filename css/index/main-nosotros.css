@@ -1,5 +1,9 @@
 /* css/index/main/_nosotros.css */
 
+#nosotros {
+  scroll-margin-top: 100px; 
+} 
+
 .bloque-info {
     color: var(--gris-texto);
     background-color: var(--gris-fondo); /* Este estilo de fondo genérico podría sobreescribirse si usas .bloque-info-nosotros */

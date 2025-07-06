@@ -1,6 +1,11 @@
 /* ----------------------------------------------- */
 /* Contenedor para la zona de interacción de los botones */
 /* ----------------------------------------------- */
+#inicio {
+  scroll-margin-top: 100px; 
+  position: relative; 
+}
+
 .mainCarouselWrapper {
     position: relative;
     background-color: var(--azul);

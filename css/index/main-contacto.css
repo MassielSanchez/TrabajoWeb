@@ -1,5 +1,9 @@
 /* css/index/main/_contacto.css */
 
+#contacto {
+  scroll-margin-top: 100px; 
+} 
+
 .contacto {
     background-color: var(--blanco); /* Cambiado de gris-claro por consistencia con nosotros */
     padding: 2rem; /* Ajustado para consistencia */

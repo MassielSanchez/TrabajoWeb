@@ -1,6 +1,18 @@
 /* css/index/_header.css */
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 64px; /* Altura del header desktop */
+}
+
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 60px; /* Altura del header móvil (ajusta según tu menú móvil) */
+  }
+}
+
 .barra-superior {
+    height: 64px;
     display: none; /* Oculto por defecto para móviles */
 }
 
