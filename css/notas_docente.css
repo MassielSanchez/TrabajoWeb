@@ -16,6 +16,7 @@ h2 {
   margin-bottom: 30px;
 }
 
+/*Estilos para las tarjetas de cursos*/
 details {
   background-color: white;
   border-radius: 12px;
@@ -31,6 +32,7 @@ summary {
   padding: 20px;
   cursor: pointer;
   list-style: none;
+  position: relative;
 }
 
 summary::-webkit-details-marker {
@@ -39,6 +41,7 @@ summary::-webkit-details-marker {
 
 summary h3 {
   margin: 0;
+  font-size: 18px;
 }
 
 summary p {
@@ -55,8 +58,8 @@ summary p {
 }
 
 details[open] .card-body {
-  max-height: 300px;
-  padding: 15px 20px;
+  max-height: 500px;
+  padding: 20px;
 }
 
 .card-body ul {
@@ -69,14 +72,74 @@ details[open] .card-body {
   font-weight: 500;
 }
 
+/* Botón Agregar Notas */
+.add-notes-button {
+  background-color: #f39c12;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.add-notes-button:hover {
+  background-color: #e67e22;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Botón Volver */
 .back-button {
   display: block;
   text-align: center;
   margin: 40px auto 0;
   background-color: #2ecc71;
   color: white;
-  padding: 10px 25px;
+  padding: 12px 30px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
+  transition: all 0.3s;
+  width: fit-content;
+}
+
+.back-button:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+        padding: 15px;
+    }
+    
+    #studentsGradesTable th,
+    #studentsGradesTable td {
+        padding: 8px 5px; /* Smaller padding for mobile */
+        font-size: 0.9em;
+    }
+
+    #studentsGradesTable input[type="text"],
+    #studentsGradesTable input[type="number"] {
+        padding: 6px;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .btn-guardar, .btn-add-student {
+        width: 100%;
+        text-align: center;
+    }
 }
