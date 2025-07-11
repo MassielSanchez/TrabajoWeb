@@ -35,36 +35,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     }
 
-    // Función para mostrar mensaje de error debajo de un campo específico
-    function mostrarMensajeCampo(campoElement, mensaje, tipo = 'error-campo') {
-        // Eliminar mensaje anterior para este campo
-        const mensajeAnteriorCampo = campoElement.nextElementSibling;
-        if (mensajeAnteriorCampo && mensajeAnteriorCampo.classList.contains('mensaje-error-campo')) {
-            mensajeAnteriorCampo.remove();
-        }
-
-        const divMensaje = document.createElement('div');
-        divMensaje.className = `mensaje-error-campo mensaje-${tipo}`;
-        divMensaje.textContent = mensaje;
-        campoElement.parentNode.insertBefore(divMensaje, campoElement.nextSibling);
-
-        // Auto-eliminar después de 2 segundos
-        setTimeout(() => {
-            if (divMensaje.parentNode) {
-                divMensaje.remove();
-            }
-        }, 2000);
-    }
-
     // Función para validar email
     function validarEmail(email) {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return regex.test(email);
     }
 
-    // Función para validar nombre (solo letras, espacios, acentos, ñ, guiones y apostrofes, sin números)
+    // Función para validar nombre
     function validarNombre(nombre) {
-        // Permite letras, espacios, acentos, ñ, guiones y apostrofes. NO permite números.
         const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]+$/;
         return regex.test(nombre);
     }
@@ -145,24 +123,38 @@ document.addEventListener('DOMContentLoaded', function() {
         mostrarCargando(true);
 
         try {
-            const respuesta = await fetch('contacto.php', {
+            console.log('Enviando datos:', validacion.datos);
+            
+            const respuesta = await fetch('https://intec.sysitinspirate.com/api/contacto.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest'
                 },
                 body: JSON.stringify(validacion.datos)
             });
 
+            console.log('Respuesta recibida:', respuesta);
+
             // Verificar si la respuesta es JSON válido
+            const contentType = respuesta.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                const textoRespuesta = await respuesta.text();
+                console.error('Respuesta no es JSON:', textoRespuesta);
+                throw new Error('La respuesta del servidor no es JSON válido');
+            }
+
             let resultado;
             try {
                 resultado = await respuesta.json();
+                console.log('Resultado JSON:', resultado);
             } catch (jsonError) {
                 console.error('Error al parsear JSON:', jsonError);
                 throw new Error('Respuesta inválida del servidor');
             }
 
-            if (respuesta.ok && resultado.success) {
+            // Verificar si la operación fue exitosa
+            if (resultado.success) {
                 // Éxito
                 mostrarMensaje(resultado.message, 'success');
                 limpiarFormulario();
@@ -180,8 +172,8 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
                 mensajeError += 'Problema de conexión. Verifica tu conexión a internet.';
-            } else if (error.message.includes('Respuesta inválida')) {
-                mensajeError += 'Error en la respuesta del servidor.';
+            } else if (error.message.includes('Respuesta inválida') || error.message.includes('JSON')) {
+                mensajeError += 'Error en la respuesta del servidor. Contacta al administrador.';
             } else {
                 mensajeError += error.message || 'Por favor, intenta de nuevo o contacta directamente por email.';
             }
@@ -196,11 +188,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Agregar validación en tiempo real para todos los campos
     Object.keys(campos).forEach(campo => {
         campos[campo].addEventListener('blur', function() {
-            // Limpia clases de error/valido para evitar que persistan si el usuario corrige
             this.classList.remove('error');
             this.classList.remove('valido'); 
             
-            // Re-evalúa si el campo tiene contenido para aplicar 'valido'
             if (this.value.trim()) {
                 this.classList.add('valido');
             } else {
@@ -209,22 +199,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Validación especial para el campo nombre (evitar números mientras se escribe y mostrar feedback)
+    // Validación especial para el campo nombre
     campos.nombre.addEventListener('input', function(e) {
         const valorOriginal = e.target.value;
-        // Eliminar números del input en tiempo real
         const valorLimpio = valorOriginal.replace(/[0-9]/g, '');
         e.target.value = valorLimpio;
         
-        // Si el valor original contenía números, activa la clase de error y la animación
         if (valorOriginal !== valorLimpio) {
             e.target.classList.add('error');
-            // Elimina la clase de error después de un breve tiempo para el efecto visual
             setTimeout(() => {
                 e.target.classList.remove('error');
-            }, 1000); // 1 segundo
+            }, 1000);
         } else {
-            // Si no hay números, asegúrate de que la clase 'error' se retire
             e.target.classList.remove('error');
         }
     });
